@@ -1,1 +1,28 @@
 // TODO: Add styles as per the requirement
+// Import variables and mixins
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+@use 'abstracts/functions';
+
+
+// Import base styles
+@use 'base/reset';
+@use 'base/typography';
+
+// Import components
+@use 'components/button';
+@use 'components/card';
+
+// Import layout
+@use 'layout/header';
+@use 'layout/footer';
+
+// Import pages
+@use 'pages/home';
+
+// Import vendors
+@use 'vendors/_icomoon.scss';
+
+body {
+    background-color: red;
+}
