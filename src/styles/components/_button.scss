@@ -1,0 +1,23 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.primary-button {
+    background-color: $primary;
+    color: $light;
+    padding: px-to-rem(16) px-to-rem(32);
+    gap: px-to-rem(8);
+    border-radius: px-to-rem(100);
+    height: px-to-rem(49);
+    width: px-to-rem(115);
+}
+
+.secondary-button {
+    background-color: $secondary;
+    color: $dark;
+    padding: px-to-rem(16) px-to-rem(32);
+    gap: px-to-rem(8);
+    border-radius: px-to-rem(100);
+    height: px-to-rem(49);
+    width: px-to-rem(115);
+}

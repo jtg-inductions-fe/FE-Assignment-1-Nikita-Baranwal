@@ -1,9 +1,7 @@
-// TODO: Add styles as per the requirement
 // Import variables and mixins
-@use 'abstracts/variables';
-@use 'abstracts/mixins';
-@use 'abstracts/functions';
-
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+@use 'abstracts/functions' as *;
 
 // Import base styles
 @use 'base/reset';
@@ -21,8 +19,4 @@
 @use 'pages/home';
 
 // Import vendors
-@use 'vendors/_icomoon.scss';
-
-body {
-    background-color: red;
-}
+@use 'vendors/icomoon';

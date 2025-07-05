@@ -1,73 +1,75 @@
-@font-face {
-  font-family: 'icomoon';
-  src:  url('/src/assets/fonts/icomoon.eot') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+@use '../abstracts/mixins' as *;
+
+@include font-face(
+    'icomoon',
+    '/src/assets/fonts/icomoon/icomoon',
+    normal,
+    normal,
+    true
+);
+
+[class^='icon-'],
+[class*=' icon-'] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.icon-accordian:before {
+    content: '\e900';
 }
-
-.icon-Vector11:before {
-  content: "\e900";
+.icon-instagram:before {
+    content: '\e901';
+    color: #fff;
 }
-.icon-Vector10:before {
-  content: "\e901";
-  color: #fff;
+.icon-twitter:before {
+    content: '\e902';
+    color: #f1f2f2;
 }
-.icon-Vector9:before {
-  content: "\e902";
-  color: #f1f2f2;
+.icon-facebook:before {
+    content: '\e903';
+    color: #5d50c6;
 }
-.icon-Vector8:before {
-  content: "\e903";
-  color: #5d50c6;
+.icon-message:before {
+    content: '\e904';
 }
-.icon-Vector7:before {
-  content: "\e904";
+.icon-star:before {
+    content: '\e905';
+    color: #facd49;
 }
-.icon-Vector6:before {
-  content: "\e905";
-  color: #facd49;
+.icon-coupons:before {
+    content: '\e906';
+    color: #fff;
 }
-.icon-Vector5:before {
-  content: "\e906";
-  color: #fff;
+.icon-calendar:before {
+    content: '\e907';
+    color: #fff;
 }
-.icon-Vector4:before {
-  content: "\e907";
-  color: #fff;
+.icon-location:before {
+    content: '\e908';
+    color: #fff;
 }
-.icon-Vector3:before {
-  content: "\e908";
-  color: #fff;
+.icon-bag:before {
+    content: '\e909';
+    color: #f85e9f;
 }
-.icon-Vector2:before {
-  content: "\e909";
-  color: #f85e9f;
+.icon-play:before {
+    content: '\e90a';
+    color: #5d50c6;
 }
-.icon-Vector1:before {
-  content: "\e90a";
-  color: #5d50c6;
+.icon-hamBurger:before {
+    content: '\e90b';
+    color: #5d50c6;
 }
-.icon-Vector:before {
-  content: "\e90b";
-  color: #5d50c6;
-}
-
 .icon-cross:before {
-  content: "\ea0f";
+    content: '\ea0f';
 }

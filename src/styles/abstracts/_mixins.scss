@@ -1,0 +1,86 @@
+@use '../abstracts/variables';
+
+// Breakpoint mixins
+$breakpoints: (
+    small: variables.$screen-sm-min,
+    medium: variables.$screen-md-min,
+    large: variables.$screen-lg-min,
+);
+@mixin breakpoint($name) {
+    @if not map-has-key($breakpoints, $name) {
+        @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+    } @else {
+        @media (min-width: map-get($breakpoints, $name)) {
+            @content;
+        }
+    }
+}
+
+// Flex mixins
+@mixin flex(
+    $justify: flex-start,
+    $align: stretch,
+    $direction: row,
+    $wrap: nowrap
+) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+// Shadow mixins
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+    box-shadow: $x $y $blur $spread $color;
+}
+
+//Font mixins
+@mixin font(
+    $family,
+    $size,
+    $weight: normal,
+    $lineHeight: normal,
+    $style: normal
+) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lineHeight;
+    font-style: $style;
+}
+
+// Visibility mixins
+@mixin visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@mixin hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+// Icomoon mixin
+
+@mixin font-face(
+    $name,
+    $path,
+    $weight: normal,
+    $style: normal,
+    $is-icon: false
+) {
+    @font-face {
+        font-family: '#{$name}';
+        src:
+            url('#{$path}.eot?#iefix') format('embedded-opentype'),
+            url('#{$path}.ttf') format('truetype'),
+            url('#{$path}.woff') format('woff'),
+            url(if($is-icon, '#{$path}.svg##{$name}', '#{$path}.svg'))
+                format('svg');
+        font-weight: $weight;
+        font-style: $style;
+        font-display: block;
+    }
+}

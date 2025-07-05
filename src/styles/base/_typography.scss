@@ -1,6 +1,86 @@
-@font-face {
-  font-family: 'Circular Std';
-  src: url('../fonts/CircularStd-Book.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+@include font-face(
+    'Circular Std',
+    '../../assets/fonts/circularStd/CircularStd-Black',
+    400
+);
+
+@include font-face(
+    'Inter',
+    '../../assets/fonts/inter/Inter_18pt-Thin.ttf',
+    700
+);
+
+body {
+    font-family: 'Circular Std';
+}
+
+.main-heading {
+    font-size: px-to-rem(40);
+
+    @include breakpoint('medium') {
+        font-size: px-to-rem(55);
+    }
+
+    @include breakpoint('large') {
+        font-size: px-to-rem(69);
+    }
+}
+
+.section-title {
+    font-size: px-to-rem(16);
+    color: $orange;
+
+    @include breakpoint('medium') {
+        font-size: px-to-rem(23);
+    }
+}
+
+.section-heading {
+    font-size: px-to-rem(32);
+    color: $grey-black;
+
+    @include breakpoint('medium') {
+        font-size: px-to-rem(40);
+    }
+
+    @include breakpoint('large') {
+        font-size: px-to-rem(44);
+    }
+}
+
+.section-description {
+    @include font('Circular Std', px-to-rem(16), 400);
+
+    @include breakpoint('medium') {
+        font-size: px-to-rem(18);
+    }
+}
+
+// Header section
+
+// Hero section
+
+// Service section
+.service-card-heading {
+    font-size: px-to-rem(24);
+
+    @include breakpoint('medium') {
+        font-size: px-to-rem(28);
+    }
+}
+.service-card-description {
+    font-size: px-to-rem(18);
+}
+
+// Travel section
+
+// Paragraphs
+
+// Testimonial section
+.testimonial-card-description {
+    @include font('Circular Std', px-to-rem(23), 450);
 }
