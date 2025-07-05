@@ -1,18 +1,25 @@
-// Breakpoints
-$screen-sm-min: 480px; // Mobile
-$screen-md-min: 768px; // Tablet
-$screen-lg-min: 1024px; // Desktop
-
-// flex
-$spacing-sm: 8px;
-$spacing-md: 16px;
-$spacing-lg: 24px;
-
 // color palette
-$primary: #5d50c6;
-$secondary: #f85e9f;
-$light: #ffffff;
-$orange: #ff5722;
-$dark: #222831;
-$grey-black: #191825;
-$yellow: #facd49;
+$colors: (
+    primary: #5d50c6,
+    light: #ffffff,
+    secondary: #f85e9f,
+    orange: #ff5722,
+    dark: #222831,
+    grey-black: #191825,
+    yellow: #facd49,
+);
+
+$spacings: (
+    xs: 4px,
+    sm: 8px,
+    md: 16px,
+    lg: 24px,
+    xl: 32px,
+);
+
+// media screen
+$breakpoints: (
+    sm: 480px,
+    md: 768px,
+    lg: 1024px,
+);

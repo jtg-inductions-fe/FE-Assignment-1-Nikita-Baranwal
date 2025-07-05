@@ -2,7 +2,7 @@
 
 @include font-face(
     'icomoon',
-    '/src/assets/fonts/icomoon/icomoon',
+    '../../assets/fonts/icomoon/icomoon',
     normal,
     normal,
     true
@@ -12,7 +12,6 @@
 [class*=' icon-'] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
-    speak: never;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -66,7 +65,7 @@
     content: '\e90a';
     color: #5d50c6;
 }
-.icon-hamBurger:before {
+.icon-ham-burger:before {
     content: '\e90b';
     color: #5d50c6;
 }

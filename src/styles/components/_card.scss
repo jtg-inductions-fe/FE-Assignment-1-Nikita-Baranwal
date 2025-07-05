@@ -3,7 +3,6 @@
 @use '../abstracts/mixins' as *;
 
 .card {
-    border: px-to-rem(1);
+    border: px-to-rem(1) solid color-opacity(map-get($colors, grey-black), 0.1);
     border-radius: px-to-rem(32);
-    border-color: color-opacity($grey-black, 0.1);
 }

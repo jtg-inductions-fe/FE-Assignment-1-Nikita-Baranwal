@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as *;
+
 // Box-sizing and spacing reset
 *,
 *::before,
@@ -26,7 +28,7 @@ ul {
 html,
 body {
     height: 100%;
-    font-size: 16px;
+    font-size: 100%;
     line-height: 1.5;
 }
 
@@ -51,6 +53,11 @@ select {
     outline: none;
     background: none;
     line-height: inherit;
+
+    &:focus-visible {
+        outline: 2px solid map-get($colors, primary);
+        outline-offset: 2px;
+    }
 }
 
 // Anchor tag
@@ -68,6 +75,5 @@ ol {
 // Prevent user-select on buttons if needed
 button {
     cursor: pointer;
-    user-select: none;
     background: transparent;
 }

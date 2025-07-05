@@ -4,14 +4,14 @@
 
 @include font-face(
     'Circular Std',
-    '../../assets/fonts/circularStd/CircularStd-Black',
-    400
+    '../../assets/fonts/circularStd/CircularStd-Bold',
+    900
 );
 
 @include font-face(
     'Inter',
     '../../assets/fonts/inter/Inter_18pt-Thin.ttf',
-    700
+    100
 );
 
 body {
@@ -21,33 +21,33 @@ body {
 .main-heading {
     font-size: px-to-rem(40);
 
-    @include breakpoint('medium') {
+    @include breakpoint('md') {
         font-size: px-to-rem(55);
     }
 
-    @include breakpoint('large') {
+    @include breakpoint('lg') {
         font-size: px-to-rem(69);
     }
 }
 
 .section-title {
     font-size: px-to-rem(16);
-    color: $orange;
+    color: map-get($colors, orange);
 
-    @include breakpoint('medium') {
+    @include breakpoint('md') {
         font-size: px-to-rem(23);
     }
 }
 
 .section-heading {
     font-size: px-to-rem(32);
-    color: $grey-black;
+    color: map-get($colors, grey-black);
 
-    @include breakpoint('medium') {
+    @include breakpoint('md') {
         font-size: px-to-rem(40);
     }
 
-    @include breakpoint('large') {
+    @include breakpoint('lg') {
         font-size: px-to-rem(44);
     }
 }
@@ -55,7 +55,7 @@ body {
 .section-description {
     @include font('Circular Std', px-to-rem(16), 400);
 
-    @include breakpoint('medium') {
+    @include breakpoint('md') {
         font-size: px-to-rem(18);
     }
 }
@@ -68,7 +68,7 @@ body {
 .service-card-heading {
     font-size: px-to-rem(24);
 
-    @include breakpoint('medium') {
+    @include breakpoint('md') {
         font-size: px-to-rem(28);
     }
 }

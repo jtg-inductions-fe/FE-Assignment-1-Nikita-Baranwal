@@ -2,9 +2,8 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-.primary-button {
-    background-color: $primary;
-    color: $light;
+// Define the placeholder first
+%button-base {
     padding: px-to-rem(16) px-to-rem(32);
     gap: px-to-rem(8);
     border-radius: px-to-rem(100);
@@ -12,12 +11,33 @@
     width: px-to-rem(115);
 }
 
+// Use it with @extend
+.primary-button {
+    @extend %button-base;
+    background-color: map-get($colors, primary);
+    color: map-get($colors, light);
+
+    &:hover,
+    &:focus-visible {
+        background-color: darken(map-get($colors, primary), 5%);
+    }
+
+    &:disabled {
+        @include hidden;
+    }
+}
+
 .secondary-button {
-    background-color: $secondary;
-    color: $dark;
-    padding: px-to-rem(16) px-to-rem(32);
-    gap: px-to-rem(8);
-    border-radius: px-to-rem(100);
-    height: px-to-rem(49);
-    width: px-to-rem(115);
+    @extend %button-base;
+    background-color: map-get($colors, secondary);
+    color: map-get($colors, dark);
+
+    &:hover,
+    &:focus-visible {
+        background-color: darken(map-get($colors, secondary), 5%);
+    }
+
+    &:disabled {
+        @include hidden;
+    }
 }
