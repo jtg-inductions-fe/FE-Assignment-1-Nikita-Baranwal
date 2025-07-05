@@ -16,18 +16,3 @@
 
 // Import vendors
 @use 'vendors/icomoon';
-
-.container,
-.img-container {
-    height: 400px;
-    width: 400px;
-    gap: px-to-rem(32);
-    background-color: map-get($colors, orange);
-    @include flex(center, center);
-}
-
-.box {
-    height: 200px;
-    width: 200px;
-    background-color: map-get($colors, light);
-}

@@ -4,18 +4,16 @@
 
 @include font-face(
     'Circular Std',
-    '../../assets/fonts/circularStd/CircularStd-Bold',
-    900
+    '../../assets/fonts/circularStd/CircularStd-Bold'
 );
 
-@include font-face(
-    'Inter',
-    '../../assets/fonts/inter/Inter_18pt-Thin.ttf',
-    100
-);
+@include font-face('Inter', '../../assets/fonts/inter/Inter_18pt-Thin.ttf');
+
+@include font-face('icomoon', '/src/assets/fonts/icomoon/icomoon');
 
 body {
     font-family: 'Circular Std';
+    font-weight: 700;
 }
 
 .main-heading {
@@ -58,29 +56,4 @@ body {
     @include breakpoint('md') {
         font-size: px-to-rem(18);
     }
-}
-
-// Header section
-
-// Hero section
-
-// Service section
-.service-card-heading {
-    font-size: px-to-rem(24);
-
-    @include breakpoint('md') {
-        font-size: px-to-rem(28);
-    }
-}
-.service-card-description {
-    font-size: px-to-rem(18);
-}
-
-// Travel section
-
-// Paragraphs
-
-// Testimonial section
-.testimonial-card-description {
-    @include font('Circular Std', px-to-rem(23), 450);
 }

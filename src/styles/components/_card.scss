@@ -1,8 +1,0 @@
-@use '../abstracts/functions' as *;
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
-
-.card {
-    border: px-to-rem(1) solid color-opacity(map-get($colors, grey-black), 0.1);
-    border-radius: px-to-rem(32);
-}

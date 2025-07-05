@@ -11,7 +11,6 @@
     width: px-to-rem(115);
 }
 
-// Use it with @extend
 .primary-button {
     @extend %button-base;
     background-color: map-get($colors, primary);

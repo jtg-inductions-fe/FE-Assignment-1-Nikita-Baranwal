@@ -75,7 +75,6 @@
             url('#{$path}.woff') format('woff'),
             url(#{if($is-icon, '#{$path}.svg##{$name}', '#{$path}.svg')})
                 format('svg');
-        font-weight: $weight;
         font-style: $style;
         font-display: block;
     }
