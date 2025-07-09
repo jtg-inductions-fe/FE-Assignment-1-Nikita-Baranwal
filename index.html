@@ -7,10 +7,41 @@
         <li nk rel="stylesheet" href="./src/styles/main.scss" />
     </head>
     <body>
-        <div>Hello World</div>
+        <header class="header">
+            <div class="header__container">
+                <a href="/" class="header__logo"
+                    ><img src="./src/assets/images/logo.png"
+                /></a>
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#">Discover</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#">Special Deals</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__actions">
+                    <button class="header__icon-btn" aria-label="Login">
+                        Login
+                    </button>
+                    <button class="header__icon-btn" aria-label="Sign">
+                        Sign Up
+                    </button>
+                </div>
+                <div class="header-ham__actions">
+                    <i class="icon-ham-burger"></i>
+                </div>
+            </div>
+        </header>
+
         <script type="module" src="./src/script/index.js"></script>
-        <p>Hello another world</p>
-        <h1>Hello header</h1>
-        <img src="./src/assets/images/arrow-up.png" />
     </body>
 </html>

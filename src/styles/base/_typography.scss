@@ -1,5 +1,5 @@
 @use '../abstracts/functions' as *;
-@use '../abstracts/variables';
+@use '../abstracts/variables' as variables;
 @use '../abstracts/mixins' as *;
 
 @include font-face(
@@ -90,4 +90,9 @@ p {
     @include breakpoint('md') {
         font-size: px-to-rem(23);
     }
+}
+
+ul li a {
+    font-size: px-to-rem(14);
+    color: color-opacity(map-get(variables.$colors, grey-black), 0.5);
 }
