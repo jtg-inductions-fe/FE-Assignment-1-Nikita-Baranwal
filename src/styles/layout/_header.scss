@@ -1,0 +1,28 @@
+// layout/_header.scss
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+
+.header__icon-btn {
+    background-color: map-get(variables.$colors, primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.header__logo img {
+    height: px-to-rem(40);
+    width: px-to-rem(40);
+}
+
+.header-ham__actions {
+    font-size: px-to-rem(40);
+}
+
+.header__nav {
+    display: none;
+}
+
+.header__actions {
+    display: non;
+}
