@@ -4,11 +4,13 @@
 @use 'abstracts/functions' as *;
 
 // Import base styles
-@use './base/base';
+@use './base';
 
 // Import components
-@use 'components/button';
-@use 'components/card';
+@use './components';
+
+// IMport layouts
+@use './layout';
 
 // Import pages
 @use 'pages/home';
