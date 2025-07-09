@@ -1,7 +1,13 @@
 @use 'variables' as *;
 
-// Breakpoint mixins
-
+/// ---------------------------------------------
+/// Breakpoint Mixin
+/// ---------------------------------------------
+/// Creates a media query using a named breakpoint
+/// defined in the `$breakpoints` map.
+///
+/// @param {String} $name - The name of the breakpoint (e.g., 'md', 'lg')
+/// @content - The styles to apply inside the media query
 @mixin breakpoint($name) {
     @if not map-has-key($breakpoints, $name) {
         @warn "Warning: `#{$name}` is not a valid breakpoint name.";
@@ -12,7 +18,15 @@
     }
 }
 
-// Flex mixins
+/// ---------------------------------------------
+/// Flexbox Mixin
+/// ---------------------------------------------
+/// Applies flexbox layout with optional alignment settings.
+///
+/// @param {String} $justify - justify-content value (default: flex-start)
+/// @param {String} $align - align-items value (default: stretch)
+/// @param {String} $direction - flex-direction (default: row)
+/// @param {String} $wrap - flex-wrap value (default: nowrap)
 @mixin flex(
     $justify: flex-start,
     $align: stretch,
@@ -26,12 +40,30 @@
     flex-wrap: $wrap;
 }
 
-// Shadow mixins
+/// ---------------------------------------------
+/// Box Shadow Mixin
+/// ---------------------------------------------
+/// Creates a box-shadow declaration with full control.
+///
+/// @param {Length} $x - Horizontal offset
+/// @param {Length} $y - Vertical offset
+/// @param {Length} $blur - Blur radius
+/// @param {Length} $spread - Spread radius
+/// @param {Color} $color - Shadow color
 @mixin box-shadow($x, $y, $blur, $spread, $color) {
     box-shadow: $x $y $blur $spread $color;
 }
 
-// Font mixins
+/// ---------------------------------------------
+/// Font Mixin
+/// ---------------------------------------------
+/// Shorthand for setting font-related properties.
+///
+/// @param {String} $family - Font family
+/// @param {Length} $size - Font size
+/// @param {Number | String} $weight - Font weight (default: normal)
+/// @param {Length | String} $lineHeight - Line height (default: normal)
+/// @param {String} $style - Font style (default: normal)
 @mixin font(
     $family,
     $size,
@@ -46,20 +78,36 @@
     font-style: $style;
 }
 
-// Visibility mixins
+/// ---------------------------------------------
+/// Visibility Mixin - Visible
+/// ---------------------------------------------
+/// Makes the element visible and interactive.
 @mixin visible {
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
 }
 
+/// ---------------------------------------------
+/// Visibility Mixin - Hidden
+/// ---------------------------------------------
+/// Hides the element visually and disables interaction.
 @mixin hidden {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
-// Icomoon mixin
 
+/// ---------------------------------------------
+/// Font-Face Mixin (with optional icon support)
+/// ---------------------------------------------
+/// Defines a @font-face rule for loading custom fonts or icon fonts.
+///
+/// @param {String} $name - Font family name
+/// @param {String} $path - Path to the font file (without extension)
+/// @param {Number | String} $weight - Font weight (default: normal)
+/// @param {String} $style - Font style (default: normal)
+/// @param {Boolean} $is-icon - If true, adjusts SVG URL for icon fonts
 @mixin font-face(
     $name,
     $path,
@@ -76,6 +124,7 @@
             url(#{if($is-icon, '#{$path}.svg##{$name}', '#{$path}.svg')})
                 format('svg');
         font-style: $style;
+        font-weight: $weight;
         font-display: block;
     }
 }

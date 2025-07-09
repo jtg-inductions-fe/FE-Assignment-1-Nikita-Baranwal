@@ -4,8 +4,7 @@
 @use 'abstracts/functions' as *;
 
 // Import base styles
-@use 'base/reset';
-@use 'base/typography';
+@use './base/base';
 
 // Import components
 @use 'components/button';

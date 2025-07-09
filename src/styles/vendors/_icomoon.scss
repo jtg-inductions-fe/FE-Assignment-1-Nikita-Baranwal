@@ -1,11 +1,9 @@
 @use '../abstracts/mixins' as *;
 
 @include font-face(
-    'icomoon',
-    '../../assets/fonts/icomoon/icomoon',
-    normal,
-    normal,
-    true
+    $name: 'icomoon',
+    $path: '/src/assets/fonts/icomoon/icomoon',
+    $is-icon: true
 );
 
 [class^='icon-'],
@@ -43,7 +41,7 @@
 }
 .icon-star:before {
     content: '\e905';
-    color: #facd49;
+    color: inherit;
 }
 .icon-coupons:before {
     content: '\e906';

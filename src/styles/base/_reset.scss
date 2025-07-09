@@ -1,4 +1,4 @@
-@use '../abstracts/variables' as *;
+@use '../abstracts/variables';
 
 // Box-sizing and spacing reset
 *,
@@ -55,7 +55,7 @@ select {
     line-height: inherit;
 
     &:focus-visible {
-        outline: 2px solid map-get($colors, primary);
+        outline: 2px solid map-get(variables.$colors, primary);
         outline-offset: 2px;
     }
 }
