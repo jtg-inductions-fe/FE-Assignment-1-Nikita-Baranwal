@@ -1,0 +1,93 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables';
+@use '../abstracts/mixins' as *;
+
+@include font-face(
+    $name: 'Circular Std',
+    $path: '/src/assets/fonts/circularStd/CircularStd-Bold'
+);
+
+@include font-face(
+    $name: 'Inter',
+    $path: '/src/assets/fonts/inter/Inter_18pt-Thin'
+);
+
+body {
+    font-family: 'Circular Std';
+    font-weight: variables.$weight-bold;
+}
+
+h1 {
+    font-size: px-to-rem(40);
+
+    @include breakpoint('md') {
+        font-size: px-to-rem(55);
+    }
+
+    @include breakpoint('lg') {
+        font-size: px-to-rem(69);
+    }
+}
+
+h2 {
+    font-size: px-to-rem(32);
+    color: map-get(variables.$colors, grey-black);
+
+    @include breakpoint('md') {
+        font-size: px-to-rem(40);
+    }
+
+    @include breakpoint('lg') {
+        font-size: px-to-rem(55);
+    }
+}
+
+h3 {
+    font-size: px-to-rem(32);
+    color: map-get(variables.$colors, grey-black);
+
+    @include breakpoint('md') {
+        font-size: px-to-rem(40);
+    }
+
+    @include breakpoint('lg') {
+        font-size: px-to-rem(44);
+    }
+}
+
+h6 {
+    font-size: px-to-rem(23);
+    color: map-get(variables.$colors, grey-black);
+}
+
+h5 {
+    font-size: px-to-rem(28);
+    color: color-opacity(map-get(variables.$colors, grey-black), 0.75);
+}
+
+.section-title {
+    font-size: px-to-rem(16);
+    color: map-get(variables.$colors, orange);
+
+    @include breakpoint('md') {
+        font-size: px-to-rem(23);
+    }
+}
+
+p {
+    @include font('Inter', px-to-rem(16), 400);
+    color: color-opacity(map-get(variables.$colors, grey-black), 0.5);
+
+    @include breakpoint('md') {
+        font-size: px-to-rem(18);
+    }
+}
+
+.body2 {
+    @include font('Circular Std', px-to-rem(18), 450);
+    color: color-opacity(map-get(variables.$colors, grey-black), 0.75);
+
+    @include breakpoint('md') {
+        font-size: px-to-rem(23);
+    }
+}

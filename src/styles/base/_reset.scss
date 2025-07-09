@@ -1,0 +1,79 @@
+@use '../abstracts/variables';
+
+// Box-sizing and spacing reset
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Remove default margin and padding
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+// Remove default font sizing
+html,
+body {
+    height: 100%;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+// Media elements
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+// Remove outline/border from inputs/buttons
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    border: none;
+    outline: none;
+    background: none;
+    line-height: inherit;
+
+    &:focus-visible {
+        outline: 2px solid map-get(variables.$colors, primary);
+        outline-offset: 2px;
+    }
+}
+
+// Anchor tag
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// List styling
+ul,
+ol {
+    list-style: none;
+}
+
+// Prevent user-select on buttons if needed
+button {
+    cursor: pointer;
+    background: transparent;
+}

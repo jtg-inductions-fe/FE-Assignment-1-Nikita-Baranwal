@@ -1,0 +1,16 @@
+// Convert px to rem
+@use 'sass:math';
+@use 'sass:meta';
+
+@function px-to-rem($px, $base: 16) {
+    @if meta.type-of($px) != 'number' {
+        @error 'px-to-rem() expects a number (e.g., 16), not a string like "16px".';
+    }
+    @return #{math.div($px, $base)}rem;
+}
+
+// color opacity
+@function color-opacity($hex, $opacity) {
+    $o: if($opacity < 0, 0, if($opacity > 1, 1, $opacity));
+    @return rgba($hex, $o);
+}

@@ -1,0 +1,42 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables';
+@use '../abstracts/mixins' as *;
+
+// Define the placeholder first
+%button-base {
+    padding: px-to-rem(16) px-to-rem(32);
+    gap: px-to-rem(8);
+    border-radius: px-to-rem(100);
+    height: px-to-rem(49);
+    width: px-to-rem(115);
+}
+
+.primary-button {
+    @extend %button-base;
+    background-color: map-get(variables.$colors, primary);
+    color: map-get(variables.$colors, light);
+
+    &:hover,
+    &:focus-visible {
+        background-color: darken(map-get(variables.$colors, primary), 5%);
+    }
+
+    &:disabled {
+        @include hidden;
+    }
+}
+
+.secondary-button {
+    @extend %button-base;
+    background-color: map-get(variables.$colors, secondary);
+    color: map-get(variables.$colors, dark);
+
+    &:hover,
+    &:focus-visible {
+        background-color: darken(map-get(variables.$colors, secondary), 5%);
+    }
+
+    &:disabled {
+        @include hidden;
+    }
+}

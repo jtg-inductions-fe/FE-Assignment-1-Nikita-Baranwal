@@ -1,0 +1,27 @@
+// color palette
+$colors: (
+    primary: #5d50c6,
+    light: #ffffff,
+    secondary: #f85e9f,
+    orange: #ff5722,
+    dark: #222831,
+    grey-black: #191825,
+    yellow: #facd49,
+);
+
+$spacings: (
+    xs: 4px,
+    sm: 8px,
+    md: 16px,
+    lg: 24px,
+    xl: 32px,
+);
+
+// media screen
+$breakpoints: (
+    sm: 480px,
+    md: 768px,
+    lg: 1024px,
+);
+
+$weight-bold: 700;
