@@ -6,7 +6,6 @@
 
 .header {
     position: relative;
-    //z-index: 1101;
     width: 100%;
     height: px-to-rem(113);
     max-width: px-to-rem(1440);
@@ -178,10 +177,6 @@ body.no-scroll {
         .header__logo {
             order: 2;
             margin: 0 auto;
-
-            img {
-                // margin-left: px-to-rem(185);
-            }
         }
 
         .header-ham__actions {
