@@ -17,6 +17,21 @@ body {
     font-weight: variables.$weight-bold;
 }
 
+.container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: px-to-rem(16);
+    max-width: px-to-rem(1440);
+
+    @include breakpoint('lg') {
+        padding-inline: px-to-rem(64);
+    }
+
+    @include breakpoint('xl') {
+        padding-inline: px-to-rem(100);
+    }
+}
+
 h1 {
     font-size: px-to-rem(40);
 

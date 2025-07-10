@@ -29,3 +29,10 @@ $breakpoints: (
 );
 
 $weight-bold: 700;
+
+// z-index
+$z-index: (
+    ham-menu: 2,
+    overlay: 0,
+    drawer: 1,
+) !default;
