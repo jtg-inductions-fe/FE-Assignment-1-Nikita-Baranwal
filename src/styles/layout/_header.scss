@@ -13,7 +13,8 @@
 }
 
 .header__logo img {
-    font-size: px-to-rem(40);
+    height: px-to-rem(40);
+    width: auto;
 }
 
 .header-ham__actions {
