@@ -13,12 +13,12 @@ button {
 }
 
 .primary-button {
-    background-color: map-get(variables.$colors, primary);
-    color: map-get(variables.$colors, light);
+    background-color: transparent;
+    color: map-get(variables.$colors, dark);
 
     &:hover,
     &:focus-visible {
-        background-color: darken(map-get(variables.$colors, primary), 5%);
+        background-color: darken(map-get(variables.$colors, light), 5%);
     }
 
     &:disabled {
@@ -27,12 +27,12 @@ button {
 }
 
 .secondary-button {
-    background-color: map-get(variables.$colors, secondary);
-    color: map-get(variables.$colors, dark);
+    background-color: map-get(variables.$colors, primary);
+    color: map-get(variables.$colors, light);
 
     &:hover,
     &:focus-visible {
-        background-color: darken(map-get(variables.$colors, secondary), 5%);
+        background-color: darken(map-get(variables.$colors, primary), 5%);
     }
 
     &:disabled {

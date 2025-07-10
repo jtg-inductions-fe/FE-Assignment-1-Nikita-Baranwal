@@ -1,22 +1,33 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>Accessible Drawer Menu</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <li nk rel="stylesheet" href="./src/styles/main.scss" />
+        <link rel="stylesheet" href="./src/styles/main.scss" />
     </head>
     <body>
         <header class="header">
             <div class="header__container">
-                <a href="/" class="header__logo"
-                    ><img src="./src/assets/images/logo.png"
-                /></a>
-                <nav class="header__nav">
+                <!-- Logo -->
+                <a href="/" class="header__logo">
+                    <img src="./src/assets/images/logo.png" alt="Site logo" />
+                </a>
+                <!-- Navigation Drawer -->
+                <nav
+                    class="header__nav"
+                    id="main-nav"
+                    aria-label="Main navigation"
+                >
+                    <!-- <button
+                        class="drawer-close"
+                        aria-label="Close navigation menu"
+                        tabindex="0"
+                    >
+                    <i class="icon-cross" aria-hidden="true"></i>
+                    </button> -->
                     <ul class="header__nav-list">
-                        <li class="header__nav-item">
-                            <a href="#">Home</a>
-                        </li>
+                        <li class="header__nav-item"><a href="#">Home</a></li>
                         <li class="header__nav-item">
                             <a href="#">Discover</a>
                         </li>
@@ -28,18 +39,38 @@
                         </li>
                     </ul>
                 </nav>
+
+                <!-- Header Actions -->
                 <div class="header__actions">
-                    <button class="header__icon-btn" aria-label="Login">
+                    <button
+                        class="header__icon-btn primary-button"
+                        aria-label="Login"
+                    >
                         Login
                     </button>
-                    <button class="header__icon-btn" aria-label="Sign">
+                    <button
+                        class="header__icon-btn secondary-button"
+                        aria-label="Sign Up"
+                    >
                         Sign Up
                     </button>
                 </div>
-                <div class="header-ham__actions">
-                    <i class="icon-ham-burger"></i>
+
+                <!-- Hamburger Icon (toggle button) -->
+                <div
+                    class="header-ham__actions"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Open navigation menu"
+                    aria-controls="main-nav"
+                    aria-expanded="false"
+                >
+                    <i class="icon-ham-burger" aria-hidden="true"></i>
                 </div>
             </div>
+
+            <!-- Overlay -->
+            <div class="drawer-overlay"></div>
         </header>
 
         <script type="module" src="./src/script/index.js"></script>

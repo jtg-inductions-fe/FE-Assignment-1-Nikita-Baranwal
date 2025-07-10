@@ -20,8 +20,12 @@ $spacings: (
 // media screen
 $breakpoints: (
     sm: 480px,
+    // Small Devices (Mobiles)
     md: 768px,
+    // Medium Devices (Tablets)
     lg: 1024px,
+    // Large Devices (Laptops)
+    xl: 1440px,
 );
 
 $weight-bold: 700;

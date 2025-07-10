@@ -1,28 +1,215 @@
-// layout/_header.scss
 @use '../abstracts/functions' as *;
 @use '../abstracts/variables' as variables;
 @use '../abstracts/mixins' as *;
 
-.header__icon-btn {
-    background-color: map-get(variables.$colors, primary);
-    color: white;
-    border: none;
-    cursor: pointer;
+// ================= BASE =================
+
+.header {
+    position: relative;
+    //z-index: 1101;
+    width: 100%;
+    height: px-to-rem(113);
+    max-width: px-to-rem(1440);
+    margin: 0 auto;
 }
 
 .header__logo img {
-    height: px-to-rem(40);
-    width: px-to-rem(40);
+    font-size: px-to-rem(40);
 }
 
 .header-ham__actions {
     font-size: px-to-rem(40);
+    height: px-to-rem(48);
+    width: px-to-rem(48);
+    z-index: 2;
+    cursor: pointer;
+    @include flex($justify: center, $align: center);
+
+    .icon-ham-burger {
+        display: block;
+    }
+}
+
+.drawer-close {
+    background: none;
+    border: none;
+    font-size: px-to-rem(32);
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    display: none;
+    margin-left: auto;
+    margin-bottom: px-to-rem(24);
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 .header__nav {
     display: none;
+
+    &.drawer-open {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 70vw;
+        max-width: 100vw;
+        background-color: white;
+        z-index: 1;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        padding: px-to-rem(32);
+        padding-top: px-to-rem(116);
+        .drawer-close {
+            display: block;
+        }
+    }
+
+    &.active {
+        transform: translateX(0);
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: px-to-rem(24);
+        padding: 0;
+        margin: 0;
+
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                padding: px-to-rem(12) px-to-rem(24);
+                border-radius: px-to-rem(8);
+                transition: background-color 0.2s ease;
+
+                &:hover {
+                    background-color: #f0f0f0;
+                }
+            }
+        }
+    }
 }
 
+// ================= BREAKPOINTS =================
+
+@include breakpoint('md') {
+    .header__nav.drawer-open {
+        top: 0;
+        left: 0;
+        right: auto;
+        height: 70vh;
+        width: 100vw;
+        transform: translateY(-100%);
+    }
+
+    .header__nav.active {
+        transform: translateY(0);
+    }
+}
+
+@include breakpoint('xl') {
+    .header__nav {
+        display: block;
+        position: static;
+        transform: none;
+        height: auto;
+        width: auto;
+        padding: 0;
+
+        ul {
+            @include flex($justify: space-between, $align: center);
+            gap: px-to-rem(64);
+        }
+    }
+
+    .drawer-close,
+    .header-ham__actions {
+        display: none;
+    }
+}
+
+// ================= HEADER STRUCTURE =================
+
 .header__actions {
-    display: non;
+    display: none;
+}
+
+.header__container {
+    width: 100%;
+    height: 100%;
+    padding: 0 px-to-rem(16);
+    margin: 0;
+    @include flex($justify: space-between, $align: center);
+
+    @include breakpoint('lg') {
+        padding-left: px-to-rem(64);
+        padding-right: px-to-rem(64);
+
+        .header__actions {
+            display: block;
+            order: 3;
+        }
+
+        .header__logo {
+            order: 2;
+            margin: 0 auto;
+
+            img {
+                // margin-left: px-to-rem(185);
+            }
+        }
+
+        .header-ham__actions {
+            order: 1;
+        }
+    }
+
+    @include breakpoint('xl') {
+        margin-top: px-to-rem(34);
+        padding-left: px-to-rem(100);
+        padding-right: px-to-rem(100);
+
+        .header__logo img {
+            margin-left: 0;
+        }
+
+        .header__logo,
+        .header__actions,
+        .header-ham__actions {
+            order: unset;
+        }
+
+        .header__logo {
+            margin: 0;
+        }
+
+        .header__actions {
+            display: block;
+        }
+    }
 }
