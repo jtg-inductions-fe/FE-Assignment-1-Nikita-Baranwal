@@ -7,7 +7,8 @@
 .header {
     position: relative;
     width: 100%;
-    height: px-to-rem(113);
+    padding-top: px-to-rem(32);
+    padding-bottom: px-to-rem(32);
     max-width: px-to-rem(1440);
     margin: 0 auto;
 }
@@ -115,9 +116,15 @@ body.no-scroll {
     }
 }
 
+.drawer__actions {
+    margin-top: px-to-rem(32);
+    @include flex($justify: space-between, $align: center, $direction: column);
+    gap: px-to-rem(16);
+}
+
 // ================= BREAKPOINTS =================
 
-@include breakpoint('md') {
+@include breakpoint('lg') {
     .header__nav.drawer-open {
         top: 0;
         left: 0;
@@ -149,6 +156,9 @@ body.no-scroll {
 
     .drawer-close,
     .header-ham__actions {
+        display: none;
+    }
+    .drawer__actions {
         display: none;
     }
 }
@@ -186,7 +196,7 @@ body.no-scroll {
     }
 
     @include breakpoint('xl') {
-        margin-top: px-to-rem(34);
+        padding-top: px-to-rem(34);
         padding-left: px-to-rem(100);
         padding-right: px-to-rem(100);
 
