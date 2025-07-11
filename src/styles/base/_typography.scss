@@ -22,7 +22,7 @@ h1 {
     line-height: 120%;
 
     @include breakpoint('lg') {
-        font-size: px-to-rem(55);
+        font-size: px-to-rem(56);
     }
 
     @include breakpoint('xl') {

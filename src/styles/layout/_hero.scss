@@ -32,6 +32,7 @@
     &__container {
         position: relative;
         z-index: z(drawer);
+        text-align: center;
         @include flex(
             $justify: center,
             $align: center,
@@ -39,10 +40,24 @@
             $gap: px-to-rem(32)
         );
         margin-top: px-to-rem(35); // this now works!
+
+        @include breakpoint('lg') {
+            margin-top: px-to-rem(0); // this now works!
+            @include flex(
+                $justify: center,
+                $align: center,
+                $direction: column,
+                $gap: px-to-rem(64)
+            );
+            // padding: 0 px-to-rem(200);
+        }
     }
 
     &__img {
-        height: px-to-rem(366);
+        // height: px-to-rem(366);
+        @include breakpoint('lg') {
+            padding: px-to-rem(64) px-to-rem(62) 0 px-to-rem(64);
+        }
         width: auto;
     }
 
@@ -77,6 +92,15 @@
             button {
                 width: 100%;
             }
+
+            @include breakpoint('lg') {
+                width: auto;
+                @include flex($direction: row, $gap: px-to-rem(16));
+            }
+        }
+
+        @include breakpoint('lg') {
+            padding: 0 px-to-rem(140);
         }
     }
 
