@@ -1,0 +1,99 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+@use '../base/typography';
+
+.hero-section {
+    position: relative;
+
+    &__blur-circle {
+        position: absolute;
+        width: px-to-rem(272); // 272px
+        height: px-to-rem(348); // 348px
+        top: px-to-rem(-360); // -36px
+        left: px-to-rem(-30); // -33px
+        background-color: map-get(
+            $map: variables.$colors,
+            $key: orange
+        ); // Orange
+        opacity: 0.5;
+        border-radius: 50%;
+        filter: blur(px-to-rem(200)); // heavy blur
+        z-index: 0; // Ensure it's behind other content
+
+        // Optional responsiveness
+        @include breakpoint('md') {
+            width: px-to-rem(200);
+            height: px-to-rem(250);
+            filter: blur(px-to-rem(250));
+        }
+    }
+
+    &__container {
+        position: relative;
+        z-index: z(drawer);
+        @include flex(
+            $justify: center,
+            $align: center,
+            $direction: column,
+            $gap: px-to-rem(32)
+        );
+        margin-top: px-to-rem(35); // this now works!
+    }
+
+    &__img {
+        height: px-to-rem(366);
+        width: auto;
+    }
+
+    &__explore {
+        box-shadow: 0px 34px 75px 0px rgba(0, 0, 0, 0.07);
+        color: map-get($map: variables.$colors, $key: secondary);
+    }
+
+    &__content {
+        @include flex($justify: center, $align: center, $direction: column);
+        gap: px-to-rem(32);
+
+        &-details {
+            text-align: center;
+            @include flex($justify: center, $align: center, $direction: column);
+            gap: px-to-rem(24);
+
+            span {
+                color: map-get($map: variables.$colors, $key: secondary);
+            }
+        }
+
+        &-controls {
+            width: 100%;
+            @include flex(
+                $justify: center,
+                $align: center,
+                $direction: column,
+                $gap: px-to-rem(24)
+            );
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+
+    &__button {
+        &-one {
+            box-shadow:
+                0px 0px 0px rgba(0, 0, 0, 0.1),
+                0px 5px 11px rgba(0, 0, 0, 0.1),
+                0px 20px 20px rgba(0, 0, 0, 0.09),
+                0px 45px 27px rgba(0, 0, 0, 0.05),
+                0px 81px 32px rgba(0, 0, 0, 0.01),
+                0px 126px 35px rgba(0, 0, 0, 0);
+        }
+
+        &-two {
+            background-color: map-get($map: variables.$colors, $key: light);
+            border: 1px solid #eeeeee;
+        }
+    }
+}

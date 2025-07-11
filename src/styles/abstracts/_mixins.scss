@@ -130,3 +130,23 @@
         font-display: swap;
     }
 }
+
+/// ---------------------------------------------
+/// Line height- Mixin
+/// ---------------------------------------------
+
+@mixin responsive-line-height($base, $lg: null, $xl: null) {
+    line-height: $base;
+
+    @if $lg {
+        @include breakpoint('md') {
+            line-height: $lg;
+        }
+    }
+
+    @if $xl {
+        @include breakpoint('lg') {
+            line-height: $xl;
+        }
+    }
+}
