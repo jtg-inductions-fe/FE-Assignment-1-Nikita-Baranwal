@@ -109,8 +109,11 @@
         }
 
         ul {
-            @include flex($direction: column, $align: center);
-            gap: px-to-rem(24);
+            @include flex(
+                $direction: column,
+                $align: center,
+                $gap: px-to-rem(24)
+            );
             margin: 0;
             padding: 0;
 
@@ -154,8 +157,11 @@
             padding: 0;
 
             ul {
-                @include flex($justify: space-between, $align: center);
-                gap: px-to-rem(64);
+                @include flex(
+                    $justify: space-between,
+                    $align: center,
+                    $gap: px-to-rem(64)
+                );
             }
         }
     }
@@ -165,8 +171,12 @@
 
 .drawer__actions {
     margin-top: px-to-rem(32);
-    @include flex($direction: column, $align: center, $justify: space-between);
-    gap: px-to-rem(16);
+    @include flex(
+        $direction: column,
+        $align: center,
+        $justify: space-between,
+        $gap: px-to-rem(16)
+    );
 
     @include breakpoint('xl') {
         display: none;
