@@ -82,6 +82,7 @@ p {
 
     @include breakpoint('lg') {
         font-size: px-to-rem(18);
+        max-width: 40ch;
     }
 }
 

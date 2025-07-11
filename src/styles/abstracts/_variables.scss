@@ -20,7 +20,7 @@ $spacings: (
 
 // media screen
 $breakpoints: (
-    sm: 480px,
+    sm: 430px,
     // Small Devices (Mobiles)
     lg: 1024px,
     // Large Devices (Laptops)
@@ -31,7 +31,7 @@ $weight-bold: 700;
 
 // z-index
 $z-index: (
-    overlay: 0,
-    drawer: 1,
-    ham-menu: 2,
+    overlay: 1,
+    drawer: 2,
+    ham-menu: 3,
 );
