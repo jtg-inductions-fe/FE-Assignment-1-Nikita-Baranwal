@@ -1,15 +1,30 @@
-const hamBtn = document.querySelector('.header-ham__actions');
+const hamBtn = document.querySelector('.header-ham');
 const drawer = document.querySelector('.header__nav');
 const overlay = document.querySelector('.drawer-overlay');
+const navLinks = document.querySelectorAll('.header__nav-item a');
+const navBtns = document.querySelectorAll('.drawer__actions button');
 const body = document.body;
 
-// Dynamic icon toggle
+/**
+ * Toggles the hamburger icon to a close icon or vice versa.
+ *
+ * @param {boolean} isOpen - Whether the drawer is open.
+ * @returns {void}
+ */
 function toggleIcon(isOpen) {
     const icon = hamBtn.querySelector('i');
     icon.className = isOpen ? 'icon-cross' : 'icon-ham-burger';
 }
 
-// Open Drawer
+/**
+ * Opens the navigation drawer and updates the UI accordingly.
+ *
+ * Adds active classes to the drawer and overlay,
+ * prevents scrolling on the body, updates the ARIA state,
+ * and changes the hamburger icon to a close icon.
+ *
+ * @returns {void}
+ */
 function openDrawer() {
     drawer.classList.add('active', 'drawer-open');
     overlay.classList.add('active');
@@ -19,7 +34,14 @@ function openDrawer() {
     toggleIcon(true);
 }
 
-// Close Drawer
+/**
+ * Closes the navigation drawer and resets the UI.
+ *
+ * Removes active classes, restores scroll,
+ * resets the ARIA attributes, and switches the icon back.
+ *
+ * @returns {void}
+ */
 function closeDrawer() {
     drawer.classList.remove('active', 'drawer-open');
     overlay.classList.remove('active');
@@ -29,15 +51,29 @@ function closeDrawer() {
     toggleIcon(false);
 }
 
-// Toggle Drawer
+/**
+ * Toggles the drawer open or closed based on its current state.
+ *
+ * If the drawer is currently open, it closes it;
+ * otherwise, it opens the drawer.
+ *
+ * @returns {void}
+ */
 function toggleDrawer() {
     const isOpen = drawer.classList.contains('active');
     isOpen ? closeDrawer() : openDrawer();
 }
 
-// Event Listeners
+/**
+ * Handles click events on the hamburger button to toggle the drawer.
+ */
 hamBtn.addEventListener('click', toggleDrawer);
 
+/**
+ * Handles keypress (Enter or Space) on the hamburger button for accessibility.
+ *
+ * @param {KeyboardEvent} e - The keydown event.
+ */
 hamBtn.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -45,15 +81,23 @@ hamBtn.addEventListener('keydown', (e) => {
     }
 });
 
-// Escape key to close
+/**
+ * Handles Escape key to close the drawer from anywhere in the document.
+ *
+ * @param {KeyboardEvent} e - The keydown event.
+ */
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeDrawer();
     }
 });
 
-// Outside click handler using mousedown (more reliable)
-document.addEventListener('mousedown', (e) => {
+/**
+ * Closes the drawer when clicking outside of it or the hamburger icon.
+ *
+ * @param {MouseEvent} e - The click event.
+ */
+document.addEventListener('click', (e) => {
     const isClickInsideDrawer = drawer.contains(e.target);
     const isClickOnHam = hamBtn.contains(e.target);
     const isDrawerOpen = drawer.classList.contains('active');
@@ -63,5 +107,29 @@ document.addEventListener('mousedown', (e) => {
     }
 });
 
-// Optional: Close on overlay click
+/**
+ * Closes drawer when any nav link is clicked.
+ *
+ * @param {MouseEvent} e - The click event.
+ */
+navLinks.forEach((navLink) => {
+    navLink.addEventListener('click', () => {
+        closeDrawer();
+    });
+});
+
+/**
+ * Closes drawer when any nav link is clicked.
+ *
+ * @param {MouseEvent} e - The click event.
+ */
+navBtns.forEach((navBtn) => {
+    navBtn.addEventListener('click', () => {
+        closeDrawer();
+    });
+});
+
+/**
+ * Handles clicks on the overlay to close the drawer.
+ */
 overlay.addEventListener('click', closeDrawer);

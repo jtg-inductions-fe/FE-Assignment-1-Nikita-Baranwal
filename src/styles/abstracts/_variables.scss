@@ -5,6 +5,7 @@ $colors: (
     secondary: #f85e9f,
     orange: #ff5722,
     dark: #222831,
+    darken: #333,
     grey-black: #191825,
     yellow: #facd49,
 );
@@ -21,8 +22,6 @@ $spacings: (
 $breakpoints: (
     sm: 480px,
     // Small Devices (Mobiles)
-    md: 768px,
-    // Medium Devices (Tablets)
     lg: 1024px,
     // Large Devices (Laptops)
     xl: 1440px,
@@ -35,4 +34,4 @@ $z-index: (
     overlay: 0,
     drawer: 1,
     ham-menu: 2,
-) !default;
+);

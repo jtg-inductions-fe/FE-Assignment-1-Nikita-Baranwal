@@ -2,6 +2,7 @@
 @use '../abstracts/variables' as variables;
 @use '../abstracts/mixins' as *;
 @use '../base/typography';
+@use '../layout/common.scss';
 
 // ================= BASE =================
 
@@ -10,7 +11,7 @@
     width: 100%;
     margin: 0 auto;
     padding: px-to-rem(32) 0;
-    max-width: px-to-rem(1440);
+    max-width: px-to-rem(1192);
 
     &__logo {
         img {
@@ -38,11 +39,12 @@
         }
     }
 
-    &-ham__actions {
+    &-ham {
         font-size: px-to-rem(40);
         width: px-to-rem(48);
         height: px-to-rem(48);
         z-index: z(ham-menu);
+        padding: 0;
         cursor: pointer;
         @include flex($justify: center, $align: center);
 
@@ -74,12 +76,11 @@
     }
 
     &__container {
-        @extend .container;
         height: 100%;
         @include flex($justify: space-between, $align: center);
 
         @include breakpoint('xl') {
-            padding-top: px-to-rem(34);
+            padding: px-to-rem(34);
         }
     }
 
@@ -210,7 +211,7 @@
     background: none;
     border: none;
     font: bold px-to-rem(32) inherit;
-    color: #333;
+    color: map-get($map: variables.$colors, $key: darken);
     cursor: pointer;
     display: none;
     margin: 0 0 px-to-rem(24) auto;

@@ -17,29 +17,14 @@ body {
     font-weight: variables.$weight-bold;
 }
 
-.container {
-    width: 100%;
-    margin-inline: auto;
-    padding-inline: px-to-rem(16);
-    max-width: px-to-rem(1440);
-
-    @include breakpoint('lg') {
-        padding-inline: px-to-rem(64);
-    }
-
-    @include breakpoint('xl') {
-        padding-inline: px-to-rem(100);
-    }
-}
-
 h1 {
     font-size: px-to-rem(40);
 
-    @include breakpoint('md') {
+    @include breakpoint('lg') {
         font-size: px-to-rem(55);
     }
 
-    @include breakpoint('lg') {
+    @include breakpoint('xl') {
         font-size: px-to-rem(69);
     }
 }
@@ -48,11 +33,11 @@ h2 {
     font-size: px-to-rem(32);
     color: map-get(variables.$colors, grey-black);
 
-    @include breakpoint('md') {
+    @include breakpoint('lg') {
         font-size: px-to-rem(40);
     }
 
-    @include breakpoint('lg') {
+    @include breakpoint('xl') {
         font-size: px-to-rem(55);
     }
 }
@@ -61,11 +46,11 @@ h3 {
     font-size: px-to-rem(32);
     color: map-get(variables.$colors, grey-black);
 
-    @include breakpoint('md') {
+    @include breakpoint('lg') {
         font-size: px-to-rem(40);
     }
 
-    @include breakpoint('lg') {
+    @include breakpoint('xl') {
         font-size: px-to-rem(44);
     }
 }
@@ -84,7 +69,7 @@ h5 {
     font-size: px-to-rem(16);
     color: map-get(variables.$colors, orange);
 
-    @include breakpoint('md') {
+    @include breakpoint('lg') {
         font-size: px-to-rem(23);
     }
 }
@@ -93,7 +78,7 @@ p {
     @include font('Inter', px-to-rem(16), 400);
     color: color-opacity(map-get(variables.$colors, grey-black), 0.5);
 
-    @include breakpoint('md') {
+    @include breakpoint('lg') {
         font-size: px-to-rem(18);
     }
 }
@@ -102,7 +87,7 @@ p {
     @include font('Circular Std', px-to-rem(18), 450);
     color: color-opacity(map-get(variables.$colors, grey-black), 0.75);
 
-    @include breakpoint('md') {
+    @include breakpoint('lg') {
         font-size: px-to-rem(23);
     }
 }

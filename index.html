@@ -7,31 +7,45 @@
         <link rel="stylesheet" href="./src/styles/main.scss" />
     </head>
     <body>
-        <header class="header">
-            <div class="header__container">
+        <header class="header" aria-label="Header Section">
+            <div
+                class="header__container container"
+                aria-label="Header container"
+            >
                 <!-- Logo -->
-                <a href="/" class="header__logo">
+                <a
+                    href="/"
+                    class="header__logo"
+                    aria-label="Travel App logo link to homepage"
+                >
                     <img src="./src/assets/images/logo.png" alt="Site logo" />
                 </a>
+
                 <!-- Navigation Drawer -->
                 <nav
                     class="header__nav"
                     id="main-nav"
                     aria-label="Main navigation"
                 >
-                    <ul class="header__nav-list">
-                        <li class="header__nav-item"><a href="#">Home</a></li>
-                        <li class="header__nav-item">
+                    <ul
+                        class="header__nav-list"
+                        role="list"
+                        aria-label="Main navigation links"
+                    >
+                        <li class="header__nav-item" role="listitem">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="header__nav-item" role="listitem">
                             <a href="#">Discover</a>
                         </li>
-                        <li class="header__nav-item">
+                        <li class="header__nav-item" role="listitem">
                             <a href="#">Special Deals</a>
                         </li>
-                        <li class="header__nav-item">
+                        <li class="header__nav-item" role="listitem">
                             <a href="#">Contact</a>
                         </li>
                     </ul>
-                    <div class="drawer__actions">
+                    <div class="drawer__actions" aria-label="Drawer actions">
                         <button
                             class="drawer__button primary-button"
                             aria-label="Login"
@@ -48,7 +62,7 @@
                 </nav>
 
                 <!-- Header Actions -->
-                <div class="header__actions">
+                <div class="header__actions" aria-label="Header action buttons">
                     <button
                         class="header__icon-btn primary-button"
                         aria-label="Login"
@@ -65,8 +79,7 @@
 
                 <!-- Hamburger Icon (toggle button) -->
                 <button
-                    class="header-ham__actions"
-                    role="button"
+                    class="header-ham"
                     tabindex="0"
                     aria-label="Open navigation menu"
                     aria-controls="main-nav"
@@ -76,7 +89,12 @@
                 </button>
             </div>
         </header>
-        <div class="drawer-overlay"></div>
+
+        <!-- Overlay for drawer -->
+        <div
+            class="drawer-overlay"
+            aria-label="Navigation drawer overlay"
+        ></div>
 
         <script type="module" src="./src/script/index.js"></script>
     </body>
