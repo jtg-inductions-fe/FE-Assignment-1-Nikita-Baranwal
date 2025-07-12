@@ -20,6 +20,7 @@ body {
 h1 {
     font-size: px-to-rem(40);
     line-height: 1.2;
+    text-align: center;
 
     @include breakpoint('lg') {
         font-size: px-to-rem(56);
@@ -27,10 +28,42 @@ h1 {
 
     @include breakpoint('xl') {
         font-size: px-to-rem(69);
+        text-align: left;
     }
 }
 
 h2 {
+    font-size: px-to-rem(16);
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: map-get(variables.$colors, secondary);
+
+    @include breakpoint('lg') {
+        font-size: px-to-rem(23);
+    }
+    @include breakpoint('xl') {
+        text-align: left;
+    }
+}
+
+h3 {
+    font-size: px-to-rem(32);
+    color: map-get(variables.$colors, grey-black);
+    line-height: 1.2;
+    text-align: center;
+
+    @include breakpoint('lg') {
+        font-size: px-to-rem(40);
+    }
+
+    @include breakpoint('xl') {
+        font-size: px-to-rem(44);
+        text-align: left;
+    }
+}
+
+h4 {
     font-size: px-to-rem(32);
     color: map-get(variables.$colors, grey-black);
 
@@ -43,19 +76,6 @@ h2 {
     }
 }
 
-h3 {
-    font-size: px-to-rem(32);
-    color: map-get(variables.$colors, grey-black);
-
-    @include breakpoint('lg') {
-        font-size: px-to-rem(40);
-    }
-
-    @include breakpoint('xl') {
-        font-size: px-to-rem(44);
-    }
-}
-
 h6 {
     font-size: px-to-rem(23);
     color: map-get(variables.$colors, grey-black);
@@ -63,16 +83,8 @@ h6 {
 
 h5 {
     font-size: px-to-rem(28);
-    color: color-opacity(map-get(variables.$colors, grey-black), 0.75);
-}
-
-.section-title {
-    font-size: px-to-rem(16);
-    color: map-get(variables.$colors, orange);
-
-    @include breakpoint('lg') {
-        font-size: px-to-rem(23);
-    }
+    color: map-get(variables.$colors, grey-black);
+    line-height: 1.2;
 }
 
 p {
@@ -80,13 +92,22 @@ p {
     color: color-opacity(map-get(variables.$colors, grey-black), 0.5);
     line-height: 1.6;
     letter-spacing: px-to-rem(0.55);
+    text-align: center;
 
-    @include breakpoint('lg') {
-        font-size: px-to-rem(18);
+
+    @include breakpoint('xl') {
+        text-align: left;
     }
 }
 
 .body2 {
+    text-align: center;
+    @include font('Inter', px-to-rem(18), 400);
+    color: color-opacity(map-get(variables.$colors, grey-black), 0.5);
+    line-height: 1.6;
+}
+
+.body3 {
     @include font('Circular Std', px-to-rem(18), 450);
     color: color-opacity(map-get(variables.$colors, grey-black), 0.75);
 

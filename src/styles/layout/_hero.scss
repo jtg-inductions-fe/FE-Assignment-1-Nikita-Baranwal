@@ -67,6 +67,10 @@
             max-width: 50%;
         }
 
+        @include breakpoint('lg') {
+            max-width: 42%;
+        }
+
         @include breakpoint('xl') {
             max-width: 100%;
         }
@@ -76,7 +80,6 @@
         @include flex($direction: column, $gap: px-to-rem(32));
 
         &-details {
-            text-align: center;
             @include flex($direction: column, $gap: px-to-rem(24));
 
             span {
@@ -197,7 +200,7 @@
     &__container {
         width: 100%;
         padding: px-to-rem(32) px-to-rem(16);
-        margin-top: px-to-rem(32);
+        margin: px-to-rem(32) 0;
 
         @include flex($justify: center, $align: center);
 
@@ -205,6 +208,7 @@
             margin-top: px-to-rem(36);
 
             padding: px-to-rem(64) 0;
+            margin: px-to-rem(32) auto;
         }
 
         @include breakpoint('xl') {

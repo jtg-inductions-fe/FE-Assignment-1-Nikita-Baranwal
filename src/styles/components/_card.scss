@@ -1,0 +1,30 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+
+.card {
+    @include flex(
+        $justify: center,
+        $align: center,
+        $direction: column,
+        $gap: px-to-rem(32)
+    );
+    padding: px-to-rem(32);
+    border: 1px solid color-opacity(map-get(variables.$colors, grey-black), 0.1);
+    border-radius: px-to-rem(32);
+
+    &:hover {
+        box-shadow: 0px 41px 89px 0px
+            color-opacity(map-get(variables.$colors, grey-black), 0.1);
+    }
+
+    @include breakpoint('lg') {
+        @include flex(
+            $justify: center,
+            $align: center,
+            $direction: column,
+            $gap: px-to-rem(64)
+        );
+        padding: px-to-rem(64);
+    }
+}
