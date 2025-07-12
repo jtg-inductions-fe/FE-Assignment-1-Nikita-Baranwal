@@ -2,6 +2,7 @@
 @use '../abstracts/variables' as variables;
 @use '../abstracts/mixins' as *;
 @use '../base/typography';
+// @use '../layout/common' as *;
 
 .hero {
     position: relative;

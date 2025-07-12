@@ -1,0 +1,44 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+@use '../base/typography';
+@use '../layout/common';
+
+.services {
+    &__container {
+        @include flex($direction: column, $gap: px-to-rem(32));
+
+        @include breakpoint('lg') {
+            padding: px-to-rem(64);
+            @include flex($direction: column, $gap: px-to-rem(32));
+        }
+    }
+
+    &__content {
+        &-details {
+            @include flex(
+                $direction: column,
+                // $align: center,
+                // $justify: center,
+                $gap: px-to-rem(16)
+            );
+        }
+    }
+
+    &__cards {
+        @include flex(
+            $direction: column,
+            // $align: center,
+            // $justify: center,
+            $gap: px-to-rem(16)
+        );
+
+        @include breakpoint('lg') {
+            @include flex($direction: row, $gap: px-to-rem(16));
+        }
+
+        @include breakpoint('xl') {
+            @include flex($direction: row, $gap: px-to-rem(21));
+        }
+    }
+}

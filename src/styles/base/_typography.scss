@@ -66,9 +66,12 @@ h5 {
     color: color-opacity(map-get(variables.$colors, grey-black), 0.75);
 }
 
-.section-title {
+h4 {
     font-size: px-to-rem(16);
-    color: map-get(variables.$colors, orange);
+    line-height: 120%;
+    letter-spacing: 20%;
+    text-transform: uppercase;
+    color: map-get(variables.$colors, secondary);
 
     @include breakpoint('lg') {
         font-size: px-to-rem(23);
