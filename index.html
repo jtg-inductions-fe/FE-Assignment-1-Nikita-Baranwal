@@ -42,7 +42,7 @@
                         class="drawer__button primary-button"
                         aria-label="Login"
                     >
-                        Login
+                        Log In
                     </button>
                     <button
                         class="drawer__button secondary-button"
@@ -85,6 +85,134 @@
             class="drawer-overlay"
             aria-label="Navigation drawer overlay"
         ></div>
+
+        <!-- Hero Section -->
+        <section class="hero__container container" aria-label="Hero Section">
+            <div class="hero__blur-circle" aria-hidden="true"></div>
+
+            <div
+                class="hero__img"
+                role="img"
+                aria-label="Hero background image"
+            >
+                <img src="./src/assets/images/hero-section-background.png" />
+            </div>
+
+            <div class="hero__content" role="region" aria-label="hero-heading">
+                <div class="hero__content-details">
+                    <div class="hero__content-title">
+                        <button
+                            class="hero__explore"
+                            aria-label="Explore the world"
+                            tabindex="0"
+                        >
+                            Explore the world!
+                            <i class="icon-message" aria-hidden="true"></i>
+                        </button>
+                        <h1 class="hero__header" id="hero-heading">
+                            Travel <span>top destination</span> of the world
+                        </h1>
+                    </div>
+                    <div class="hero__description">
+                        <p>
+                            We always make our customer happy by providing as
+                            many choices as possible
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="hero__content-controls"
+                    role="group"
+                    aria-label="Hero action buttons"
+                >
+                    <button
+                        class="hero__button-one secondary-button button2"
+                        aria-label="Get Started"
+                        tabindex="0"
+                    >
+                        Get Started
+                    </button>
+                    <button
+                        class="hero__button-two primary-button button2"
+                        aria-label="Watch Demo"
+                        tabindex="0"
+                    >
+                        <i class="icon-play" aria-hidden="true"></i>
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+
+            <div
+                class="hero__element"
+                role="img"
+                aria-label="Scroll down indicator"
+            >
+                <img
+                    src="./src/assets/images/arrow-up.png"
+                    alt="Scroll down arrow"
+                />
+            </div>
+        </section>
+
+        <!-- Customer Section -->
+        <section
+            class="customer__container container"
+            aria-label="Partner Companies Section"
+        >
+            <ul
+                class="customer__logo-list"
+                role="list"
+                aria-label="Partner company logos"
+            >
+                <li class="customer__logo-item" role="listitem">
+                    <img
+                        src="./src/assets/images/tripadvisor.png"
+                        alt="TripAdvisor logo"
+                        class="customer__logo-img"
+                        loading="lazy"
+                        tabindex="0"
+                    />
+                </li>
+                <li class="customer__logo-item" role="listitem">
+                    <img
+                        src="./src/assets/images/expedia.png"
+                        alt="Expedia logo"
+                        class="customer__logo-img"
+                        loading="lazy"
+                        tabindex="0"
+                    />
+                </li>
+                <li class="customer__logo-item" role="listitem">
+                    <img
+                        src="./src/assets/images/booking.png"
+                        alt="Booking.com logo"
+                        class="customer__logo-img"
+                        loading="lazy"
+                        tabindex="0"
+                    />
+                </li>
+                <li class="customer__logo-item" role="listitem">
+                    <img
+                        src="./src/assets/images/airbnb.png"
+                        alt="Airbnb logo"
+                        class="customer__logo-img"
+                        loading="lazy"
+                        tabindex="0"
+                    />
+                </li>
+                <li class="customer__logo-item" role="listitem">
+                    <img
+                        src="./src/assets/images/orbitz.png"
+                        alt="Orbitz logo"
+                        class="customer__logo-img"
+                        loading="lazy"
+                        tabindex="0"
+                    />
+                </li>
+            </ul>
+        </section>
 
         <script type="module" src="./src/script/index.js"></script>
     </body>

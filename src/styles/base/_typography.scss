@@ -19,9 +19,10 @@ body {
 
 h1 {
     font-size: px-to-rem(40);
+    line-height: 1.2;
 
     @include breakpoint('lg') {
-        font-size: px-to-rem(55);
+        font-size: px-to-rem(56);
     }
 
     @include breakpoint('xl') {
@@ -77,9 +78,11 @@ h5 {
 p {
     @include font('Inter', px-to-rem(16), 400);
     color: color-opacity(map-get(variables.$colors, grey-black), 0.5);
+    line-height: 160%;
 
     @include breakpoint('lg') {
         font-size: px-to-rem(18);
+        max-width: 40ch;
     }
 }
 
