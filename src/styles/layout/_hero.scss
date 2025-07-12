@@ -3,7 +3,7 @@
 @use '../abstracts/mixins' as *;
 @use '../base/typography';
 
-.hero-section {
+.hero {
     position: relative;
 
     &__blur-circle {
@@ -34,28 +34,18 @@
     &__container {
         position: relative;
         text-align: center;
-        @include flex(
-            $justify: center,
-            $align: center,
-            $direction: column,
-            $gap: px-to-rem(32)
-        );
-        margin-top: px-to-rem(35);
+        @include flex($direction: column, $gap: px-to-rem(32));
+        margin-top: px-to-rem(59);
 
         @include breakpoint('lg') {
             margin-top: px-to-rem(0);
-            @include flex(
-                $justify: center,
-                $align: center,
-                $direction: column,
-                $gap: px-to-rem(64)
-            );
+            @include flex($direction: column, $gap: px-to-rem(64));
             padding: px-to-rem(64) 0;
         }
 
         @include breakpoint('xl') {
             @include flex($align: center, $direction: row-reverse);
-            padding: px-to-rem(64) px-to-rem(100);
+            padding: px-to-rem(58) 0;
         }
     }
 
@@ -63,7 +53,6 @@
         @include breakpoint('lg') {
             max-width: px-to-rem(772);
             height: auto;
-            flex-basis: 1;
         }
     }
 
@@ -95,39 +84,23 @@
     }
 
     &__content {
-        @include flex(
-            $justify: center,
-            $align: center,
-            $direction: column,
-            $gap: px-to-rem(32)
-        );
+        @include flex($direction: column, $gap: px-to-rem(32));
 
         &-details {
             text-align: center;
-            @include flex(
-                $justify: center,
-                $align: center,
-                $direction: column,
-                $gap: px-to-rem(24)
-            );
+            @include flex($direction: column, $gap: px-to-rem(24));
 
             span {
                 color: map-get($map: variables.$colors, $key: secondary);
             }
 
             @include breakpoint('lg') {
-                @include flex(
-                    $justify: center,
-                    $align: center,
-                    $direction: column,
-                    $gap: px-to-rem(43)
-                );
+                @include flex($direction: column, $gap: px-to-rem(43));
             }
 
             @include breakpoint('xl') {
                 text-align: left;
                 @include flex(
-                    $justify: center,
                     $align: flex-start,
                     $direction: column,
                     $gap: px-to-rem(43)
@@ -136,25 +109,14 @@
         }
 
         &-title {
-            @include flex(
-                $justify: center,
-                $align: center,
-                $direction: column,
-                $gap: px-to-rem(16)
-            );
+            @include flex($direction: column, $gap: px-to-rem(16));
 
             @include breakpoint('lg') {
-                @include flex(
-                    $justify: center,
-                    $align: center,
-                    $direction: column,
-                    $gap: px-to-rem(43)
-                );
+                @include flex($direction: column, $gap: px-to-rem(43));
             }
 
             @include breakpoint('xl') {
                 @include flex(
-                    $justify: center,
                     $align: flex-start,
                     $direction: column,
                     $gap: px-to-rem(43)
@@ -164,12 +126,7 @@
 
         &-controls {
             width: 100%;
-            @include flex(
-                $justify: center,
-                $align: center,
-                $direction: column,
-                $gap: px-to-rem(24)
-            );
+            @include flex($direction: column, $gap: px-to-rem(24));
 
             button {
                 width: 100%;
@@ -180,33 +137,28 @@
                 @include flex($direction: row, $gap: px-to-rem(16));
 
                 button {
-                    width: unset;
+                    width: auto;
                 }
             }
         }
 
         @include breakpoint('lg') {
-            @include flex(
-                $justify: center,
-                $align: center,
-                $direction: column,
-                $gap: px-to-rem(43)
-            );
+            @include flex($direction: column, $gap: px-to-rem(43));
         }
 
         @include breakpoint('xl') {
             @include flex(
-                $justify: center,
                 $align: flex-start,
                 $direction: column,
                 $gap: px-to-rem(43)
             );
-            width: 40%;
+            width: 38%;
             padding: 0;
         }
     }
 
     &__button {
+        padding: px-to-rem(24) 0;
         &-one {
             box-shadow:
                 0px 0px 0px rgba(0, 0, 0, 0.1),
@@ -229,8 +181,13 @@
 
         @include breakpoint('lg') {
             display: block;
-            top: 85%;
-            left: 1.5%;
+            top: 86%;
+            left: -2%;
+        }
+        @include breakpoint('xl') {
+            display: block;
+            top: 84%;
+            left: -6.5%;
         }
     }
 }
@@ -239,36 +196,28 @@
     &__container {
         width: 100%;
         padding: px-to-rem(32) px-to-rem(16);
+        margin-top: px-to-rem(32);
 
         @include flex($justify: center, $align: center);
 
         @include breakpoint('lg') {
-            padding: px-to-rem(64);
+            padding: px-to-rem(64) 0;
         }
 
         @include breakpoint('xl') {
-            padding: px-to-rem(64) px-to-rem(100);
+            margin-top: px-to-rem(16);
+            padding: px-to-rem(32) 0;
         }
     }
 
     &__logo-list {
         width: 100%;
 
-        @include flex(
-            $justify: center,
-            $align: center,
-            $wrap: wrap,
-            $gap: px-to-rem(27)
-        );
+        @include flex($wrap: wrap, $gap: px-to-rem(27));
 
         @include breakpoint('lg') {
             max-width: 70%;
-            @include flex(
-                $justify: center,
-                $align: center,
-                $wrap: wrap,
-                $gap: px-to-rem(32)
-            );
+            @include flex($wrap: wrap, $gap: px-to-rem(32));
         }
 
         @include breakpoint('xl') {

@@ -31,6 +31,7 @@ $weight-bold: 700;
 
 // z-index
 $z-index: (
+    base: 0,
     overlay: 1,
     drawer: 2,
     ham-menu: 3,

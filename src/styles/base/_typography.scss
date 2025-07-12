@@ -19,7 +19,7 @@ body {
 
 h1 {
     font-size: px-to-rem(40);
-    line-height: 120%;
+    line-height: 1.2;
 
     @include breakpoint('lg') {
         font-size: px-to-rem(56);
@@ -93,11 +93,6 @@ p {
     @include breakpoint('lg') {
         font-size: px-to-rem(23);
     }
-}
-
-.hero-section__button {
-    padding-top: 24px;
-    padding-bottom: 24px;
 }
 
 ul li a {
