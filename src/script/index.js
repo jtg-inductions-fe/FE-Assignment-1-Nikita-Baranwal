@@ -1,8 +1,6 @@
 const hamBtn = document.querySelector('.header-ham');
 const drawer = document.querySelector('.header__nav');
 const overlay = document.querySelector('.drawer-overlay');
-const navLinks = document.querySelectorAll('.header__nav-item a');
-const navBtns = document.querySelectorAll('.drawer__actions button');
 const body = document.body;
 
 /**
@@ -70,18 +68,6 @@ function toggleDrawer() {
 hamBtn.addEventListener('click', toggleDrawer);
 
 /**
- * Handles keypress (Enter or Space) on the hamburger button for accessibility.
- *
- * @param {KeyboardEvent} e - The keydown event.
- */
-hamBtn.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleDrawer();
-    }
-});
-
-/**
  * Handles Escape key to close the drawer from anywhere in the document.
  *
  * @param {KeyboardEvent} e - The keydown event.
@@ -108,25 +94,22 @@ document.addEventListener('click', (e) => {
 });
 
 /**
- * Closes drawer when any nav link is clicked.
+ * Handles click events on the header using event delegation.
+ * Closes the navigation drawer if a nav link or drawer button is clicked.
  *
- * @param {MouseEvent} e - The click event.
+ * @param {MouseEvent} e - The click event triggered within the header.
  */
-navLinks.forEach((navLink) => {
-    navLink.addEventListener('click', () => {
-        closeDrawer();
-    });
-});
+const header = document.querySelector('header');
 
-/**
- * Closes drawer when any nav link is clicked.
- *
- * @param {MouseEvent} e - The click event.
- */
-navBtns.forEach((navBtn) => {
-    navBtn.addEventListener('click', () => {
+header.addEventListener('click', (e) => {
+    const target = e.target;
+
+    if (
+        target.closest('.header__nav-item a') ||
+        target.closest('.drawer__button')
+    ) {
         closeDrawer();
-    });
+    }
 });
 
 /**
