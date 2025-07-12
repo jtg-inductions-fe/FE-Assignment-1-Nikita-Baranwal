@@ -10,14 +10,14 @@
 .container {
     width: 100%;
     margin-inline: auto;
-    padding-inline: px-to-rem(16);
-    max-width: px-to-rem(1192);
+    padding: 0 px-to-rem(16);
 
     @include breakpoint('lg') {
-        padding-inline: px-to-rem(64);
+        padding: unset;
+        max-width: px-to-rem(896);
     }
 
     @include breakpoint('xl') {
-        padding-inline: px-to-rem(100);
+        max-width: px-to-rem(1192);
     }
 }

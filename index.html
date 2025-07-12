@@ -7,87 +7,78 @@
         <link rel="stylesheet" href="./src/styles/main.scss" />
     </head>
     <body>
-        <header class="header" aria-label="Header Section">
-            <div
-                class="header__container container"
-                aria-label="Header container"
+        <header class="header__container container" aria-label="Header Section">
+            <!-- Logo -->
+            <a
+                href="/"
+                class="header__logo"
+                aria-label="Travel App logo link to homepage"
             >
-                <!-- Logo -->
-                <a
-                    href="/"
-                    class="header__logo"
-                    aria-label="Travel App logo link to homepage"
-                >
-                    <img src="./src/assets/images/logo.png" alt="Site logo" />
-                </a>
+                <img src="./src/assets/images/logo.png" alt="Site logo" />
+            </a>
 
-                <!-- Navigation Drawer -->
-                <nav
-                    class="header__nav"
-                    id="main-nav"
-                    aria-label="Main navigation"
+            <!-- Navigation Drawer -->
+            <nav class="header__nav" id="main-nav" aria-label="Main navigation">
+                <ul
+                    class="header__nav-list"
+                    role="list"
+                    aria-label="Main navigation links"
                 >
-                    <ul
-                        class="header__nav-list"
-                        role="list"
-                        aria-label="Main navigation links"
-                    >
-                        <li class="header__nav-item" role="listitem">
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="header__nav-item" role="listitem">
-                            <a href="#">Discover</a>
-                        </li>
-                        <li class="header__nav-item" role="listitem">
-                            <a href="#">Special Deals</a>
-                        </li>
-                        <li class="header__nav-item" role="listitem">
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
-                    <div class="drawer__actions" aria-label="Drawer actions">
-                        <button
-                            class="drawer__button primary-button"
-                            aria-label="Login"
-                        >
-                            Login
-                        </button>
-                        <button
-                            class="drawer__button secondary-button"
-                            aria-label="Sign Up"
-                        >
-                            Sign Up
-                        </button>
-                    </div>
-                </nav>
-
-                <!-- Header Actions -->
-                <div class="header__actions" aria-label="Header action buttons">
+                    <li class="header__nav-item" role="listitem">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="header__nav-item" role="listitem">
+                        <a href="#">Discover</a>
+                    </li>
+                    <li class="header__nav-item" role="listitem">
+                        <a href="#">Special Deals</a>
+                    </li>
+                    <li class="header__nav-item" role="listitem">
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                <div class="drawer__actions" aria-label="Drawer actions">
                     <button
-                        class="header__icon-btn primary-button"
+                        class="drawer__button primary-button"
                         aria-label="Login"
                     >
                         Login
                     </button>
                     <button
-                        class="header__icon-btn secondary-button"
+                        class="drawer__button secondary-button"
                         aria-label="Sign Up"
                     >
                         Sign Up
                     </button>
                 </div>
+            </nav>
 
-                <!-- Hamburger Icon (toggle button) -->
+            <!-- Header Actions -->
+            <div class="header__actions" aria-label="Header action buttons">
                 <button
-                    class="header-ham"
-                    tabindex="0"
-                    aria-label="Open navigation menu"
-                    aria-controls="main-nav"
-                    aria-expanded="false"
+                    class="header__icon-btn primary-button"
+                    aria-label="Login"
                 >
-                    <i class="icon-ham-burger" aria-hidden="true"></i>
+                    Login
+                </button>
+                <button
+                    class="header__icon-btn secondary-button"
+                    aria-label="Sign Up"
+                >
+                    Sign Up
                 </button>
             </div>
+
+            <!-- Hamburger Icon (toggle button) -->
+            <button
+                class="header-ham"
+                tabindex="0"
+                aria-label="Open navigation menu"
+                aria-controls="main-nav"
+                aria-expanded="false"
+            >
+                <i class="icon-ham-burger" aria-hidden="true"></i>
+            </button>
         </header>
 
         <!-- Overlay for drawer -->

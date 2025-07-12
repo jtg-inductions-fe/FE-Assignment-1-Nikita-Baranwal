@@ -8,10 +8,8 @@
 
 .header {
     position: relative;
-    width: 100%;
     margin: 0 auto;
     padding: px-to-rem(32) 0;
-    max-width: px-to-rem(1192);
 
     &__logo {
         img {
@@ -76,11 +74,18 @@
     }
 
     &__container {
-        height: 100%;
+        margin: px-to-rem(19) auto;
+        padding: px-to-rem(16);
         @include flex($justify: space-between, $align: center);
 
+        @include breakpoint('lg') {
+            margin: 0 auto;
+            padding: px-to-rem(32) 0;
+        }
+
         @include breakpoint('xl') {
-            padding: px-to-rem(34);
+            margin: px-to-rem(34) auto;
+            padding: px-to-rem(32) 0;
         }
     }
 
