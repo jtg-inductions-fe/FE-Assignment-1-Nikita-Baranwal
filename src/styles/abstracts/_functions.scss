@@ -1,6 +1,15 @@
 // Convert px to rem
+@use '../abstracts/variables' as variables;
 @use 'sass:math';
 @use 'sass:meta';
+
+/// Convert pixel units to rem units based on a base font size.
+///
+/// Ensures that the input is a number, not a string like `"16px"`.
+///
+/// @param {Number} $px - The pixel value to convert.
+/// @param {Number} $base [16] - The base font size for conversion.
+/// @return {Number} - The converted rem value.
 
 @function px-to-rem($px, $base: 16) {
     @if meta.type-of($px) != 'number' {
@@ -9,8 +18,28 @@
     @return #{math.div($px, $base)}rem;
 }
 
-// color opacity
+/// Convert a HEX color to an RGBA color with a specified opacity level.
+///
+/// Clamps the opacity between 0 and 1.
+/// Useful for applying semi-transparency to solid hex colors.
+///
+/// @param {Color} $hex - The base color in HEX format.
+/// @param {Number} $opacity - The desired opacity (between 0 and 1).
+/// @return {Color} - The RGBA equivalent of the given hex with opacity.
+
 @function color-opacity($hex, $opacity) {
     $o: if($opacity < 0, 0, if($opacity > 1, 1, $opacity));
     @return rgba($hex, $o);
+}
+
+/// Return z-index value from the z-index map defined in variables.
+///
+/// Helps centralize and standardize z-index usage across components.
+///
+/// @param {String} $key - The key name to look up in the z-index map.
+/// @return {Number | Null} - The corresponding z-index value.
+
+///   z('modal'); // returns 1000 (if defined in map)
+@function z($key) {
+    @return map-get(variables.$z-index, $key);
 }
