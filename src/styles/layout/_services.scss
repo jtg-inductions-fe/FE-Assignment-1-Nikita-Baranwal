@@ -9,36 +9,47 @@
         @include flex($direction: column, $gap: px-to-rem(32));
 
         @include breakpoint('lg') {
-            padding: px-to-rem(64);
-            @include flex($direction: column, $gap: px-to-rem(32));
+            padding: px-to-rem(64) 0;
+            @include flex($direction: column, $gap: px-to-rem(64));
+        }
+
+        @include breakpoint('xl') {
+            padding: px-to-rem(64) 0;
+            @include flex($direction: row, $gap: px-to-rem(0));
         }
     }
 
     &__content {
         &-details {
-            @include flex(
-                $direction: column,
-                // $align: center,
-                // $justify: center,
-                $gap: px-to-rem(16)
-            );
+            @include flex($direction: column, $gap: px-to-rem(16));
+
+            @include breakpoint('xl') {
+                align-items: unset;
+            }
         }
     }
 
     &__cards {
-        @include flex(
-            $direction: column,
-            // $align: center,
-            // $justify: center,
-            $gap: px-to-rem(16)
-        );
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: px-to-rem(16);
 
         @include breakpoint('lg') {
-            @include flex($direction: row, $gap: px-to-rem(16));
+            grid-template-columns: repeat(3, 1fr);
         }
 
         @include breakpoint('xl') {
-            @include flex($direction: row, $gap: px-to-rem(21));
+            grid-template-columns: repeat(2, 1fr);
+            gap: px-to-rem(21);
+
+            &-three {
+                display: none;
+            }
+        }
+
+        &-details {
+            text-align: center;
+            @include flex($direction: column, $gap: px-to-rem(32));
         }
     }
 }
