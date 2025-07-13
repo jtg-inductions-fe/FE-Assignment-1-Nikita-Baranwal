@@ -64,16 +64,9 @@ h3 {
 }
 
 h4 {
-    font-size: px-to-rem(32);
-    color: map-get(variables.$colors, grey-black);
-
-    @include breakpoint('lg') {
-        font-size: px-to-rem(40);
-    }
-
-    @include breakpoint('xl') {
-        font-size: px-to-rem(55);
-    }
+    font-size: px-to-rem(35);
+    color: map-get(variables.$colors, orange);
+    line-height: 1.2;
 }
 
 h5,

@@ -1,0 +1,88 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+@use '../base/typography';
+
+.travel {
+    &__container {
+        margin-top: 68px;
+
+        @include breakpoint('lg') {
+            margin-top: 0;
+            padding: px-to-rem(64) px-to-rem(32);
+        }
+
+        @include breakpoint('xl') {
+            max-width: px-to-rem(1322);
+            margin-left: 0;
+            @include flex($justify: space-between);
+            padding: px-to-rem(64) px-to-rem(0);
+        }
+
+        @include breakpoint('xxl') {
+            margin-inline: auto;
+        }
+    }
+
+    &__img {
+        @include breakpoint('lg') {
+            max-width: px-to-rem(871);
+            height: auto;
+        }
+    }
+
+    &__details {
+        position: relative;
+        @include flex($direction: column, $gap: px-to-rem(32));
+
+        &-details {
+            @include flex($direction: column, $gap: px-to-rem(64));
+        }
+
+        @include breakpoint('xl') {
+            @include flex($direction: column, $gap: px-to-rem(64));
+            width: 34%;
+        }
+
+        .travel__element {
+            display: none;
+
+            @include breakpoint('xl') {
+                display: block;
+                position: absolute;
+                top: 38%;
+                right: -14%;
+            }
+        }
+    }
+
+    &__content {
+        @include flex($direction: column, $gap: px-to-rem(32));
+
+        &-details {
+            @include flex($direction: column, $gap: px-to-rem(16));
+
+            @include breakpoint('xl') {
+                align-items: unset;
+            }
+        }
+    }
+
+    &__cards {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: px-to-rem(16);
+
+        @include breakpoint('lg') {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .card {
+            @include breakpoint('lg') {
+                padding: px-to-rem(32);
+                gap: px-to-rem(16);
+            }
+        }
+    }
+}

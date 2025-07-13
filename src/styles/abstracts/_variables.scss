@@ -10,14 +10,6 @@ $colors: (
     yellow: #facd49,
 );
 
-$spacings: (
-    xs: 4px,
-    sm: 8px,
-    md: 16px,
-    lg: 24px,
-    xl: 32px,
-);
-
 // media screen
 $breakpoints: (
     sm: 430px,
@@ -25,6 +17,7 @@ $breakpoints: (
     lg: 1024px,
     // Large Devices (Laptops)
     xl: 1440px,
+    xxl: 1441px,
 );
 
 $weight-bold: 700;
