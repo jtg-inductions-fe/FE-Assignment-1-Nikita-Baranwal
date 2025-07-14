@@ -1,5 +1,4 @@
 @use '../abstracts/functions' as *;
-@use '../abstracts/variables' as variables;
 @use '../abstracts/mixins' as *;
 @use '../base/typography';
 
@@ -25,13 +24,15 @@
     }
 
     &__img {
+        width: 100%;
+        height: auto;
         @include breakpoint('lg') {
             max-width: px-to-rem(871);
             height: auto;
         }
     }
 
-    &__details {
+    &__overview {
         position: relative;
         @include flex($direction: column, $gap: px-to-rem(32));
 
