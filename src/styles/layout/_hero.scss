@@ -77,16 +77,12 @@
             }
 
             @include breakpoint('lg') {
-                @include flex($direction: column, $gap: px-to-rem(43));
+                gap: px-to-rem(43);
             }
 
             @include breakpoint('xl') {
                 text-align: left;
-                @include flex(
-                    $align: flex-start,
-                    $direction: column,
-                    $gap: px-to-rem(43)
-                );
+                align-items: flex-start;
             }
         }
 
@@ -94,15 +90,11 @@
             @include flex($direction: column, $gap: px-to-rem(16));
 
             @include breakpoint('lg') {
-                @include flex($direction: column, $gap: px-to-rem(43));
+                gap: px-to-rem(43);
             }
 
             @include breakpoint('xl') {
-                @include flex(
-                    $align: flex-start,
-                    $direction: column,
-                    $gap: px-to-rem(43)
-                );
+                align-items: flex-start;
             }
         }
 
@@ -116,32 +108,20 @@
 
             @include breakpoint('lg') {
                 width: auto;
-                @include flex($direction: row, $gap: px-to-rem(16));
+                @include flex($gap: px-to-rem(16));
 
                 button {
                     width: auto;
                 }
             }
-
-            .button--lg {
-                padding: px-to-rem(24) px-to-rem(32);
-
-                @include breakpoint('lg') {
-                    padding: px-to-rem(16) px-to-rem(32);
-                }
-            }
         }
 
         @include breakpoint('lg') {
-            @include flex($direction: column, $gap: px-to-rem(43));
+            gap: px-to-rem(43);
         }
 
         @include breakpoint('xl') {
-            @include flex(
-                $align: flex-start,
-                $direction: column,
-                $gap: px-to-rem(43)
-            );
+            align-items: flex-start;
             width: 36%;
             padding: 0;
         }
@@ -166,12 +146,12 @@
         @include breakpoint('lg') {
             display: block;
             top: 86%;
-            left: -2%;
+            left: -3%;
         }
         @include breakpoint('xl') {
             display: block;
             top: 87%;
-            left: -6.5%;
+            left: -7.5%;
         }
     }
 
@@ -225,7 +205,7 @@
 
         @include breakpoint('lg') {
             max-width: 70%;
-            @include flex($wrap: wrap, $gap: px-to-rem(32));
+            gap: px-to-rem(32);
         }
 
         @include breakpoint('xl') {
