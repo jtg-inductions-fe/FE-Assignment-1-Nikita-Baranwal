@@ -38,7 +38,6 @@
 
         @include breakpoint('lg') {
             margin-top: px-to-rem(0);
-            padding: px-to-rem(64) 0;
         }
 
         @include breakpoint('xl') {

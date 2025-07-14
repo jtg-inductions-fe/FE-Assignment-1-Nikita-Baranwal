@@ -16,10 +16,13 @@
     @include breakpoint('lg') {
         padding: unset;
         max-width: px-to-rem(896);
+        padding: px-to-rem(64) 0;
         @include flex($direction: column, $gap: px-to-rem(64));
     }
 
     @include breakpoint('xl') {
+        padding: px-to-rem(58) 0;
         max-width: px-to-rem(1192);
+        @include flex($direction: row, $gap: px-to-rem(64));
     }
 }
