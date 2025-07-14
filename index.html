@@ -7,64 +7,37 @@
         <link rel="stylesheet" href="./src/styles/main.scss" />
     </head>
     <body>
-        <header class="header__container container" aria-label="Header Section">
+        <header class="header__container container">
             <!-- Logo -->
-            <a
-                href="/"
-                class="header__logo"
-                aria-label="Travel App logo link to homepage"
-            >
-                <img src="./src/assets/images/logo.png" alt="Site logo" />
+            <a href="/" class="header__logo">
+                <img src="./src/assets/images/logo.png" alt="Travel App logo" />
             </a>
 
             <!-- Navigation Drawer -->
-            <nav class="header__nav" id="main-nav" aria-label="Main navigation">
-                <ul
-                    class="header__nav-list"
-                    role="list"
-                    aria-label="Main navigation links"
-                >
-                    <li class="header__nav-item" role="listitem">
-                        <a href="#">Home</a>
-                    </li>
-                    <li class="header__nav-item" role="listitem">
-                        <a href="#">Discover</a>
-                    </li>
-                    <li class="header__nav-item" role="listitem">
+            <nav class="header__nav" id="main-nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="#">Home</a></li>
+                    <li class="header__nav-item"><a href="#">Discover</a></li>
+                    <li class="header__nav-item">
                         <a href="#">Special Deals</a>
                     </li>
-                    <li class="header__nav-item" role="listitem">
-                        <a href="#">Contact</a>
-                    </li>
+                    <li class="header__nav-item"><a href="#">Contact</a></li>
                 </ul>
-                <div class="drawer__actions" aria-label="Drawer actions">
-                    <button
-                        class="drawer__button primary-button"
-                        aria-label="Login"
-                    >
+
+                <div class="drawer__actions">
+                    <button class="drawer__button primary-button">
                         Log In
                     </button>
-                    <button
-                        class="drawer__button secondary-button"
-                        aria-label="Sign Up"
-                    >
+                    <button class="drawer__button secondary-button">
                         Sign Up
                     </button>
                 </div>
             </nav>
 
             <!-- Header Actions -->
-            <div class="header__actions" aria-label="Header action buttons">
-                <button
-                    class="header__icon-btn primary-button"
-                    aria-label="Login"
-                >
-                    Login
-                </button>
-                <button
-                    class="header__icon-btn secondary-button"
-                    aria-label="Sign Up"
-                >
+            <div class="header__actions">
+                <button class="header__icon-btn primary-button">Login</button>
+                <button class="header__icon-btn secondary-button">
                     Sign Up
                 </button>
             </div>
@@ -81,35 +54,31 @@
         </header>
 
         <!-- Overlay for drawer -->
-        <div
-            class="drawer-overlay"
-            aria-label="Navigation drawer overlay"
-        ></div>
+        <div class="drawer-overlay" aria-hidden="true"></div>
 
         <!-- Hero Section -->
-        <section class="hero__container container" aria-label="Hero Section">
+        <section
+            class="hero__container container"
+            aria-labelledby="hero-heading"
+        >
             <div class="hero__blur-circle" aria-hidden="true"></div>
 
-            <div
-                class="hero__img"
-                role="img"
-                aria-label="Hero background image"
-            >
-                <img src="./src/assets/images/hero-section-background.png" />
+            <div class="hero__img">
+                <img
+                    src="./src/assets/images/hero-section-background.png"
+                    alt="Scenic background of mountains"
+                />
             </div>
 
-            <div class="hero__content" role="region" aria-label="hero-heading">
+            <div class="hero__content" id="hero-heading">
                 <div class="hero__content-details">
                     <div class="hero__content-title">
-                        <button
-                            class="hero__explore"
-                            aria-label="Explore the world"
-                            tabindex="0"
-                        >
+                        <span class="hero__explore" aria-hidden="true">
                             Explore the world!
                             <i class="icon-message" aria-hidden="true"></i>
-                        </button>
-                        <h1 class="hero__header" id="hero-heading">
+                        </span>
+
+                        <h1 class="hero__header" id="hero-title">
                             Travel <span>top destination</span> of the world
                         </h1>
                     </div>
@@ -121,34 +90,18 @@
                     </div>
                 </div>
 
-                <div
-                    class="hero__content-controls"
-                    role="group"
-                    aria-label="Hero action buttons"
-                >
-                    <button
-                        class="hero__button-one secondary-button button2"
-                        aria-label="Get Started"
-                        tabindex="0"
-                    >
+                <div class="hero__content-controls">
+                    <button class="hero__button-one secondary-button button2">
                         Get Started
                     </button>
-                    <button
-                        class="hero__button-two primary-button button2"
-                        aria-label="Watch Demo"
-                        tabindex="0"
-                    >
+                    <button class="hero__button-two primary-button button2">
                         <i class="icon-play" aria-hidden="true"></i>
                         Watch Demo
                     </button>
                 </div>
             </div>
 
-            <div
-                class="hero__element"
-                role="img"
-                aria-label="Scroll down indicator"
-            >
+            <div class="hero__element">
                 <img
                     src="./src/assets/images/arrow-up.png"
                     alt="Scroll down arrow"
@@ -159,56 +112,47 @@
         <!-- Customer Section -->
         <section
             class="customer__container container"
-            aria-label="Partner Companies Section"
+            aria-label="Our Partners"
         >
-            <ul
-                class="customer__logo-list"
-                role="list"
-                aria-label="Partner company logos"
-            >
-                <li class="customer__logo-item" role="listitem">
+            <ul class="customer__logo-list">
+                <li class="customer__logo-item">
                     <img
                         src="./src/assets/images/tripadvisor.png"
                         alt="TripAdvisor logo"
                         class="customer__logo-img"
                         loading="lazy"
-                        tabindex="0"
                     />
                 </li>
-                <li class="customer__logo-item" role="listitem">
+                <li class="customer__logo-item">
                     <img
                         src="./src/assets/images/expedia.png"
                         alt="Expedia logo"
                         class="customer__logo-img"
                         loading="lazy"
-                        tabindex="0"
                     />
                 </li>
-                <li class="customer__logo-item" role="listitem">
+                <li class="customer__logo-item">
                     <img
                         src="./src/assets/images/booking.png"
                         alt="Booking.com logo"
                         class="customer__logo-img"
                         loading="lazy"
-                        tabindex="0"
                     />
                 </li>
-                <li class="customer__logo-item" role="listitem">
+                <li class="customer__logo-item">
                     <img
                         src="./src/assets/images/airbnb.png"
                         alt="Airbnb logo"
                         class="customer__logo-img"
                         loading="lazy"
-                        tabindex="0"
                     />
                 </li>
-                <li class="customer__logo-item" role="listitem">
+                <li class="customer__logo-item">
                     <img
                         src="./src/assets/images/orbitz.png"
                         alt="Orbitz logo"
                         class="customer__logo-img"
                         loading="lazy"
-                        tabindex="0"
                     />
                 </li>
             </ul>
