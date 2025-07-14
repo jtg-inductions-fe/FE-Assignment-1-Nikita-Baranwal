@@ -21,6 +21,7 @@ h1 {
     font-size: px-to-rem(40);
     line-height: 1.2;
     text-align: center;
+    color: map-get($map: variables.$colors, $key: grey-black);
 
     @include breakpoint('lg') {
         font-size: px-to-rem(56);
@@ -52,6 +53,7 @@ h3 {
     color: map-get(variables.$colors, grey-black);
     line-height: 1.2;
     text-align: center;
+    color: map-get($map: variables.$colors, $key: grey-black);
 
     @include breakpoint('lg') {
         font-size: px-to-rem(40);
