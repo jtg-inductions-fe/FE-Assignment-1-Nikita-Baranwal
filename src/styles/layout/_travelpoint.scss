@@ -12,14 +12,9 @@
         }
 
         @include breakpoint('xl') {
-            max-width: px-to-rem(1322);
-            margin-left: 0;
-            @include flex($justify: space-between);
+            max-width: px-to-rem(1440);
+            @include flex($justify: flex-start);
             padding: px-to-rem(64) px-to-rem(0);
-        }
-
-        @include breakpoint('xxl') {
-            margin-inline: auto;
         }
     }
 
@@ -42,7 +37,7 @@
 
         @include breakpoint('xl') {
             @include flex($direction: column, $gap: px-to-rem(64));
-            width: 34%;
+            width: 30%;
         }
 
         .travel__element {
