@@ -97,7 +97,6 @@
         gap: px-to-rem(8);
 
         @include breakpoint('lg') {
-            grid-template-columns: repeat(1, 1fr);
             gap: 0;
         }
 
