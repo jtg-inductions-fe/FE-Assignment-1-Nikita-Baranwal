@@ -147,6 +147,14 @@
                     width: auto;
                 }
             }
+
+            .button--lg {
+                padding: px-to-rem(24) px-to-rem(32);
+
+                @include breakpoint('lg') {
+                    padding: px-to-rem(16) px-to-rem(32);
+                }
+            }
         }
 
         @include breakpoint('lg') {
@@ -167,13 +175,7 @@
     &__button {
         padding: px-to-rem(24) 0;
         &-one {
-            box-shadow:
-                0px 0px 0px rgba(0, 0, 0, 0.1),
-                0px 5px 11px rgba(0, 0, 0, 0.1),
-                0px 20px 20px rgba(0, 0, 0, 0.09),
-                0px 45px 27px rgba(0, 0, 0, 0.05),
-                0px 81px 32px rgba(0, 0, 0, 0.01),
-                0px 126px 35px rgba(0, 0, 0, 0);
+            box-shadow: variables.$shadow-elevation-high;
         }
 
         &-two {

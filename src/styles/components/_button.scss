@@ -16,14 +16,6 @@ button {
     );
 }
 
-.button2 {
-    padding: px-to-rem(24) px-to-rem(32);
-
-    @include breakpoint('lg') {
-        padding: px-to-rem(16) px-to-rem(32);
-    }
-}
-
 .primary-button {
     background-color: map-get($map: variables.$colors, $key: light);
     color: map-get(variables.$colors, dark);
