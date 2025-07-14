@@ -74,6 +74,9 @@
             @include breakpoint('xl') {
                 align-items: unset;
             }
+            p {
+                text-align: left;
+            }
         }
     }
 
