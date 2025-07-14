@@ -84,7 +84,7 @@
         }
 
         @include breakpoint('xl') {
-            margin: px-to-rem(34) auto;
+            margin: px-to-rem(32) auto 0;
             padding: px-to-rem(32) 0;
         }
     }

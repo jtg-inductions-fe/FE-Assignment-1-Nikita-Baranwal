@@ -34,12 +34,10 @@
     &__container {
         position: relative;
         text-align: center;
-        @include flex($direction: column, $gap: px-to-rem(32));
         margin-top: px-to-rem(59);
 
         @include breakpoint('lg') {
             margin-top: px-to-rem(0);
-            @include flex($direction: column, $gap: px-to-rem(64));
             padding: px-to-rem(64) 0;
         }
 
@@ -152,7 +150,7 @@
                 $direction: column,
                 $gap: px-to-rem(43)
             );
-            width: 38%;
+            width: 36%;
             padding: 0;
         }
     }
@@ -186,7 +184,7 @@
         }
         @include breakpoint('xl') {
             display: block;
-            top: 84%;
+            top: 87%;
             left: -6.5%;
         }
     }
@@ -205,8 +203,7 @@
         }
 
         @include breakpoint('xl') {
-            margin-top: px-to-rem(16);
-            padding: px-to-rem(32) 0;
+            padding: px-to-rem(36) 0;
         }
     }
 
