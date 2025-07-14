@@ -6,31 +6,6 @@
 .hero {
     position: relative;
 
-    &__blur-circle {
-        position: absolute;
-        width: px-to-rem(272);
-        height: px-to-rem(348);
-        top: px-to-rem(-79);
-        left: px-to-rem(-30);
-        background-color: map-get($map: variables.$colors, $key: orange);
-        opacity: 0.5;
-        border-radius: 50%;
-        filter: blur(px-to-rem(200));
-        z-index: 0;
-
-        @include breakpoint('lg') {
-            width: px-to-rem(500);
-            height: px-to-rem(500);
-            top: px-to-rem(-319);
-            left: px-to-rem(-170);
-            filter: blur(px-to-rem(250));
-        }
-
-        @include breakpoint('xl') {
-            top: px-to-rem(-143);
-        }
-    }
-
     &__container {
         position: relative;
         text-align: center;
@@ -197,6 +172,31 @@
             display: block;
             top: 87%;
             left: -6.5%;
+        }
+    }
+
+    &__blur-circle {
+        position: absolute;
+        width: px-to-rem(272);
+        height: px-to-rem(348);
+        top: px-to-rem(-79);
+        left: px-to-rem(-30);
+        background-color: map-get($map: variables.$colors, $key: orange);
+        opacity: 0.5;
+        border-radius: 50%;
+        filter: blur(px-to-rem(200));
+        z-index: 0;
+
+        @include breakpoint('lg') {
+            width: px-to-rem(500);
+            height: px-to-rem(500);
+            top: px-to-rem(-319);
+            left: px-to-rem(-170);
+            filter: blur(px-to-rem(250));
+        }
+
+        @include breakpoint('xl') {
+            top: px-to-rem(-143);
         }
     }
 }
