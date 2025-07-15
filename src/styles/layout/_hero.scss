@@ -9,7 +9,7 @@
     &__container {
         position: relative;
         text-align: center;
-        margin-top: px-to-rem(59);
+        margin-top: px-to-rem(47);
         gap: px-to-rem(34);
 
         @include breakpoint('lg') {

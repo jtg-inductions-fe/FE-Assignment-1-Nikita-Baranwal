@@ -7,7 +7,7 @@
         $justify: center,
         $align: center,
         $direction: column,
-        $gap: px-to-rem(32)
+        $gap: px-to-rem(29)
     );
     padding: px-to-rem(32);
     border: 1px solid color-opacity(map-get(variables.$colors, grey-black), 0.1);
@@ -19,12 +19,12 @@
     }
 
     @include breakpoint('lg') {
-        @include flex(
-            $justify: center,
-            $align: center,
-            $direction: column,
-            $gap: px-to-rem(64)
-        );
-        padding: px-to-rem(64);
+        gap: px-to-rem(68);
+        padding: px-to-rem(60);
+    }
+
+    @include breakpoint('xl') {
+        gap: px-to-rem(66);
+        padding: px-to-rem(62) px-to-rem(61);
     }
 }

@@ -10,11 +10,11 @@
 
         @include breakpoint('lg') {
             padding: px-to-rem(32) 0;
-            @include flex($direction: column, $gap: px-to-rem(64));
+            gap: px-to-rem(64);
         }
 
         @include breakpoint('xl') {
-            padding: px-to-rem(64) 0;
+            padding: px-to-rem(55) 0;
             @include flex($direction: row, $gap: px-to-rem(0));
         }
     }
@@ -24,7 +24,9 @@
             @include flex($direction: column, $gap: px-to-rem(16));
 
             @include breakpoint('xl') {
+                margin-top: px-to-rem(35);
                 align-items: unset;
+                gap: px-to-rem(19);
             }
         }
     }

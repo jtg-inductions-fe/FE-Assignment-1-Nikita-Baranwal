@@ -82,9 +82,14 @@ h6 {
 }
 
 h5 {
-    font-size: px-to-rem(28);
+    font-size: px-to-rem(24);
     color: map-get(variables.$colors, grey-black);
     line-height: 1.2;
+    letter-spacing: px-to-rem(0.55);
+
+    @include breakpoint('lg') {
+        font-size: px-to-rem(27);
+    }
 }
 
 p {
