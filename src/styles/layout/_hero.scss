@@ -67,10 +67,6 @@
             max-width: 50%;
         }
 
-        @include breakpoint('lg') {
-            max-width: 42%;
-        }
-
         @include breakpoint('xl') {
             max-width: 100%;
         }
@@ -206,7 +202,6 @@
 
         @include breakpoint('lg') {
             margin-top: px-to-rem(36);
-
             padding: px-to-rem(64) 0;
             margin: px-to-rem(32) auto;
         }
@@ -225,7 +220,6 @@
             max-width: 70%;
             gap: px-to-rem(32);
         }
-
         @include breakpoint('xl') {
             max-width: 100%;
             flex-wrap: nowrap;
