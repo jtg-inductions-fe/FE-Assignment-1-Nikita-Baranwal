@@ -94,6 +94,9 @@ p {
     letter-spacing: px-to-rem(0.55);
     text-align: center;
 
+    @include breakpoint('lg') {
+        font-size: px-to-rem(18);
+    }
 
     @include breakpoint('xl') {
         text-align: left;
