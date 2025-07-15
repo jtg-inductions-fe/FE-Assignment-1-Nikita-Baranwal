@@ -9,7 +9,7 @@
 
 @include font-face(
     $name: 'Inter',
-    $path: '/src/assets/fonts/inter/Inter_18pt-Thin'
+    $path: '/src/assets/fonts/inter/Inter-Regular'
 );
 
 body {
@@ -79,10 +79,10 @@ p {
     @include font('Inter', px-to-rem(16), 400);
     color: color-opacity(map-get(variables.$colors, grey-black), 0.5);
     line-height: 160%;
+    letter-spacing: px-to-rem(0.55);
 
     @include breakpoint('lg') {
         font-size: px-to-rem(18);
-        max-width: 40ch;
     }
 }
 

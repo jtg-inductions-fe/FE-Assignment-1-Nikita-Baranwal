@@ -83,6 +83,7 @@
             @include breakpoint('xl') {
                 text-align: left;
                 align-items: flex-start;
+                gap: px-to-rem(40);
             }
         }
 
@@ -121,7 +122,11 @@
         }
 
         @include breakpoint('xl') {
-            align-items: flex-start;
+            @include flex(
+                $direction: column,
+                $align: flex-start,
+                $gap: px-to-rem(64)
+            );
             width: 36%;
             padding: 0;
         }
