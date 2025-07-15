@@ -1,0 +1,246 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+@use '../base/typography';
+
+.hero {
+    position: relative;
+
+    &__container {
+        position: relative;
+        text-align: center;
+        margin-top: px-to-rem(59);
+        gap: px-to-rem(34);
+
+        @include breakpoint('lg') {
+            margin-top: px-to-rem(0);
+            gap: px-to-rem(67);
+            padding: px-to-rem(61) 0;
+        }
+
+        @include breakpoint('xl') {
+            @include flex($align: center, $direction: row-reverse);
+            padding: px-to-rem(58) 0;
+        }
+    }
+
+    &__img {
+        @include breakpoint('lg') {
+            max-width: px-to-rem(772);
+            height: auto;
+        }
+    }
+
+    &__explore {
+        padding: px-to-rem(16) px-to-rem(32);
+        gap: px-to-rem(8);
+        border-radius: px-to-rem(100);
+        font-size: px-to-rem(14);
+        @include flex(
+            $justify: center,
+            $align: center,
+            $direction: row,
+            $gap: px-to-rem(16)
+        );
+        width: px-to-rem(224);
+        height: px-to-rem(56);
+        box-shadow: 0px 34px 75px 0px rgba(0, 0, 0, 0.07);
+        color: map-get($map: variables.$colors, $key: secondary);
+    }
+
+    &__header {
+        max-width: 90%;
+
+        @include breakpoint('lg') {
+            max-width: 70%;
+        }
+
+        @include breakpoint('xl') {
+            max-width: 100%;
+        }
+    }
+
+    &__description {
+        max-width: 100%;
+
+        @include breakpoint('lg') {
+            max-width: 50%;
+        }
+
+        @include breakpoint('xl') {
+            max-width: 100%;
+        }
+    }
+
+    &__content {
+        @include flex($direction: column, $gap: px-to-rem(32));
+
+        &-details {
+            text-align: center;
+            @include flex($direction: column, $gap: px-to-rem(24));
+
+            span {
+                color: map-get($map: variables.$colors, $key: secondary);
+            }
+
+            @include breakpoint('lg') {
+                gap: px-to-rem(41);
+            }
+
+            @include breakpoint('xl') {
+                text-align: left;
+                align-items: flex-start;
+                gap: px-to-rem(40);
+            }
+        }
+
+        &-title {
+            @include flex($direction: column, $gap: px-to-rem(16));
+
+            @include breakpoint('lg') {
+                gap: px-to-rem(43);
+            }
+
+            @include breakpoint('xl') {
+                align-items: flex-start;
+            }
+        }
+
+        &-controls {
+            width: 100%;
+            @include flex($direction: column, $gap: px-to-rem(24));
+
+            button {
+                width: 100%;
+            }
+
+            @include breakpoint('lg') {
+                width: auto;
+                @include flex($gap: px-to-rem(16));
+
+                button {
+                    width: auto;
+                }
+            }
+        }
+
+        @include breakpoint('lg') {
+            gap: px-to-rem(40);
+        }
+
+        @include breakpoint('xl') {
+            @include flex(
+                $direction: column,
+                $align: flex-start,
+                $gap: px-to-rem(64)
+            );
+            width: 36%;
+            padding: 0;
+        }
+    }
+
+    &__button {
+        padding: px-to-rem(24) 0;
+        &-one {
+            box-shadow: variables.$shadow-elevation-high;
+        }
+
+        &-two {
+            background-color: map-get($map: variables.$colors, $key: light);
+            border: variables.$border-light;
+        }
+    }
+
+    &__element {
+        position: absolute;
+        display: none;
+
+        @include breakpoint('lg') {
+            display: block;
+            top: 86.5%;
+            left: -3%;
+        }
+        @include breakpoint('xl') {
+            display: block;
+            top: 87%;
+            left: -7.5%;
+        }
+    }
+
+    &__blur-circle {
+        position: absolute;
+        width: px-to-rem(272);
+        height: px-to-rem(348);
+        top: px-to-rem(-79);
+        left: px-to-rem(-30);
+        background-color: map-get($map: variables.$colors, $key: orange);
+        opacity: 0.5;
+        border-radius: 50%;
+        filter: blur(px-to-rem(200));
+        z-index: 0;
+
+        @include breakpoint('lg') {
+            width: px-to-rem(500);
+            height: px-to-rem(500);
+            top: px-to-rem(-319);
+            left: px-to-rem(-170);
+            filter: blur(px-to-rem(250));
+        }
+
+        @include breakpoint('xl') {
+            top: px-to-rem(-143);
+        }
+    }
+}
+
+.customer {
+    &__container {
+        width: 100%;
+        padding: px-to-rem(32) px-to-rem(16);
+        margin-top: px-to-rem(32);
+
+        @include flex($justify: center, $align: center);
+
+        @include breakpoint('lg') {
+            margin-top: px-to-rem(36);
+
+            padding: px-to-rem(64) 0;
+        }
+
+        @include breakpoint('xl') {
+            padding: px-to-rem(36) 0;
+        }
+    }
+
+    &__logo-list {
+        width: 100%;
+
+        @include flex($wrap: wrap, $gap: px-to-rem(27));
+
+        @include breakpoint('lg') {
+            max-width: 70%;
+            gap: px-to-rem(32);
+        }
+
+        @include breakpoint('xl') {
+            max-width: 100%;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 0;
+        }
+    }
+
+    &__logo-item {
+        text-align: center;
+        height: px-to-rem(20);
+
+        .customer__logo-img {
+            max-height: 100%;
+            width: auto;
+        }
+
+        @include breakpoint('lg') {
+            height: px-to-rem(32);
+        }
+    }
+}
