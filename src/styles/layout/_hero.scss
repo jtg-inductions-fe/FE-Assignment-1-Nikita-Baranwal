@@ -196,7 +196,7 @@
     &__container {
         width: 100%;
         padding: px-to-rem(32) px-to-rem(16);
-        margin: px-to-rem(32) 0;
+        margin: px-to-rem(33) 0;
 
         @include flex($justify: center, $align: center);
 
