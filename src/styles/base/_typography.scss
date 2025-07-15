@@ -78,7 +78,7 @@ h5 {
 p {
     @include font('Inter', px-to-rem(16), 400);
     color: color-opacity(map-get(variables.$colors, grey-black), 0.5);
-    line-height: 160%;
+    line-height: 1.6;
     letter-spacing: px-to-rem(0.55);
 
     @include breakpoint('lg') {
