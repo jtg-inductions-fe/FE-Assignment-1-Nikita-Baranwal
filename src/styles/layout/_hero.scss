@@ -9,7 +9,7 @@
     &__container {
         position: relative;
         text-align: center;
-        margin-top: px-to-rem(59);
+        margin-top: px-to-rem(47);
         gap: px-to-rem(34);
 
         @include breakpoint('lg') {
@@ -76,7 +76,6 @@
         @include flex($direction: column, $gap: px-to-rem(32));
 
         &-details {
-            text-align: center;
             @include flex($direction: column, $gap: px-to-rem(24));
 
             span {
@@ -197,18 +196,19 @@
     &__container {
         width: 100%;
         padding: px-to-rem(32) px-to-rem(16);
-        margin-top: px-to-rem(32);
+        margin: px-to-rem(33) 0;
 
         @include flex($justify: center, $align: center);
 
         @include breakpoint('lg') {
             margin-top: px-to-rem(36);
-
-            padding: px-to-rem(64) 0;
+            padding: px-to-rem(69) 0;
+            margin: px-to-rem(32) auto 0;
         }
 
         @include breakpoint('xl') {
             padding: px-to-rem(36) 0;
+            margin: px-to-rem(30) auto;
         }
     }
 
@@ -219,9 +219,8 @@
 
         @include breakpoint('lg') {
             max-width: 70%;
-            gap: px-to-rem(32);
+            gap: px-to-rem(27);
         }
-
         @include breakpoint('xl') {
             max-width: 100%;
             flex-wrap: nowrap;
@@ -240,7 +239,7 @@
         }
 
         @include breakpoint('lg') {
-            height: px-to-rem(32);
+            height: px-to-rem(34);
         }
     }
 }

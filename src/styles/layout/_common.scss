@@ -23,6 +23,6 @@
     @include breakpoint('xl') {
         padding: px-to-rem(58) 0;
         max-width: px-to-rem(1192);
-        @include flex($direction: row, $gap: px-to-rem(64));
+        @include flex($direction: row, $gap: px-to-rem(0));
     }
 }

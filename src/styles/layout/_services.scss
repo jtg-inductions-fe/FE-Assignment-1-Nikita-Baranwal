@@ -1,0 +1,63 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+@use '../base/typography';
+
+.services {
+    @include flex($direction: column, $gap: px-to-rem(32));
+
+    @include breakpoint('lg') {
+        padding: px-to-rem(32) 0;
+        gap: px-to-rem(64);
+    }
+
+    @include breakpoint('xl') {
+        padding: px-to-rem(55) 0;
+        @include flex($direction: row, $gap: px-to-rem(0));
+    }
+
+    &__content {
+        @include flex($direction: column, $gap: px-to-rem(16));
+
+        @include breakpoint('xl') {
+            margin-top: px-to-rem(7);
+            align-items: unset;
+            gap: px-to-rem(19);
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: px-to-rem(19);
+
+        @include breakpoint('lg') {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include breakpoint('xl') {
+            grid-template-columns: repeat(2, 1fr);
+            gap: px-to-rem(21);
+
+            > *:last-child {
+                display: none;
+            }
+        }
+
+        &-details {
+            text-align: center;
+            @include flex($direction: column, $gap: px-to-rem(32));
+        }
+
+        .card {
+            @include breakpoint('lg') {
+                padding-bottom: px-to-rem(32);
+            }
+            @include breakpoint('xl') {
+                max-width: px-to-rem(646);
+
+                padding-bottom: px-to-rem(96);
+            }
+        }
+    }
+}
