@@ -20,14 +20,12 @@
     }
 
     &__content {
-        &-details {
-            @include flex($direction: column, $gap: px-to-rem(16));
+        @include flex($direction: column, $gap: px-to-rem(16));
 
-            @include breakpoint('xl') {
-                margin-top: px-to-rem(35);
-                align-items: unset;
-                gap: px-to-rem(19);
-            }
+        @include breakpoint('xl') {
+            margin-top: px-to-rem(35);
+            align-items: unset;
+            gap: px-to-rem(19);
         }
     }
 
@@ -44,7 +42,7 @@
             grid-template-columns: repeat(2, 1fr);
             gap: px-to-rem(21);
 
-            &-three {
+            > *:last-child {
                 display: none;
             }
         }

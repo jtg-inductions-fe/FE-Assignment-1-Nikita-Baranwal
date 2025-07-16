@@ -16,6 +16,7 @@
     &:hover {
         box-shadow: 0px 41px 89px 0px
             color-opacity(map-get(variables.$colors, grey-black), 0.1);
+        transition: box-shadow 0.3s ease-in-out;
     }
 
     @include breakpoint('lg') {
