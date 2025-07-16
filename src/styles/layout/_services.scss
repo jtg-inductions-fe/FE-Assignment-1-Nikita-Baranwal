@@ -5,25 +5,23 @@
 @use '../layout/common';
 
 .services {
-    &__container {
-        @include flex($direction: column, $gap: px-to-rem(32));
+    @include flex($direction: column, $gap: px-to-rem(32));
 
-        @include breakpoint('lg') {
-            padding: px-to-rem(32) 0;
-            gap: px-to-rem(64);
-        }
+    @include breakpoint('lg') {
+        padding: px-to-rem(32) 0;
+        gap: px-to-rem(64);
+    }
 
-        @include breakpoint('xl') {
-            padding: px-to-rem(55) 0;
-            @include flex($direction: row, $gap: px-to-rem(0));
-        }
+    @include breakpoint('xl') {
+        padding: px-to-rem(55) 0;
+        @include flex($direction: row, $gap: px-to-rem(0));
     }
 
     &__content {
         @include flex($direction: column, $gap: px-to-rem(16));
 
         @include breakpoint('xl') {
-            margin-top: px-to-rem(35);
+            margin-top: px-to-rem(7);
             align-items: unset;
             gap: px-to-rem(19);
         }
@@ -44,6 +42,12 @@
 
             > *:last-child {
                 display: none;
+            }
+        }
+
+        &-item {
+            @include breakpoint('xl') {
+                padding-bottom: px-to-rem(96);
             }
         }
 

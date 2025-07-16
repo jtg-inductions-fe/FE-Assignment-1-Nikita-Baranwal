@@ -203,11 +203,12 @@
         @include breakpoint('lg') {
             margin-top: px-to-rem(36);
             padding: px-to-rem(69) 0;
-            margin: px-to-rem(32) auto;
+            margin: px-to-rem(32) auto 0;
         }
 
         @include breakpoint('xl') {
             padding: px-to-rem(36) 0;
+            margin: px-to-rem(30) auto;
         }
     }
 
