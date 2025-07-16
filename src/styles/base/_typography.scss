@@ -84,7 +84,8 @@ h5,
     }
 }
 
-h6 {
+h6,
+.h6 {
     font-size: px-to-rem(23);
     color: map-get(variables.$colors, grey-black);
 }

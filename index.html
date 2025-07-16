@@ -274,8 +274,8 @@
 
         <!-- Key features Section -->
         <section
-            class="keyfeatures__container container"
-            aria-label="Key Features Section"
+            class="keyfeatures container"
+            aria-labelledby="keyfeatures-title"
         >
             <div class="keyfeatures__img">
                 <img
@@ -288,60 +288,58 @@
             <div class="keyfeatures__overview">
                 <div
                     class="keyfeatures__content"
-                    role="region"
-                    aria-label="Key Features Content"
+                    aria-label="Best Services Offered By Us"
                 >
-                    <div class="keyfeatures__content-details">
-                        <h2 class="keyfeatures__content-title">Key Features</h2>
-                        <div class="keyfeatures__content-description">
-                            <h3>We offer best services</h3>
-                        </div>
-                    </div>
-                    <div class="keyfeatures__description">
-                        <p>
-                            Contrary to popular belief, Lorem Ipsum is not
-                            simply random text. It has roots in a piece of
-                            classical Latin literature from 45 BC.
-                        </p>
-                    </div>
+                    <header class="keyfeatures__content-details">
+                        <h2
+                            class="keyfeatures__content-title"
+                            id="keyfeatures-title"
+                        >
+                            Key Features
+                        </h2>
+                        <h3 class="keyfeatures__content-description">
+                            We offer best services
+                        </h3>
+                    </header>
+                    <p class="keyfeatures__description">
+                        Contrary to popular belief, Lorem Ipsum is not simply
+                        random text. It has roots in a piece of classical Latin
+                        literature from 45 BC.
+                    </p>
                 </div>
 
                 <!-- Cards Section -->
-                <ul
-                    class="keyfeatures__cards"
-                    role="list"
-                    aria-label="Key Features section cards"
-                >
-                    <li class="keyfeatures__cards-one card">
+                <ul class="keyfeatures__cards" aria-label="Key Features List">
+                    <li class="keyfeatures__cards-item card">
                         <div class="keyfeatures__cards-icon1 icon">
                             <i class="icon-location"></i>
                         </div>
                         <div class="keyfeatures__cards-details">
-                            <h6 class="keyfeatures__cards-img">
+                            <h4 class="keyfeatures__cards-caption">
                                 We offer best services
-                            </h6>
+                            </h4>
                             <p>Lorem Ipsum is not simply random text</p>
                         </div>
                     </li>
-                    <li class="keyfeatures__cards-two card">
+                    <li class="keyfeatures__cards-item card">
                         <div class="keyfeatures__cards-icon2 icon">
                             <i class="icon-calendar"></i>
                         </div>
                         <div class="keyfeatures__cards-details">
-                            <h6 class="keyfeatures__cards-img">
+                            <h4 class="keyfeatures__cards-caption">
                                 Schedule your trip
-                            </h6>
+                            </h4>
                             <p>It has roots in a piece of classical</p>
                         </div>
                     </li>
-                    <li class="keyfeatures__cards-three card">
+                    <li class="keyfeatures__cards-item card">
                         <div class="keyfeatures__cards-icon3 icon">
                             <i class="icon-coupons"></i>
                         </div>
                         <div class="keyfeatures__cards-details">
-                            <h6 class="keyfeatures__cards-img">
+                            <h4 class="keyfeatures__cards-caption">
                                 Get discounted coupons
-                            </h6>
+                            </h4>
                             <p>Lorem Ipsum is not simply random text</p>
                         </div>
                     </li>
