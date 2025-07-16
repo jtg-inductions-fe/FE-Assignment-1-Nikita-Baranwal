@@ -219,13 +219,9 @@
         <!-- Travel Section -->
         <section
             class="travel__container container"
-            aria-label="Travel Section"
+            aria-labelledby="travel-title"
         >
-            <div
-                class="travel__img"
-                role="img"
-                aria-label="Travel background image"
-            >
+            <div class="travel__img">
                 <img
                     src="./src/assets/images/travel-background.png"
                     alt="Travel background image"
@@ -234,42 +230,29 @@
 
             <!-- Content Section -->
             <div class="travel__overview">
-                <div
-                    class="travel__content"
-                    role="region"
-                    aria-label="Travel Content"
-                >
-                    <div class="travel__content-details">
+                <div class="travel__content">
+                    <header class="travel__content-details">
                         <h2 class="travel__content-title">Travel Point</h2>
                         <div class="travel__content-description">
                             <h3>We helping you find your dream location</h3>
                         </div>
-                    </div>
-                    <div class="travel__description">
-                        <p>
-                            Contrary to popular belief, Lorem Ipsum is not
-                            simply random text. It has roots in a piece of
-                            classical Latin literature from 45 BC.
-                        </p>
-                    </div>
+                    </header>
+                    <p class="travel__description">
+                        Contrary to popular belief, Lorem Ipsum is not simply
+                        random text. It has roots in a piece of classical Latin
+                        literature from 45 BC.
+                    </p>
                 </div>
-                <div
-                    class="travel__element"
-                    role="img"
-                    aria-label="Travel Element"
-                >
+                <div class="travel__element">
                     <img
                         src="./src/assets/images/travel-side-element.png"
-                        alt="travel side image"
+                        alt="Travel Discount"
+                        aria-hidden="true"
                     />
                 </div>
 
                 <!-- Cards Section -->
-                <ul
-                    class="travel__cards"
-                    role="list"
-                    aria-label="Travel section cards"
-                >
+                <ul class="travel__cards" aria-label="Travel List">
                     <li class="travel__cards-one card">
                         <h4 class="travel__cards-img">500+</h4>
                         <p class="body2">Holiday Package</p>

@@ -62,7 +62,7 @@
 
         @include breakpoint('xl') {
             padding: 0;
-            @include flex($direction: column, $gap: px-to-rem(64));
+            gap: px-to-rem(64);
             width: 32%;
         }
     }
