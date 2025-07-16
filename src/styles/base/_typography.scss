@@ -76,13 +76,9 @@ h4 {
     }
 }
 
-h6 {
+h5,
+.h5 {
     font-size: px-to-rem(23);
-    color: map-get(variables.$colors, grey-black);
-}
-
-h5 {
-    font-size: px-to-rem(24);
     color: map-get(variables.$colors, grey-black);
     line-height: 1.2;
     letter-spacing: px-to-rem(0.55);
@@ -91,6 +87,11 @@ h5 {
         font-size: px-to-rem(27);
         @include line-clamp(2);
     }
+}
+
+h6 {
+    font-size: px-to-rem(23);
+    color: map-get(variables.$colors, grey-black);
 }
 
 p {
