@@ -123,15 +123,6 @@ p {
     }
 }
 
-.body3 {
-    @include font('Circular Std', px-to-rem(18), 450);
-    color: color-opacity(map-get(variables.$colors, grey-black), 0.75);
-
-    @include breakpoint('lg') {
-        font-size: px-to-rem(23);
-    }
-}
-
 ul li a {
     font-size: px-to-rem(14);
     color: color-opacity(map-get(variables.$colors, grey-black), 0.5);

@@ -2,7 +2,6 @@
 @use '../abstracts/variables' as variables;
 @use '../abstracts/mixins' as *;
 @use '../base/typography';
-@use '../layout/common';
 
 .services {
     @include flex($direction: column, $gap: px-to-rem(32));
@@ -45,20 +44,19 @@
             }
         }
 
-        &-item {
-            @include breakpoint('xl') {
-                padding-bottom: px-to-rem(96);
-            }
-        }
-
         &-details {
             text-align: center;
             @include flex($direction: column, $gap: px-to-rem(32));
         }
 
         .card {
+            @include breakpoint('lg') {
+                padding-bottom: px-to-rem(32);
+            }
             @include breakpoint('xl') {
                 max-width: px-to-rem(646);
+
+                padding-bottom: px-to-rem(96);
             }
         }
     }
