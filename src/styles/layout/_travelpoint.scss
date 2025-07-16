@@ -3,21 +3,19 @@
 @use '../base/typography';
 
 .travel {
-    &__container {
-        margin-top: 68px;
-        gap: px-to-rem(38);
+    margin-top: 68px;
+    gap: px-to-rem(38);
 
-        @include breakpoint('lg') {
-            margin-top: 0;
-            gap: px-to-rem(69);
-        }
+    @include breakpoint('lg') {
+        margin-top: px-to-rem(0);
+        gap: px-to-rem(64);
+    }
 
-        @include breakpoint('xl') {
-            max-width: px-to-rem(1440);
-            @include flex($justify: flex-start, $align: flex-start);
-            padding: px-to-rem(64) px-to-rem(0);
-            margin-top: px-to-rem(65);
-        }
+    @include breakpoint('xl') {
+        max-width: px-to-rem(1440);
+        @include flex($justify: flex-start, $align: flex-start);
+        padding: px-to-rem(64) px-to-rem(0);
+        margin-top: px-to-rem(29);
     }
 
     &__img {
@@ -50,7 +48,7 @@
             @include breakpoint('xl') {
                 display: block;
                 position: absolute;
-                top: 34%;
+                top: 36%;
                 right: -11%;
             }
         }
@@ -86,13 +84,14 @@
         gap: px-to-rem(16);
 
         @include breakpoint('lg') {
-            gap: px-to-rem(28);
+            gap: px-to-rem(32);
             grid-template-columns: repeat(2, 1fr);
         }
 
         .card {
+            gap: px-to-rem(14);
             @include breakpoint('lg') {
-                padding: px-to-rem(32);
+                padding: px-to-rem(30);
                 gap: px-to-rem(16);
             }
         }
