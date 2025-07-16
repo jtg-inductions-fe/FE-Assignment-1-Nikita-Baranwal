@@ -86,9 +86,10 @@ h5 {
     color: map-get(variables.$colors, grey-black);
     line-height: 1.2;
     letter-spacing: px-to-rem(0.55);
-
+    @include line-clamp(1);
     @include breakpoint('lg') {
         font-size: px-to-rem(27);
+        @include line-clamp(2);
     }
 }
 
@@ -109,10 +110,16 @@ p {
 }
 
 .body2 {
+    @include line-clamp(3);
     text-align: center;
     @include font('Inter', px-to-rem(18), 400);
     color: color-opacity(map-get(variables.$colors, grey-black), 0.5);
     line-height: 1.6;
+    max-width: 100%;
+
+    @include breakpoint('lg') {
+        @include line-clamp(4);
+    }
 }
 
 .body3 {

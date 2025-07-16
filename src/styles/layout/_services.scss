@@ -53,5 +53,11 @@
             text-align: center;
             @include flex($direction: column, $gap: px-to-rem(32));
         }
+
+        .card {
+            @include breakpoint('xl') {
+                max-width: px-to-rem(646);
+            }
+        }
     }
 }
