@@ -1,7 +1,6 @@
 @use '../abstracts/functions' as *;
 @use '../abstracts/variables' as variables;
 @use '../abstracts/mixins' as *;
-@use '../base/typography';
 
 .keyfeatures {
     margin-top: 77px;
@@ -28,10 +27,8 @@
     &__img {
         margin-top: 15px;
         width: 100%;
-        height: auto;
         @include breakpoint('lg') {
             max-width: px-to-rem(693);
-            height: auto;
         }
         @include breakpoint('xl') {
             max-width: px-to-rem(678);
