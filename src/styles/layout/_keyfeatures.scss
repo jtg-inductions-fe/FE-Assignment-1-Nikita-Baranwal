@@ -143,15 +143,15 @@
             font-size: px-to-rem(34);
         }
 
-        &-icon1 {
+        &-location {
             background-color: map-get(variables.$colors, orange);
         }
 
-        &-icon2 {
+        &-calendar {
             background-color: map-get(variables.$colors, yellow);
         }
 
-        &-icon3 {
+        &-coupons {
             background-color: map-get(variables.$colors, secondary);
         }
     }
