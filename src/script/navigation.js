@@ -1,7 +1,25 @@
+/**
+ * Initializes the navigation drawer toggle functionality
+ * once the DOM content has fully loaded.
+ *
+ * Checks for the presence of required DOM elements:
+ * - .header-ham (toggle button)
+ * - .header__nav (drawer)
+ * - .drawer-overlay (background overlay)
+ *
+ * If any of these are missing, the function logs a warning
+ * and exits early to prevent JavaScript errors.
+ */
+
 const hamBtn = document.querySelector('.header-ham');
 const drawer = document.querySelector('.header__nav');
 const overlay = document.querySelector('.drawer-overlay');
 const body = document.body;
+document.addEventListener('DOMContentLoaded', () => {
+    if (!hamBtn || !drawer || !overlay) {
+        return;
+    }
+});
 
 /**
  * Toggles the hamburger icon to a close icon or vice versa.

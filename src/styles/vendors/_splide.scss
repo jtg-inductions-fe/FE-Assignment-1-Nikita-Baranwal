@@ -1,0 +1,62 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+
+.testimonial-slider {
+    .splide__arrow {
+        top: 104%;
+        padding: px-to-rem(32);
+        font-size: 10px;
+
+        @include breakpoint('lg') {
+            top: 51.5%;
+            padding: px-to-rem(50);
+        }
+
+        &--prev {
+            left: px-to-rem(16);
+            background-color: map-get(variables.$colors, light);
+
+            @include breakpoint('lg') {
+                left: px-to-rem(64);
+            }
+
+            @include breakpoint('xl') {
+                left: px-to-rem(126);
+            }
+        }
+
+        &--next {
+            right: px-to-rem(16);
+            background-color: map-get(variables.$colors, primary);
+
+            @include breakpoint('lg') {
+                right: px-to-rem(64);
+            }
+
+            @include breakpoint('xl') {
+                right: px-to-rem(126);
+            }
+        }
+    }
+
+    .splide__slide {
+        @include flex($direction: column, $gap: px-to-rem(57));
+
+        @include breakpoint('lg') {
+            gap: px-to-rem(51);
+        }
+    }
+
+    .splide__track {
+        max-width: 100%;
+    }
+
+    .splide__list {
+        transform: translateX(px-to-rem(-1921));
+
+        @include breakpoint('xl') {
+            transform: translateX(px-to-rem(-5216));
+        }
+    }
+}

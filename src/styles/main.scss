@@ -2,7 +2,6 @@
 @use 'abstracts/variables' as *;
 @use 'abstracts/mixins' as *;
 @use 'abstracts/functions' as *;
-
 // Import base styles
 @use './base';
 
@@ -17,3 +16,4 @@
 
 // Import vendors
 @use 'vendors/icomoon';
+@use 'vendors/splide';

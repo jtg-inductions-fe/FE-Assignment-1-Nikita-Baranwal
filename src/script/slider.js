@@ -1,8 +1,12 @@
 import Splide from '@splidejs/splide';
-import '@splidejs/splide/css'; // Default CSS
+import '@splidejs/splide/css';
 
 document.addEventListener('DOMContentLoaded', () => {
-    new Splide('.splide', {
+    const splideElement = document.querySelector('.splide');
+    if (!splideElement) {
+        return;
+    }
+    const splide = new Splide('.splide', {
         type: 'loop',
         perPage: 1,
         autoplay: false,
@@ -17,4 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
             next: 'splide__arrow--next testimonial-next',
         },
     }).mount();
+    window.testimonialSlider = splide;
 });
