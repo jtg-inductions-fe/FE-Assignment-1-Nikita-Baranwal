@@ -55,7 +55,7 @@
             }
             @include breakpoint('xl') {
                 max-width: px-to-rem(646);
-
+                justify-content: flex-start;
                 padding-bottom: px-to-rem(96);
             }
         }

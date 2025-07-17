@@ -25,49 +25,57 @@
     content: '\e900';
 }
 .icon-instagram:before {
-    content: '\e901';
+    content: '\e90c';
     color: #fff;
 }
 .icon-twitter:before {
-    content: '\e902';
+    content: '\e90b';
     color: #f1f2f2;
 }
 .icon-facebook:before {
-    content: '\e903';
-    color: #5d50c6;
-}
-.icon-message:before {
-    content: '\e904';
-}
-.icon-star:before {
-    content: '\e905';
-    color: inherit;
-}
-.icon-coupons:before {
-    content: '\e906';
-    color: #fff;
-}
-.icon-calendar:before {
-    content: '\e907';
-    color: #fff;
-}
-.icon-location:before {
-    content: '\e908';
-    color: #fff;
-}
-.icon-bag:before {
-    content: '\e909';
-    color: #f85e9f;
-}
-.icon-play:before {
     content: '\e90a';
     color: #5d50c6;
 }
+.icon-message:before {
+    content: '\e908';
+}
+.icon-star:before {
+    content: '\e907';
+    color: inherit;
+}
+.icon-coupons:before {
+    content: '\e909';
+    color: #fff;
+}
+.icon-calendar:before {
+    content: '\e906';
+    color: #fff;
+}
+.icon-location:before {
+    content: '\e905';
+    color: #fff;
+}
+.icon-bag:before {
+    content: '\e904';
+    color: #f85e9f;
+}
+.icon-play:before {
+    content: '\e903';
+    color: #5d50c6;
+}
 .icon-ham-burger:before {
-    content: '\e90b';
+    content: '\e902';
     color: #5d50c6;
 }
 .icon-cross:before {
     content: '\2715';
     color: black;
+}
+.icon-arrow-left::before {
+    content: '\e900';
+    color: black;
+}
+.icon-arrow-right::before {
+    content: '\e901';
+    color: #fff;
 }
