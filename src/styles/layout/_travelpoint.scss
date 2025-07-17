@@ -1,0 +1,99 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/typography';
+
+.travel {
+    margin-top: 68px;
+    gap: px-to-rem(38);
+
+    @include breakpoint('lg') {
+        margin-top: px-to-rem(0);
+        gap: px-to-rem(64);
+    }
+
+    @include breakpoint('xl') {
+        max-width: px-to-rem(1440);
+        @include flex($justify: flex-start, $align: flex-start);
+        padding: px-to-rem(64) px-to-rem(0);
+        margin-top: px-to-rem(29);
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        @include breakpoint('lg') {
+            margin-top: px-to-rem(2);
+            margin-left: px-to-rem(34);
+            max-width: px-to-rem(871);
+            height: auto;
+        }
+
+        @include breakpoint('xl') {
+            margin-top: px-to-rem(-33);
+            margin-left: px-to-rem(-6);
+        }
+    }
+
+    &__overview {
+        position: relative;
+        @include flex($direction: column, $gap: px-to-rem(32));
+
+        &-details {
+            @include flex($direction: column, $gap: px-to-rem(64));
+        }
+
+        .travel__element {
+            display: none;
+
+            @include breakpoint('xl') {
+                display: block;
+                position: absolute;
+                top: 36%;
+                right: -11%;
+            }
+        }
+
+        @include breakpoint('lg') {
+            padding: 0 px-to-rem(32);
+            gap: px-to-rem(64);
+        }
+
+        @include breakpoint('xl') {
+            padding: 0;
+            gap: px-to-rem(64);
+            width: 32%;
+        }
+    }
+
+    &__content {
+        @include flex($direction: column, $gap: px-to-rem(32));
+
+        &-details {
+            @include flex($direction: column, $gap: px-to-rem(16));
+
+            @include breakpoint('xl') {
+                align-items: unset;
+            }
+        }
+    }
+
+    &__cards {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: px-to-rem(16);
+
+        @include breakpoint('lg') {
+            gap: px-to-rem(32);
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .card {
+            gap: px-to-rem(14);
+            @include breakpoint('lg') {
+                padding: px-to-rem(30);
+                gap: px-to-rem(16);
+            }
+        }
+    }
+}
