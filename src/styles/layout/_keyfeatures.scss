@@ -1,0 +1,155 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+
+.keyfeatures {
+    margin-top: 77px;
+    padding: 0 px-to-rem(40);
+    @include flex($direction: column, $gap: px-to-rem(91));
+
+    @include breakpoint('lg') {
+        margin-top: 0;
+        padding: px-to-rem(52) px-to-rem(32);
+        gap: px-to-rem(70);
+    }
+
+    @include breakpoint('xl') {
+        max-width: px-to-rem(1440);
+        @include flex(
+            $direction: row-reverse,
+            $justify: flex-start,
+            $align: flex-start,
+            $gap: px-to-rem(110)
+        );
+        padding: px-to-rem(68) px-to-rem(0);
+    }
+
+    &__img {
+        margin-top: 15px;
+        width: 100%;
+        @include breakpoint('lg') {
+            max-width: px-to-rem(693);
+        }
+        @include breakpoint('xl') {
+            max-width: px-to-rem(678);
+
+            margin-top: 0;
+        }
+    }
+
+    &__overview {
+        position: relative;
+        padding: 0 px-to-rem(8);
+        @include flex($direction: column, $gap: px-to-rem(32));
+
+        &-details {
+            @include flex($direction: column, $gap: px-to-rem(64));
+        }
+
+        @include breakpoint('lg') {
+            padding: 0;
+            gap: px-to-rem(64);
+        }
+
+        @include breakpoint('xl') {
+            align-items: flex-start;
+            width: 36%;
+        }
+    }
+
+    &__content {
+        @include flex($direction: column, $gap: px-to-rem(32));
+
+        &-details {
+            @include flex($direction: column, $gap: px-to-rem(16));
+
+            @include breakpoint('xl') {
+                align-items: unset;
+                align-items: flex-start;
+                gap: px-to-rem(16);
+            }
+        }
+
+        @include breakpoint('lg') {
+            gap: px-to-rem(32);
+        }
+
+        @include breakpoint('xl') {
+            align-items: flex-start;
+            gap: px-to-rem(30);
+        }
+    }
+
+    &__cards {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: px-to-rem(6);
+
+        @include breakpoint('lg') {
+            gap: 0;
+        }
+
+        &-caption {
+            font-size: px-to-rem(23);
+            color: map-get(variables.$colors, grey-black);
+        }
+
+        .card {
+            border: none;
+            @include flex(
+                $direction: column,
+                $align: flex-start,
+                $gap: px-to-rem(32)
+            );
+
+            @include breakpoint('lg') {
+                @include flex(
+                    $direction: row,
+                    $justify: flex-start,
+                    $gap: px-to-rem(32)
+                );
+
+                padding: px-to-rem(32);
+                padding-right: 0;
+            }
+
+            p {
+                font-size: px-to-rem(18);
+                text-align: left;
+            }
+        }
+
+        &-details {
+            @include flex(
+                $direction: column,
+                $align: flex-start,
+                $gap: px-to-rem(11)
+            );
+
+            @include breakpoint('lg') {
+                gap: px-to-rem(8);
+            }
+        }
+
+        .icon {
+            height: px-to-rem(100);
+            width: px-to-rem(100);
+            border-radius: px-to-rem(32);
+            @include flex();
+            font-size: px-to-rem(34);
+        }
+
+        &-location {
+            background-color: map-get(variables.$colors, orange);
+        }
+
+        &-calendar {
+            background-color: map-get(variables.$colors, yellow);
+        }
+
+        &-coupons {
+            background-color: map-get(variables.$colors, secondary);
+        }
+    }
+}
