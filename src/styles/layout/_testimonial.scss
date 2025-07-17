@@ -1,0 +1,202 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+@use '../base/typography';
+
+.testimonial {
+    position: relative;
+    padding: px-to-rem(70) px-to-rem(16);
+    margin-top: px-to-rem(-30);
+    @include flex($direction: column, $gap: px-to-rem(32));
+    @include breakpoint('lg') {
+        max-width: 100%;
+
+        margin-top: px-to-rem(26);
+        padding: px-to-rem(52) px-to-rem(32);
+        gap: px-to-rem(27);
+    }
+
+    &-background {
+        @include breakpoint('lg') {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(/src/assets/images/testimonial-background.png); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        @include breakpoint('xl') {
+            top: 15%;
+        }
+    }
+
+    @include breakpoint('xl') {
+        max-width: 1440px;
+        margin-top: px-to-rem(-66);
+        gap: px-to-rem(26);
+        padding: px-to-rem(68);
+    }
+
+    &__details {
+        @include flex($direction: column, $gap: px-to-rem(66));
+
+        @include breakpoint('lg') {
+            gap: px-to-rem(57);
+        }
+    }
+
+    &__review {
+        @include flex($direction: column, $gap: px-to-rem(29));
+
+        &-user {
+            font-size: px-to-rem(23);
+            font-weight: bold;
+        }
+
+        span {
+            color: map-get($map: variables.$colors, $key: orange);
+            font-size: px-to-rem(28);
+        }
+
+        &-ratings {
+            @include flex($gap: px-to-rem(16));
+
+            i {
+                color: map-get($map: variables.$colors, $key: yellow);
+                font-size: px-to-rem(30);
+            }
+        }
+    }
+
+    &__description {
+        font-size: px-to-rem(17);
+
+        @include breakpoint('lg') {
+            max-width: 65%;
+            font-size: px-to-rem(22);
+        }
+
+        @include breakpoint('xl') {
+            max-width: 62%;
+            text-align: center;
+            line-height: 1.7;
+        }
+    }
+
+    &__content {
+        @include flex($direction: column, $gap: px-to-rem(32));
+
+        &-details {
+            @include flex($direction: column, $gap: px-to-rem(16));
+
+            @include breakpoint('xl') {
+                gap: px-to-rem(16);
+            }
+        }
+
+        @include breakpoint('lg') {
+            gap: px-to-rem(32);
+        }
+
+        @include breakpoint('xl') {
+            align-items: flex-start;
+            gap: px-to-rem(30);
+        }
+
+        &-title {
+            @include breakpoint('lg') {
+                letter-spacing: px-to-rem(6);
+            }
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        flex-direction: row;
+        margin-top: px-to-rem(34);
+        gap: px-to-rem(25);
+        margin-bottom: px-to-rem(-23);
+
+        &-page {
+            background-color: color-opacity(
+                map-get(variables.$colors, grey-black),
+                0.05
+            );
+            padding: px-to-rem(12);
+            border-radius: 50%;
+
+            &.is-active {
+                background-color: map-get(variables.$colors, secondary);
+            }
+        }
+    }
+}
+
+.splide {
+    &__list {
+        transform: translateX(px-to-rem(-1921));
+
+        @include breakpoint('xl') {
+            transform: translateX(px-to-rem(-5216));
+        }
+    }
+    &__track {
+        max-width: 100%;
+    }
+
+    &__slide {
+        @include flex($direction: column, $gap: px-to-rem(57));
+
+        @include breakpoint('lg') {
+            gap: px-to-rem(51);
+        }
+    }
+
+    &__arrow {
+        top: 104% !important;
+        padding: unset;
+        font-size: 10px;
+        padding: px-to-rem(32) !important;
+
+        @include breakpoint('lg') {
+            top: 51.5% !important;
+            padding: px-to-rem(50) !important;
+        }
+
+        &--prev {
+            left: px-to-rem(16) !important;
+            background-color: map-get(
+                $map: variables.$colors,
+                $key: light
+            ) !important;
+
+            @include breakpoint('lg') {
+                left: px-to-rem(64) !important;
+            }
+
+            @include breakpoint('xl') {
+                left: px-to-rem(126) !important;
+            }
+        }
+
+        &--next {
+            right: px-to-rem(16) !important;
+            background-color: map-get(
+                $map: variables.$colors,
+                $key: primary
+            ) !important;
+
+            @include breakpoint('lg') {
+                right: px-to-rem(64) !important;
+            }
+
+            @include breakpoint('xl') {
+                right: px-to-rem(126) !important;
+            }
+        }
+    }
+}
