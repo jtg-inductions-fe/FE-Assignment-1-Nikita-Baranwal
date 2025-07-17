@@ -116,3 +116,28 @@ header.addEventListener('click', (e) => {
  * Handles clicks on the overlay to close the drawer.
  */
 overlay.addEventListener('click', closeDrawer);
+
+/**
+ * Reference to the subscription form element
+ * @type {HTMLFormElement}
+ */
+const form = document.getElementById('subscribeForm');
+
+/**
+ * Handles the form submission event.
+ * Prevents the default form behavior, checks email validity,
+ * shows an alert on success, and resets the form.
+ */
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const emailInput = document.getElementById('emailInput');
+
+    // Check if the email input is valid
+    if (emailInput.checkValidity()) {
+        alert('Thank you for subscribing!');
+        form.reset();
+    } else {
+        // Trigger browser's built-in validation error display
+        emailInput.reportValidity();
+    }
+});

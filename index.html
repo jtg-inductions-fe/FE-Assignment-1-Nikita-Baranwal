@@ -495,6 +495,55 @@
             </div>
         </section>
 
+        <!-- Newsletter Section -->
+        <section
+            class="newsletter container"
+            aria-labelledby="newsletter-title"
+        >
+            <header class="newsletter__content">
+                <h2 class="newsletter__content-title" id="newsletter-title">
+                    Subscribe to our newsletter
+                </h2>
+                <h3 class="newsletter__content-description">
+                    Prepare yourself & let’s explore the beauty of the world
+                </h3>
+            </header>
+            <form
+                action="#"
+                method="post"
+                class="subscribe-form"
+                id="subscribeForm"
+            >
+                <div class="input-group">
+                    <span class="input-icon"><i class="icon-message"></i></span>
+                    <input
+                        type="email"
+                        placeholder="Your Email"
+                        required
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        title="Please enter a valid email address"
+                        id="emailInput"
+                    />
+                </div>
+
+                <button type="submit" class="subscribe-button">
+                    Subscribe
+                </button>
+            </form>
+            <div class="newsletter__element-left">
+                <img
+                    src="./src/assets/images/traingle-element.png"
+                    aria-hidden="true"
+                />
+            </div>
+            <div class="newsletter__element-right">
+                <img
+                    src="./src/assets/images/spiral-element.png"
+                    aria-hidden="true"
+                />
+            </div>
+        </section>
+
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
