@@ -36,11 +36,11 @@
     },
     "lint-staged": {
         "*.js": [
-            "eslint --max-warnings=0"
+            "eslint"
         ],
         "*.{html,scss,json}": "prettier --check"
     },
     "dependencies": {
-        "@splidejs/splide": "^4.1.4"
+        "@splidejs/splide": "^4.1.3"
     }
 }

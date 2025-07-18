@@ -131,10 +131,12 @@ const form = document.getElementById('subscribeForm');
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     const emailInput = document.getElementById('emailInput');
+    const user = emailInput.value;
 
     // Check if the email input is valid
     if (emailInput.checkValidity()) {
-        alert('Thank you for subscribing!');
+        console.log(user);
+        alert(`${user}, \nThank you for subscribing!`);
         form.reset();
     } else {
         // Trigger browser's built-in validation error display
