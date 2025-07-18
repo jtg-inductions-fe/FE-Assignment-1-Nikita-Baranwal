@@ -510,9 +510,12 @@
             </header>
             <form class="subscribe-form" id="subscribeForm">
                 <div class="input-group">
-                    <span class="input-icon"><i class="icon-message"></i></span>
+                    <span class="input-icon" aria-hidden="true"
+                        ><i class="icon-message"></i
+                    ></span>
                     <input
                         type="email"
+                        name="email"
                         placeholder="Your Email"
                         required
                         pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
@@ -521,7 +524,7 @@
                     />
                 </div>
 
-                <button type="submit" class="subscribe-button">
+                <button type="submit" class="subscribe-button secondary-button">
                     Subscribe
                 </button>
             </form>
