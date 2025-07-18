@@ -36,7 +36,7 @@
     },
     "lint-staged": {
         "*.js": [
-            "eslint"
+            "eslint --max-warnings=0"
         ],
         "*.{html,scss,json}": "prettier --check"
     },

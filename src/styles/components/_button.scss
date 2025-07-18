@@ -31,8 +31,8 @@ button {
 }
 
 .secondary-button {
-    background-color: map-get(variables.$colors, primary);
-    color: map-get(variables.$colors, light);
+    background-color: map-get(variables.$colors, $key: primary);
+    color: map-get(variables.$colors, $key: light);
 
     &:hover,
     &:focus-visible {
