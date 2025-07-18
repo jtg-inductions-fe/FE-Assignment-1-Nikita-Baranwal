@@ -23,10 +23,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url(/src/assets/images/testimonial-background.png); /* Replace with your image path */
+            background-image: url(/src/assets/images/testimonial-background.png);
             background-size: cover;
             background-position: center;
-            z-index: -1;
         }
 
         @include breakpoint('xl') {
@@ -35,7 +34,7 @@
     }
 
     @include breakpoint('xl') {
-        max-width: 1440px;
+        max-width: px-to-rem(1440);
         margin-top: px-to-rem(-66);
         gap: px-to-rem(26);
         padding: px-to-rem(68);
@@ -110,92 +109,6 @@
         &-title {
             @include breakpoint('lg') {
                 letter-spacing: px-to-rem(6);
-            }
-        }
-    }
-
-    &__pagination {
-        display: flex;
-        flex-direction: row;
-        margin-top: px-to-rem(34);
-        gap: px-to-rem(25);
-        margin-bottom: px-to-rem(-23);
-
-        &-page {
-            background-color: color-opacity(
-                map-get(variables.$colors, grey-black),
-                0.05
-            );
-            padding: px-to-rem(12);
-            border-radius: 50%;
-
-            &.is-active {
-                background-color: map-get(variables.$colors, secondary);
-            }
-        }
-    }
-}
-
-.splide {
-    &__list {
-        transform: translateX(px-to-rem(-1921));
-
-        @include breakpoint('xl') {
-            transform: translateX(px-to-rem(-5216));
-        }
-    }
-    &__track {
-        max-width: 100%;
-    }
-
-    &__slide {
-        @include flex($direction: column, $gap: px-to-rem(57));
-
-        @include breakpoint('lg') {
-            gap: px-to-rem(51);
-        }
-    }
-
-    &__arrow {
-        top: 104% !important;
-        padding: unset;
-        font-size: 10px;
-        padding: px-to-rem(32) !important;
-
-        @include breakpoint('lg') {
-            top: 51.5% !important;
-            padding: px-to-rem(50) !important;
-        }
-
-        &--prev {
-            left: px-to-rem(16) !important;
-            background-color: map-get(
-                $map: variables.$colors,
-                $key: light
-            ) !important;
-
-            @include breakpoint('lg') {
-                left: px-to-rem(64) !important;
-            }
-
-            @include breakpoint('xl') {
-                left: px-to-rem(126) !important;
-            }
-        }
-
-        &--next {
-            right: px-to-rem(16) !important;
-            background-color: map-get(
-                $map: variables.$colors,
-                $key: primary
-            ) !important;
-
-            @include breakpoint('lg') {
-                right: px-to-rem(64) !important;
-            }
-
-            @include breakpoint('xl') {
-                right: px-to-rem(126) !important;
             }
         }
     }
