@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function toggleIcon(isOpen) {
     const icon = hamBtn.querySelector('i');
-    icon.className = isOpen ? 'icon-cross' : 'icon-ham-burger';
+    icon.className = isOpen ? 'icon-cross' : 'icon-hamburger';
 }
 
 /**
