@@ -1,13 +1,13 @@
 @use '../abstracts/functions' as *;
 @use '../abstracts/variables' as variables;
 @use '../abstracts/mixins' as *;
-@use '../base/typography';
 
 .testimonial {
     position: relative;
     padding: px-to-rem(70) px-to-rem(16);
     margin-top: px-to-rem(-30);
     @include flex($direction: column, $gap: px-to-rem(32));
+
     @include breakpoint('lg') {
         max-width: 100%;
 
@@ -26,6 +26,7 @@
             background-image: url(/src/assets/images/testimonial-background.png);
             background-size: cover;
             background-position: center;
+            z-index: -1;
         }
 
         @include breakpoint('xl') {
@@ -34,7 +35,7 @@
     }
 
     @include breakpoint('xl') {
-        max-width: px-to-rem(1440);
+        max-width: 1440px;
         margin-top: px-to-rem(-66);
         gap: px-to-rem(26);
         padding: px-to-rem(68);
@@ -109,6 +110,95 @@
         &-title {
             @include breakpoint('lg') {
                 letter-spacing: px-to-rem(6);
+            }
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        flex-direction: row;
+        margin-top: px-to-rem(34);
+        gap: px-to-rem(25);
+        margin-bottom: px-to-rem(-23);
+
+        &-page {
+            background-color: color-opacity(
+                map-get(variables.$colors, grey-black),
+                0.05
+            );
+            padding: px-to-rem(12);
+            border-radius: 50%;
+
+            &.is-active {
+                background-color: map-get(variables.$colors, secondary);
+            }
+        }
+    }
+}
+
+.splide {
+    &__list {
+        transform: translateX(px-to-rem(-1921));
+
+        @include breakpoint('xl') {
+            transform: translateX(px-to-rem(-5216));
+        }
+    }
+    &__track {
+        cursor: grab;
+        max-width: 100%;
+
+        &:active {
+            cursor: grabbing;
+        }
+    }
+
+    &__slide {
+        @include flex($direction: column, $gap: px-to-rem(57));
+
+        @include breakpoint('lg') {
+            gap: px-to-rem(51);
+        }
+    }
+
+    &__arrow {
+        top: 104%;
+        padding: unset;
+        font-size: 10px;
+        padding: px-to-rem(32);
+        color: map-get($map: variables.$colors, $key: grey-black);
+        background-color: map-get($map: variables.$colors, $key: light);
+
+        &:hover {
+            background-color: map-get($map: variables.$colors, $key: primary);
+        }
+
+        @include breakpoint('lg') {
+            top: 51.5%;
+            padding: px-to-rem(50);
+        }
+
+        &--prev {
+            left: px-to-rem(16);
+
+            @include breakpoint('lg') {
+                left: px-to-rem(64);
+            }
+
+            @include breakpoint('xl') {
+                left: px-to-rem(126);
+            }
+        }
+
+        &--next {
+            right: px-to-rem(16);
+
+            @include breakpoint('lg') {
+                right: px-to-rem(64);
+            }
+
+            @include breakpoint('xl') {
+                right: px-to-rem(126);
             }
         }
     }

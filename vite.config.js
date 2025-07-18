@@ -25,6 +25,8 @@ export default defineConfig(() => {
         ],
         build: {
             assetsInlineLimit: 0,
+            cssMinify: true,
+
             rollupOptions: {
                 output: {
                     chunkFileNames: 'js/[name]-[hash].js',
