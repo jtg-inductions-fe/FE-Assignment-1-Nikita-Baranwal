@@ -10,7 +10,6 @@
 
     @include breakpoint('lg') {
         max-width: 100%;
-
         margin-top: px-to-rem(26);
         padding: px-to-rem(52) px-to-rem(32);
         gap: px-to-rem(27);
@@ -35,7 +34,7 @@
     }
 
     @include breakpoint('xl') {
-        max-width: 1440px;
+        max-width: px-to-rem(1440);
         margin-top: px-to-rem(-66);
         gap: px-to-rem(26);
         padding: px-to-rem(68);
@@ -115,10 +114,8 @@
     }
 
     &__pagination {
-        display: flex;
-        flex-direction: row;
-        margin-top: px-to-rem(34);
-        gap: px-to-rem(25);
+        @include flex($justify: center, $gap: px-to-rem(25));
+        margin-top: px-to-rem(68);
         margin-bottom: px-to-rem(-23);
 
         &-page {
@@ -133,10 +130,19 @@
                 background-color: map-get(variables.$colors, secondary);
             }
         }
+
+        @include breakpoint('lg') {
+            margin-top: px-to-rem(57);
+        }
+
+        @include breakpoint('xl') {
+            margin-top: px-to-rem(53);
+        }
     }
 }
 
 .splide {
+    width: 100%;
     &__list {
         transform: translateX(px-to-rem(-1921));
 
@@ -147,6 +153,7 @@
     &__track {
         cursor: grab;
         max-width: 100%;
+        margin-top: px-to-rem(29);
 
         &:active {
             cursor: grabbing;
@@ -162,7 +169,7 @@
     }
 
     &__arrow {
-        top: 104%;
+        top: 119%;
         padding: unset;
         font-size: 10px;
         padding: px-to-rem(32);
@@ -174,31 +181,31 @@
         }
 
         @include breakpoint('lg') {
-            top: 51.5%;
+            top: 40%;
             padding: px-to-rem(50);
         }
 
         &--prev {
-            left: px-to-rem(16);
+            left: px-to-rem(0);
 
             @include breakpoint('lg') {
-                left: px-to-rem(64);
+                left: px-to-rem(32);
             }
 
             @include breakpoint('xl') {
-                left: px-to-rem(126);
+                left: px-to-rem(54);
             }
         }
 
         &--next {
-            right: px-to-rem(16);
+            right: px-to-rem(0);
 
             @include breakpoint('lg') {
-                right: px-to-rem(64);
+                right: px-to-rem(32);
             }
 
             @include breakpoint('xl') {
-                right: px-to-rem(126);
+                right: px-to-rem(54);
             }
         }
     }
