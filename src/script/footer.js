@@ -1,41 +1,34 @@
 /**
- * Initializes the accordion functionality in the footer section.
- * It selects all elements with the class `.footer__content-title`
- * and sets up click event listeners to toggle their expanded/collapsed state.
+ * Initializes accessible accordion functionality.
  *
- * The toggled state is reflected via:
- * - `.is-open` class for styling
- * - `aria-expanded` attribute for accessibility
- * - `.is-toggle` class on the icon for rotation or animation
- *
- * Only one accordion section remains open at a time.
+ * - Toggles aria-expanded and data-state attributes.
+ * - Adds/removes 'is-toggle' class for visual indicators.
+ * - Closes other open accordions when one is toggled.
  */
+const accordions = document.querySelectorAll('.accordion');
 
-// Select all accordion toggle headers
-const accordionTitles = document.querySelectorAll('.footer__content-title');
+accordions.forEach((accordion) => {
+    const accordionBtn = accordion.querySelector('.accordion__header');
+    const toggleBtn = accordionBtn.querySelector('.toggle-btn');
 
-// Loop through each title and attach a click event listener
-accordionTitles.forEach((accordionTitle) => {
-    const toggleBtn = accordionTitle.querySelector('.toggle-btn');
+    accordionBtn.addEventListener('click', () => {
+        const isOpen = accordion.getAttribute('data-state') === 'open';
 
-    accordionTitle.addEventListener('click', () => {
-        // Check if the clicked accordion is already open
-        const isOpen = accordionTitle.classList.contains('is-open');
+        // Toggle the aria-expanded state on the clicked header
+        accordionBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
 
-        // First, close all accordion sections
-        accordionTitles.forEach((otherTitle) => {
-            otherTitle.classList.remove('is-open');
-            otherTitle.setAttribute('aria-expanded', 'false');
+        // Close all other accordions
+        accordions.forEach((otherAccordion) => {
+            otherAccordion.setAttribute('data-state', 'closed');
 
-            const otherToggleBtn = otherTitle.querySelector('.toggle-btn');
+            const otherToggleBtn = otherAccordion.querySelector('.toggle-btn');
             otherToggleBtn?.classList.remove('is-toggle');
         });
 
-        // If it was not open earlier, open the clicked one
-        if (!isOpen) {
-            accordionTitle.classList.add('is-open');
-            accordionTitle.setAttribute('aria-expanded', 'true');
-            toggleBtn?.classList.add('is-toggle');
-        }
+        // Open the clicked accordion if it was closed
+        accordion.setAttribute('data-state', isOpen ? 'closed' : 'open');
+
+        // Toggle classname
+        toggleBtn?.classList.toggle('is-toggle', !isOpen);
     });
 });
