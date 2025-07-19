@@ -3,7 +3,8 @@
 @use '../abstracts/mixins' as *;
 
 .footer {
-    margin-top: px-to-rem(32);
+    padding-top: px-to-rem(32);
+    padding-bottom: px-to-rem(32);
 
     &__overview {
         @include flex(
@@ -75,33 +76,6 @@
             i {
                 font-size: px-to-rem(22);
             }
-
-            .toggle-btn {
-                transition: all 0.3s ease;
-
-                @include breakpoint('lg') {
-                    display: none;
-                }
-            }
-
-            .toggle-btn.is-toggle {
-                transform: rotateX(180deg);
-            }
-        }
-
-        &-title + &-list {
-            height: 0;
-            visibility: hidden;
-
-            @include breakpoint('lg') {
-                height: auto;
-                visibility: visible;
-            }
-        }
-
-        &-title.is-open + &-list {
-            height: auto;
-            visibility: visible;
         }
 
         &-list {

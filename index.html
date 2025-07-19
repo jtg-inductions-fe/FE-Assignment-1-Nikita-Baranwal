@@ -598,9 +598,12 @@
                 </div>
             </div>
             <nav class="footer__content" aria-label="Footer Navigation">
-                <div class="footer__content-company links">
+                <div
+                    class="footer__content-company links accordion"
+                    data-state="closed"
+                >
                     <div
-                        class="footer__content-title"
+                        class="footer__content-title accordion__header"
                         role="button"
                         aria-expanded="false"
                         aria-controls="company-links"
@@ -610,15 +613,21 @@
                             <i class="icon-accordion"></i>
                         </span>
                     </div>
-                    <ul class="footer__content-list">
+                    <ul
+                        class="footer__content-list accordion__content"
+                        id="company-links"
+                    >
                         <li><a href="#">About</a></li>
                         <li><a href="#">Career</a></li>
                         <li><a href="#">Mobile</a></li>
                     </ul>
                 </div>
-                <div class="footer__content-contact links">
+                <div
+                    class="footer__content-contact links accordion"
+                    data-state="closed"
+                >
                     <div
-                        class="footer__content-title"
+                        class="footer__content-title accordion__header"
                         role="button"
                         aria-expanded="false"
                         aria-controls="contact-links"
@@ -628,16 +637,22 @@
                             <i class="icon-accordion"></i>
                         </span>
                     </div>
-                    <ul class="footer__content-list">
+                    <ul
+                        class="footer__content-list accordion__content"
+                        id="contact-links"
+                    >
                         <li><a href="#">Why Travlog?</a></li>
                         <li><a href="#">Partner with us</a></li>
                         <li><a href="#">FAQ's</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
-                <div class="footer__content-meet links">
+                <div
+                    class="footer__content-meet links accordion"
+                    data-state="closed"
+                >
                     <div
-                        class="footer__content-title"
+                        class="footer__content-title accordion__header"
                         role="button"
                         aria-expanded="false"
                         aria-controls="meet-links"
@@ -647,7 +662,10 @@
                             <i class="icon-accordion"></i>
                         </span>
                     </div>
-                    <ul class="footer__content-list">
+                    <ul
+                        class="footer__content-list accordion__content"
+                        id="meet-links"
+                    >
                         <li>
                             <a href="#">+00 92 1234 56789</a>
                         </li>
