@@ -1,6 +1,6 @@
 /**
  * Handles the form submission event.
- * Prevents the default form behavior, checks email validity,
+ * Prevents the default form behavior,
  * shows an alert on success, and resets the form.
  */
 const form = document.getElementById('subscribeForm');
