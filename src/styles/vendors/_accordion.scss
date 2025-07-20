@@ -1,10 +1,13 @@
 @use '../abstracts/mixins' as *;
 
 .accordion {
+    overflow: hidden;
+    transition: all 0.3s ease;
+
     &__content {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 500ms ease;
+        transition: max-height 0.3s ease;
 
         @include breakpoint('lg') {
             max-height: none;
@@ -13,12 +16,12 @@
 
     &[data-state='open'] {
         .accordion__content {
-            max-height: 500px;
+            max-height: none;
         }
     }
 
     .toggle-btn {
-        transition: transform 100ms ease;
+        transition: transform 0.3s ease;
 
         @include breakpoint('lg') {
             display: none;
