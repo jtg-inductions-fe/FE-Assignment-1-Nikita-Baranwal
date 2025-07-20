@@ -100,6 +100,11 @@
                     color: map-get($map: variables.$colors, $key: grey-black);
                 }
 
+                &:focus {
+                    outline: px-to-rem(2) solid
+                        map-get($map: variables.$colors, $key: primary);
+                }
+
                 @include breakpoint('xl') {
                     letter-spacing: px-to-rem(0.67);
                 }

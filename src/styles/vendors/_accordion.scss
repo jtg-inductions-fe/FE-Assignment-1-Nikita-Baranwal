@@ -22,6 +22,12 @@
 
     .toggle-btn {
         transition: transform 0.3s ease;
+        padding: 0;
+
+        &:focus {
+            outline: 1px solid currentColor;
+            outline-offset: 0;
+        }
 
         @include breakpoint('lg') {
             display: none;
