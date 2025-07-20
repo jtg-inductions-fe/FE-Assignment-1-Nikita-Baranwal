@@ -3,7 +3,7 @@
 @use '../abstracts/mixins' as *;
 
 .keyfeatures {
-    margin-top: 77px;
+    margin-top: px-to-rem(77);
     padding: 0 px-to-rem(40);
     @include flex($direction: column, $gap: px-to-rem(91));
 
@@ -64,7 +64,6 @@
             @include flex($direction: column, $gap: px-to-rem(16));
 
             @include breakpoint('xl') {
-                align-items: unset;
                 align-items: flex-start;
                 gap: px-to-rem(16);
             }

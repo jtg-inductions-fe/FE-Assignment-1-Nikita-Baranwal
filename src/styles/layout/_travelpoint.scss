@@ -1,9 +1,8 @@
 @use '../abstracts/functions' as *;
 @use '../abstracts/mixins' as *;
-@use '../base/typography';
 
 .travel {
-    margin-top: 68px;
+    margin-top: px-to-rem(68);
     gap: px-to-rem(38);
 
     @include breakpoint('lg') {

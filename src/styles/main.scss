@@ -1,19 +1,13 @@
-// Import variables and mixins
 @use 'abstracts/variables' as *;
 @use 'abstracts/mixins' as *;
 @use 'abstracts/functions' as *;
 
-// Import base styles
 @use './base';
 
-// Import components
 @use './components';
 
-// IMport layouts
+@use './vendors';
+
 @use './layout';
 
-// Import pages
 @use 'pages/home';
-
-// Import vendors
-@use 'vendors/icomoon';
