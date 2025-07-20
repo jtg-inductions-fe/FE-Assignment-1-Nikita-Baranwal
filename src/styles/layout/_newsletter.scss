@@ -138,25 +138,28 @@
             font-size: px-to-rem(26);
         }
     }
-}
 
-input {
-    height: 100%;
-    width: 100%;
-    font-size: px-to-rem(14);
+    input {
+        height: 100%;
+        width: 100%;
+        font-size: px-to-rem(14);
 
-    &:focus {
-        outline: none;
-    }
+        &:focus {
+            outline: none;
+        }
 
-    @include breakpoint('lg') {
-        font-size: px-to-rem(24);
-    }
+        @include breakpoint('lg') {
+            font-size: px-to-rem(24);
+        }
 
-    &:-webkit-autofill {
-        background-color: white !important;
-        -webkit-box-shadow: 0 0 0 1000px white inset !important;
-        -webkit-text-fill-color: #000 !important;
-        font-weight: normal !important;
+        &:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 1000px
+                map-get($map: variables.$colors, $key: light) inset !important;
+            -webkit-text-fill-color: map-get(
+                $map: variables.$colors,
+                $key: grey-black
+            ) !important;
+            font-weight: normal !important;
+        }
     }
 }
