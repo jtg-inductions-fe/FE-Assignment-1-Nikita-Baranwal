@@ -37,8 +37,7 @@
     @include breakpoint('lg') {
         margin-top: px-to-rem(84);
         padding: px-to-rem(131) px-to-rem(64);
-        gap: px-to-rem(59);
-
+        gap: px-to-rem(63);
         border-radius: px-to-rem(32);
         background-color: color-opacity(
             map-get(variables.$colors, yellow),
@@ -136,7 +135,7 @@
         font-size: px-to-rem(20);
 
         @include breakpoint('lg') {
-            font-size: px-to-rem(27);
+            font-size: px-to-rem(26);
         }
     }
 }
