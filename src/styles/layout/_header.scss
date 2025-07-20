@@ -39,7 +39,7 @@
         font-size: px-to-rem(40);
         width: px-to-rem(48);
         height: px-to-rem(48);
-        z-index: z(ham-menu);
+        z-index: 1;
         padding: 0;
         color: map-get($map: variables.$colors, $key: primary);
         cursor: pointer;
@@ -104,10 +104,12 @@
             z-index: z(drawer);
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
-            padding: px-to-rem(116) px-to-rem(32) px-to-rem(32);
+            padding: px-to-rem(32) px-to-rem(32);
 
-            .drawer-close {
-                display: block;
+            &.drawer-open {
+                .drawer-close {
+                    display: block;
+                }
             }
         }
 
