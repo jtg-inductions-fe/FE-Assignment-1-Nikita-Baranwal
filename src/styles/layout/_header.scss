@@ -215,10 +215,6 @@
 // ================= DRAWER CLOSE BUTTON =================
 
 .drawer-close {
-    &-wrapper {
-        align-self: flex-end;
-    }
-
     background: none;
     border: none;
     font: bold px-to-rem(32) inherit;
@@ -227,6 +223,10 @@
     display: none;
     margin: 0 0 px-to-rem(24) auto;
     text-align: right;
+
+    &-wrapper {
+        align-self: flex-end;
+    }
 
     @include breakpoint('xl') {
         display: none;
