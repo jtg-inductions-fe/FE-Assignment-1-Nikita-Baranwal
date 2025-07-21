@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="./src/styles/main.scss" />
     </head>
     <body>
+        <!-- Header Section -->
         <header class="header__container container">
             <!-- Logo -->
             <a href="/" class="header__logo">
@@ -17,11 +18,15 @@
             <nav class="header__nav" id="main-nav">
                 <ul class="header__nav-list">
                     <li class="header__nav-item"><a href="#">Home</a></li>
-                    <li class="header__nav-item"><a href="#">Discover</a></li>
                     <li class="header__nav-item">
-                        <a href="#">Special Deals</a>
+                        <a href="#keyfeatures-section">Discover</a>
                     </li>
-                    <li class="header__nav-item"><a href="#">Contact</a></li>
+                    <li class="header__nav-item">
+                        <a href="#services-section">Special Deals</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#footer-section">Contact</a>
+                    </li>
                 </ul>
 
                 <div class="drawer__actions">
@@ -49,7 +54,7 @@
                 aria-controls="main-nav"
                 aria-expanded="false"
             >
-                <i class="icon-ham-burger" aria-hidden="true"></i>
+                <i class="icon-hamburger" aria-hidden="true"></i>
             </button>
         </header>
 
@@ -57,7 +62,7 @@
         <div class="drawer-overlay" aria-hidden="true"></div>
 
         <!-- Hero Section -->
-        <section class="hero__container container" aria-labelledby="hero-title">
+        <main class="hero__container container" aria-labelledby="hero-title">
             <div class="hero__blur-circle" aria-hidden="true"></div>
 
             <div class="hero__img">
@@ -105,7 +110,7 @@
                     aria-hidden="true"
                 />
             </div>
-        </section>
+        </main>
 
         <!-- Customer Section -->
         <section
@@ -157,7 +162,11 @@
         </section>
 
         <!-- Services Section -->
-        <section class="service container" aria-labelledby="services-title">
+        <section
+            class="service container"
+            aria-labelledby="services-title"
+            id="services-section"
+        >
             <header class="services__content">
                 <h2 class="services__content-title" id="services-title">
                     Services
@@ -276,6 +285,7 @@
         <section
             class="keyfeatures container"
             aria-labelledby="keyfeatures-title"
+            id="keyfeatures-section"
         >
             <div class="keyfeatures__img">
                 <img
@@ -535,6 +545,148 @@
                 <img src="./src/assets/images/spiral-element.png" />
             </div>
         </section>
+
+        <!-- Footer -->
+        <footer
+            class="footer container"
+            aria-labelledby="footer-title"
+            id="footer-section"
+        >
+            <div class="footer__overview">
+                <div class="footer__overview-details">
+                    <a href="#" class="footer__overview-header">
+                        <div class="footer-logo">
+                            <img
+                                src="./src/assets/images/logo.png"
+                                alt="Footer Logo"
+                            />
+                        </div>
+                        <h5 id="footer-title">Travlog</h5>
+                    </a>
+                    <p class="footer__overview-description">
+                        Contrary to popular belief, Lorem Ipsum is not simply
+                        random text. It has roots in a piece of classical Latin
+                        literature from 45 BC.
+                    </p>
+                </div>
+                <ul class="footer__social">
+                    <li>
+                        <a
+                            href="https://www.facebook.com"
+                            target="_blank"
+                            aria-label="Facebook"
+                            class="footer__social-icon"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="icon-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://www.twitter.com"
+                            target="_blank"
+                            aria-label="Twitter"
+                            class="footer__social-icon"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="icon-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://www.instagram.com"
+                            target="_blank"
+                            aria-label="Instagram"
+                            class="footer__social-icon"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="icon-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <nav class="footer__content" aria-label="Footer Navigation">
+                <div
+                    class="footer__content-company links accordion"
+                    data-state="closed"
+                >
+                    <div
+                        class="footer__content-title accordion__header"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="company-links"
+                    >
+                        <h6>Company</h6>
+                        <button class="toggle-btn">
+                            <i class="icon-accordion"></i>
+                        </button>
+                    </div>
+                    <ul
+                        class="footer__content-list accordion__content"
+                        id="company-links"
+                    >
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Mobile</a></li>
+                    </ul>
+                </div>
+                <div
+                    class="footer__content-contact links accordion"
+                    data-state="closed"
+                >
+                    <div
+                        class="footer__content-title accordion__header"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="contact-links"
+                    >
+                        <h6>Contact</h6>
+                        <button class="toggle-btn">
+                            <i class="icon-accordion"></i>
+                        </button>
+                    </div>
+                    <ul
+                        class="footer__content-list accordion__content"
+                        id="contact-links"
+                    >
+                        <li><a href="#">Why Travlog?</a></li>
+                        <li><a href="#">Partner with us</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div
+                    class="footer__content-meet links accordion"
+                    data-state="closed"
+                >
+                    <div
+                        class="footer__content-title accordion__header"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="meet-links"
+                    >
+                        <h6>Meet Us</h6>
+                        <button class="toggle-btn">
+                            <i class="icon-accordion"></i>
+                        </button>
+                    </div>
+                    <ul
+                        class="footer__content-list accordion__content"
+                        id="meet-links"
+                    >
+                        <li>
+                            <a href="tel:+00921234567889">+00 92 1234 56789</a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@travlog.com"
+                                >info@travlog.com</a
+                            >
+                        </li>
+                        <li><a href="#">205. R Street, New York BD23200</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </footer>
 
         <script type="module" src="./src/script/index.js"></script>
     </body>

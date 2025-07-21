@@ -1,0 +1,41 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+.accordion {
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &__content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+
+        @include breakpoint('lg') {
+            max-height: none;
+        }
+    }
+
+    &[data-state='open'] {
+        .accordion__content {
+            max-height: px-to-rem(500);
+        }
+    }
+
+    .toggle-btn {
+        transition: transform 0.3s ease;
+        padding: 0;
+
+        &:focus {
+            outline: 1px solid currentColor;
+            outline-offset: 0;
+        }
+
+        @include breakpoint('lg') {
+            display: none;
+        }
+    }
+
+    .toggle-btn.is-toggle {
+        transform: rotateX(180deg);
+    }
+}

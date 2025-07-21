@@ -1,13 +1,4 @@
-@use 'abstracts/variables' as *;
-@use 'abstracts/mixins' as *;
-@use 'abstracts/functions' as *;
-
 @use './base';
-
 @use './components';
-
 @use './vendors';
-
 @use './layout';
-
-@use 'pages/home';

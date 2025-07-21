@@ -11,7 +11,7 @@ const body = document.body;
  */
 function toggleIcon(isOpen) {
     const icon = hamBtn.querySelector('i');
-    icon.className = isOpen ? 'icon-cross' : 'icon-ham-burger';
+    icon.className = isOpen ? 'icon-cross' : 'icon-hamburger';
 }
 
 /**

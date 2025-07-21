@@ -1,0 +1,155 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+
+.footer {
+    padding-top: px-to-rem(32);
+    padding-bottom: px-to-rem(32);
+
+    &__overview {
+        @include flex(
+            $direction: column,
+            $align: flex-start,
+            $gap: px-to-rem(32)
+        );
+        padding: px-to-rem(16) 0;
+
+        &-details {
+            @include flex(
+                $direction: column,
+                $align: flex-start,
+                $gap: px-to-rem(32)
+            );
+        }
+
+        &-header {
+            @include flex($justify: flex-start, $gap: px-to-rem(16));
+        }
+
+        h5 {
+            letter-spacing: px-to-rem(-1);
+        }
+
+        &-description {
+            text-align: left;
+            letter-spacing: px-to-rem(0.2);
+
+            @include breakpoint('lg') {
+                font-size: px-to-rem(23);
+            }
+        }
+
+        @include breakpoint('lg') {
+            padding: 0;
+        }
+
+        @include breakpoint('xl') {
+            gap: px-to-rem(65);
+        }
+    }
+
+    &__social {
+        @include flex($gap: px-to-rem(32));
+
+        &-icon {
+            height: px-to-rem(32);
+            width: px-to-rem(32);
+            color: map-get($map: variables.$colors, $key: light);
+            background-color: map-get($map: variables.$colors, $key: primary);
+            border-radius: 50%;
+            @include flex();
+        }
+    }
+
+    &__content {
+        margin-top: px-to-rem(44);
+        width: 100%;
+        @include flex($direction: column, $align: unset, $gap: px-to-rem(65));
+
+        &-title {
+            @include flex($justify: space-between);
+            cursor: pointer;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            i {
+                font-size: px-to-rem(22);
+            }
+        }
+
+        &-list {
+            @include flex(
+                $direction: column,
+                $align: unset,
+                $gap: px-to-rem(32)
+            );
+
+            > :first-child {
+                margin-top: px-to-rem(24);
+
+                @include breakpoint('lg') {
+                    margin-top: px-to-rem(27);
+                }
+            }
+
+            a {
+                font-size: px-to-rem(18);
+
+                &:hover {
+                    color: map-get($map: variables.$colors, $key: grey-black);
+                }
+
+                &:focus {
+                    outline: px-to-rem(2) solid
+                        map-get($map: variables.$colors, $key: primary);
+                }
+
+                @include breakpoint('xl') {
+                    letter-spacing: px-to-rem(0.67);
+                }
+            }
+
+            @include breakpoint('lg') {
+                gap: px-to-rem(34);
+
+                > :last-child {
+                    line-height: 1.8;
+                }
+            }
+        }
+
+        @include breakpoint('lg') {
+            margin-top: 0;
+            @include flex(
+                $justify: space-between,
+                $align: flex-start,
+                $gap: px-to-rem(0)
+            );
+        }
+    }
+
+    .links {
+        @include breakpoint('lg') {
+            max-width: px-to-rem(277);
+            width: 100%;
+        }
+
+        @include breakpoint('xl') {
+            max-width: px-to-rem(166);
+            width: 100%;
+        }
+    }
+
+    @include breakpoint('lg') {
+        margin-top: px-to-rem(0);
+        padding-top: px-to-rem(62);
+    }
+
+    @include breakpoint('xl') {
+        @include flex($align: flex-start);
+        margin-top: px-to-rem(129);
+        padding-top: px-to-rem(62);
+    }
+}
