@@ -1,0 +1,53 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+
+// Define the placeholder first
+button {
+    padding: px-to-rem(16) px-to-rem(32);
+    gap: px-to-rem(8);
+    border-radius: px-to-rem(100);
+    font-size: px-to-rem(14);
+    @include flex(
+        $justify: center,
+        $align: center,
+        $direction: row,
+        $gap: px-to-rem(16)
+    );
+}
+
+.primary-button {
+    background-color: map-get($map: variables.$colors, $key: light);
+    color: map-get(variables.$colors, dark);
+
+    &:hover,
+    &:focus-visible {
+        background-color: darken(map-get(variables.$colors, light), 5%);
+    }
+
+    &:disabled {
+        @include hidden;
+    }
+}
+
+.secondary-button {
+    background-color: map-get(variables.$colors, $key: primary);
+    color: map-get(variables.$colors, $key: light);
+
+    &:hover,
+    &:focus-visible {
+        background-color: darken(map-get(variables.$colors, primary), 5%);
+    }
+
+    &:disabled {
+        @include hidden;
+    }
+}
+
+.button--lg {
+    padding: px-to-rem(24) px-to-rem(32);
+
+    @include breakpoint('lg') {
+        padding: px-to-rem(16) px-to-rem(32);
+    }
+}

@@ -24,12 +24,18 @@ export default defineConfig(() => {
             }),
         ],
         build: {
+            assetsInlineLimit: 0,
+            cssMinify: true,
+
             rollupOptions: {
                 output: {
                     chunkFileNames: 'js/[name]-[hash].js',
                     entryFileNames: 'js/[name]-[hash].js',
                     assetFileNames: ({ name }) => {
-                        if (/\.(jpg|png)$/.test(name ?? '')) {
+                        if (/\.(woff2?|ttf|eot|otf)$/.test(name)) {
+                            return 'fonts/[name]-[hash][extname]';
+                        }
+                        if (/\.(png|jpe?g|webp|gif|svg)$/.test(name ?? '')) {
                             return 'images/[name]-[hash][extname]';
                         }
                         if (/\.css$/.test(name ?? '')) {

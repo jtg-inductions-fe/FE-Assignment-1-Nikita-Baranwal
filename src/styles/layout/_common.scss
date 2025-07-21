@@ -1,0 +1,28 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+
+/// Utility container class for layout alignment and responsiveness.
+///
+/// Applies max-width and horizontal padding based on breakpoints.
+/// Padding increases as screen size grows, improving layout balance.
+
+.container {
+    width: 100%;
+    margin-inline: auto;
+    padding: 0 px-to-rem(16);
+    @include flex($direction: column, $gap: px-to-rem(32));
+
+    @include breakpoint('lg') {
+        padding: unset;
+        max-width: px-to-rem(896);
+        padding: px-to-rem(64) 0;
+        @include flex($direction: column, $gap: px-to-rem(64));
+    }
+
+    @include breakpoint('xl') {
+        padding: px-to-rem(58) 0;
+        max-width: px-to-rem(1192);
+        @include flex($direction: row, $gap: px-to-rem(0));
+    }
+}

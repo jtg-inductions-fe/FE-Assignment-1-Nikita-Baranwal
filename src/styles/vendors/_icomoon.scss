@@ -1,0 +1,93 @@
+@use '../abstracts/mixins' as *;
+
+@include font-face(
+    $name: 'icomoon',
+    $path: '/src/assets/fonts/icomoon/icomoon',
+    $is-icon: true
+);
+
+[class^='icon-'],
+[class*=' icon-'] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-arrow-left::before {
+    content: '\e900';
+}
+
+.icon-arrow-right::before {
+    content: '\e901';
+}
+
+.icon-hamburger::before {
+    content: '\e902';
+    color: inherit;
+}
+
+.icon-play::before {
+    content: '\e903';
+    color: inherit;
+}
+
+.icon-bag::before {
+    content: '\e904';
+    color: inherit;
+}
+
+.icon-location::before {
+    content: '\e905';
+    color: inherit;
+}
+
+.icon-calendar::before {
+    content: '\e906';
+    color: inherit;
+}
+
+.icon-star::before {
+    content: '\e907';
+    color: inherit;
+}
+
+.icon-message::before {
+    content: '\e908';
+}
+
+.icon-coupons::before {
+    content: '\e909';
+    color: inherit;
+}
+
+.icon-facebook::before {
+    content: '\e90a';
+    color: inherit;
+}
+
+.icon-twitter::before {
+    content: '\e90b';
+    color: inherit;
+}
+
+.icon-instagram::before {
+    content: '\e90c';
+    color: inherit;
+}
+
+.icon-accordion::before {
+    content: '\e90d';
+    color: inherit;
+}
+
+.icon-cross::before {
+    content: '\ea0f';
+    color: inherit;
+}

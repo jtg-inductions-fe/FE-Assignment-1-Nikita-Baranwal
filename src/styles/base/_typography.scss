@@ -1,0 +1,124 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+
+@include font-face(
+    $name: 'Circular Std',
+    $path: '/src/assets/fonts/circularStd/CircularStd-Bold'
+);
+
+@include font-face(
+    $name: 'Inter',
+    $path: '/src/assets/fonts/inter/Inter-Regular'
+);
+
+body {
+    font-family: 'Circular Std';
+    font-weight: variables.$weight-bold;
+}
+
+h1 {
+    font-size: px-to-rem(40);
+    line-height: 1.2;
+    text-align: center;
+    color: map-get($map: variables.$colors, $key: grey-black);
+
+    @include breakpoint('lg') {
+        font-size: px-to-rem(56);
+    }
+
+    @include breakpoint('xl') {
+        font-size: px-to-rem(69);
+        text-align: left;
+    }
+}
+
+h2 {
+    font-size: px-to-rem(16);
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: map-get(variables.$colors, secondary);
+
+    @include breakpoint('lg') {
+        font-size: px-to-rem(23);
+    }
+    @include breakpoint('xl') {
+        text-align: left;
+    }
+}
+
+h3 {
+    font-size: px-to-rem(32);
+    color: map-get(variables.$colors, grey-black);
+    line-height: 1.2;
+    text-align: center;
+
+    @include breakpoint('lg') {
+        font-size: px-to-rem(40);
+    }
+
+    @include breakpoint('xl') {
+        font-size: px-to-rem(44);
+        text-align: left;
+    }
+}
+
+h4 {
+    font-size: px-to-rem(35);
+    color: map-get(variables.$colors, orange);
+    line-height: 1.2;
+}
+
+h5,
+.h5 {
+    font-size: px-to-rem(23);
+    color: map-get(variables.$colors, grey-black);
+    line-height: 1.2;
+    letter-spacing: px-to-rem(0.55);
+    @include line-clamp(1);
+    @include breakpoint('lg') {
+        font-size: px-to-rem(27);
+        @include line-clamp(2);
+    }
+}
+
+h6,
+.h6 {
+    font-size: px-to-rem(23);
+    color: map-get(variables.$colors, grey-black);
+}
+
+p {
+    @include font('Inter', px-to-rem(16), 400);
+    color: color-opacity(map-get(variables.$colors, grey-black), 0.5);
+    line-height: 1.6;
+    letter-spacing: px-to-rem(0.55);
+    text-align: center;
+
+    @include breakpoint('lg') {
+        font-size: px-to-rem(18);
+    }
+
+    @include breakpoint('xl') {
+        text-align: left;
+    }
+}
+
+.body2 {
+    @include line-clamp(3);
+    text-align: center;
+    @include font('Inter', px-to-rem(18), 400);
+    color: color-opacity(map-get(variables.$colors, grey-black), 0.5);
+    line-height: 1.6;
+    max-width: 100%;
+
+    @include breakpoint('lg') {
+        @include line-clamp(4);
+    }
+}
+
+ul li a {
+    font-size: px-to-rem(14);
+    color: color-opacity(map-get(variables.$colors, grey-black), 0.5);
+}

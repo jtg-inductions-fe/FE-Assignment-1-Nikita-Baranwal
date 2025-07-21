@@ -1,0 +1,42 @@
+// color palette
+$colors: (
+    primary: #5d50c6,
+    light: #ffffff,
+    secondary: #f85e9f,
+    orange: #ff5722,
+    dark: #222831,
+    darken: #333,
+    grey-black: #191825,
+    yellow: #facd49,
+);
+
+// media screen
+$breakpoints: (
+    sm: 430px,
+    // Small Devices (Mobiles)
+    lg: 1024px,
+    // Large Devices (Laptops)
+    xl: 1440px,
+);
+
+$weight-bold: 700;
+
+// z-index
+$z-index: (
+    negative: -1,
+    base: 0,
+    one: 1,
+    two: 2,
+);
+
+// border
+$border-light: 1px solid #eeeeee;
+
+// box-shadow
+$shadow-elevation-high:
+    0px 0px 0px rgba(0, 0, 0, 0.1),
+    0px 5px 11px rgba(0, 0, 0, 0.1),
+    0px 20px 20px rgba(0, 0, 0, 0.09),
+    0px 45px 27px rgba(0, 0, 0, 0.05),
+    0px 81px 32px rgba(0, 0, 0, 0.01),
+    0px 126px 35px rgba(0, 0, 0, 0);
