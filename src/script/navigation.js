@@ -4,19 +4,10 @@
 const logo = document.querySelector('.header__logo');
 const ham = document.querySelector('.header-ham');
 
-function setTabIndexForTablets() {
-    if (!logo || !ham) return;
-
-    if (window.innerWidth >= 1024 && window.innerWidth < 1440) {
-        logo.tabIndex = 0;
-        ham.tabIndex = 1;
-    } else {
-        logo.tabIndex = -1;
-        ham.tabIndex = -1;
-    }
+if (window.innerWidth >= 1024 && window.innerWidth < 1440) {
+    logo.tabIndex = 0;
+    ham.tabIndex = 1;
 }
-
-window.addEventListener('resize', setTabIndexForTablets);
 
 /**
  * Traps focus within a given container.
@@ -175,27 +166,5 @@ window.addEventListener('resize', () => {
     const isDrawerOpen = drawer.classList.contains('active');
     if (window.innerWidth >= 1440 && isDrawerOpen) {
         closeDrawer();
-    }
-});
-
-/**
- * Handles subscription form submission.
- * Validates email, shows alert on success, and resets form.
- *
- * @type {HTMLFormElement}
- */
-const form = document.getElementById('subscribeForm');
-
-/**
- * @param {SubmitEvent} e - The form submission event.
- */
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const emailInput = document.getElementById('emailInput');
-    if (emailInput.checkValidity()) {
-        alert('Thank you for subscribing!');
-        form.reset();
-    } else {
-        emailInput.reportValidity();
     }
 });
