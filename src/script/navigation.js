@@ -18,11 +18,7 @@ if (window.innerWidth >= 1024 && window.innerWidth < 1440) {
 function trapFocus(container) {
     const focusableSelectors = `
         a[href],
-        button:not([disabled]),
-        textarea:not([disabled]),
-        input:not([disabled]),
-        select:not([disabled]),
-        [tabindex]:not([tabindex="-1"])
+        button:not([disabled])
     `;
 
     const focusableElements = container.querySelectorAll(focusableSelectors);

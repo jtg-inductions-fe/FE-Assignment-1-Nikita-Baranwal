@@ -96,6 +96,7 @@
 
             a {
                 font-size: px-to-rem(18);
+                margin-left: px-to-rem(3);
 
                 &:hover {
                     color: map-get($map: variables.$colors, $key: grey-black);
@@ -144,7 +145,7 @@
 
     @include breakpoint('lg') {
         margin-top: px-to-rem(0);
-        padding-top: px-to-rem(62);
+        padding-top: px-to-rem(60);
     }
 
     @include breakpoint('xl') {

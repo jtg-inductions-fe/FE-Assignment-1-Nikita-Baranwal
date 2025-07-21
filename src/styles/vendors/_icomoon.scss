@@ -84,9 +84,10 @@
 
 .icon-accordion::before {
     content: '\e90d';
+    color: inherit;
 }
 
 .icon-cross::before {
     content: '\ea0f';
-    color: black;
+    color: inherit;
 }

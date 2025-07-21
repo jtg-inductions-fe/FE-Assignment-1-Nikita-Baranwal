@@ -49,7 +49,7 @@ accordions.forEach((accordion) => {
 
             otherAccordion
                 .querySelectorAll('.accordion__content a')
-                .forEach((link) => (link.tabIndex = -1));
+                .forEach((link) => (link.tabIndex = 0));
         });
 
         // Toggle current accordion
