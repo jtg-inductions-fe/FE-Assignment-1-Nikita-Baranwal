@@ -22,10 +22,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url(/src/assets/images/testimonial-background.png);
+            background-image: url(/src/assets/images/testimonial-background.webp);
             background-size: cover;
             background-position: center;
-            z-index: -1;
+            z-index: z(negative);
         }
 
         @include breakpoint('xl') {

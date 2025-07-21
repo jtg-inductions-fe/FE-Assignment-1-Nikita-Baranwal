@@ -1,25 +1,74 @@
+/**
+ * Sets tabIndex for logo and hamburger button on tablet screens.
+ */
+const logo = document.querySelector('.header__logo');
+const ham = document.querySelector('.header-ham');
+
+if (window.innerWidth >= 1024 && window.innerWidth < 1440) {
+    logo.tabIndex = 0;
+    ham.tabIndex = 1;
+}
+
+/**
+ * Traps focus within a given container.
+ * Prevents focus from escaping when using Tab or Shift+Tab.
+ *
+ * @param {HTMLElement} container - The container element to trap focus within.
+ */
+function trapFocus(container) {
+    const focusableSelectors = `
+        a[href],
+        button:not([disabled])
+    `;
+
+    const focusableElements = container.querySelectorAll(focusableSelectors);
+    if (!focusableElements.length) return;
+
+    const first = focusableElements[0];
+    const last = focusableElements[focusableElements.length - 1];
+
+    const handleKeydown = (e) => {
+        if (e.key === 'Tab') {
+            if (e.shiftKey) {
+                if (document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                }
+            } else {
+                if (document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+        }
+    };
+
+    container.addEventListener('keydown', handleKeydown);
+
+    first.focus();
+
+    // Return cleanup function
+    return () => {
+        container.removeEventListener('keydown', handleKeydown);
+    };
+}
+
 const hamBtn = document.querySelector('.header-ham');
 const drawer = document.querySelector('.header__nav');
 const overlay = document.querySelector('.drawer-overlay');
 const body = document.body;
 
 /**
- * Toggles the hamburger icon to a close icon or vice versa.
- *
- * @param {boolean} isOpen - Whether the drawer is open.
- * @returns {void}
+ * DOMContentLoaded guard for essential elements.
  */
-function toggleIcon(isOpen) {
-    const icon = hamBtn.querySelector('i');
-    icon.className = isOpen ? 'icon-cross' : 'icon-hamburger';
-}
+document.addEventListener('DOMContentLoaded', () => {
+    if (!hamBtn || !drawer || !overlay) return;
+});
 
 /**
- * Opens the navigation drawer and updates the UI accordingly.
- *
- * Adds active classes to the drawer and overlay,
- * prevents scrolling on the body, updates the ARIA state,
- * and changes the hamburger icon to a close icon.
+ * Opens the navigation drawer.
+ * Adds classes to display drawer and overlay, disables body scroll,
+ * updates ARIA attributes, and traps focus inside the drawer.
  *
  * @returns {void}
  */
@@ -28,15 +77,13 @@ function openDrawer() {
     overlay.classList.add('active');
     body.classList.add('no-scroll');
     hamBtn.setAttribute('aria-expanded', 'true');
-    hamBtn.classList.add('open');
-    toggleIcon(true);
+    trapFocus(drawer);
 }
 
 /**
- * Closes the navigation drawer and resets the UI.
- *
- * Removes active classes, restores scroll,
- * resets the ARIA attributes, and switches the icon back.
+ * Closes the navigation drawer.
+ * Removes drawer and overlay classes, re-enables scroll,
+ * resets ARIA attribute, and focuses the hamburger button.
  *
  * @returns {void}
  */
@@ -45,15 +92,11 @@ function closeDrawer() {
     overlay.classList.remove('active');
     body.classList.remove('no-scroll');
     hamBtn.setAttribute('aria-expanded', 'false');
-    hamBtn.classList.remove('open');
-    toggleIcon(false);
+    hamBtn.focus();
 }
 
 /**
- * Toggles the drawer open or closed based on its current state.
- *
- * If the drawer is currently open, it closes it;
- * otherwise, it opens the drawer.
+ * Toggles the drawer based on its current state.
  *
  * @returns {void}
  */
@@ -62,13 +105,11 @@ function toggleDrawer() {
     isOpen ? closeDrawer() : openDrawer();
 }
 
-/**
- * Handles click events on the hamburger button to toggle the drawer.
- */
+// Event listener for hamburger button
 hamBtn.addEventListener('click', toggleDrawer);
 
 /**
- * Handles Escape key to close the drawer from anywhere in the document.
+ * Global listener to close the drawer when Escape key is pressed.
  *
  * @param {KeyboardEvent} e - The keydown event.
  */
@@ -79,7 +120,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 /**
- * Closes the drawer when clicking outside of it or the hamburger icon.
+ * Closes drawer when clicking outside the drawer or hamburger icon.
  *
  * @param {MouseEvent} e - The click event.
  */
@@ -93,17 +134,16 @@ document.addEventListener('click', (e) => {
     }
 });
 
-/**
- * Handles click events on the header using event delegation.
- * Closes the navigation drawer if a nav link or drawer button is clicked.
- *
- * @param {MouseEvent} e - The click event triggered within the header.
- */
 const header = document.querySelector('header');
 
+/**
+ * Delegates click events inside header to close drawer
+ * when nav links or drawer buttons are clicked.
+ *
+ * @param {MouseEvent} e - The click event.
+ */
 header.addEventListener('click', (e) => {
     const target = e.target;
-
     if (
         target.closest('.header__nav-item a') ||
         target.closest('.drawer__button')
@@ -113,6 +153,14 @@ header.addEventListener('click', (e) => {
 });
 
 /**
- * Handles clicks on the overlay to close the drawer.
+ * Closes drawer when clicking the close (×) button inside drawer.
  */
-overlay.addEventListener('click', closeDrawer);
+const closeBtn = drawer.querySelector('.drawer-close');
+closeBtn.addEventListener('click', closeDrawer);
+
+window.addEventListener('resize', () => {
+    const isDrawerOpen = drawer.classList.contains('active');
+    if (window.innerWidth >= 1440 && isDrawerOpen) {
+        closeDrawer();
+    }
+});

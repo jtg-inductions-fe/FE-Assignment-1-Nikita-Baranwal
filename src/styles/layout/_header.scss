@@ -39,7 +39,7 @@
         font-size: px-to-rem(40);
         width: px-to-rem(48);
         height: px-to-rem(48);
-        z-index: z(ham-menu);
+        z-index: z(one);
         padding: 0;
         color: map-get($map: variables.$colors, $key: primary);
         cursor: pointer;
@@ -101,13 +101,15 @@
             max-width: 100vw;
             height: 100vh;
             background-color: map-get(variables.$colors, light);
-            z-index: z(drawer);
+            z-index: z(two);
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
-            padding: px-to-rem(116) px-to-rem(32) px-to-rem(32);
+            padding: px-to-rem(32) px-to-rem(32);
 
-            .drawer-close {
-                display: block;
+            &.drawer-open {
+                .drawer-close {
+                    display: block;
+                }
             }
         }
 
@@ -201,7 +203,7 @@
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
-    z-index: z(overlay);
+    z-index: z(one);
     transition: opacity 0.3s ease-in-out;
 
     &.active {
@@ -220,6 +222,11 @@
     cursor: pointer;
     display: none;
     margin: 0 0 px-to-rem(24) auto;
+    text-align: right;
+
+    &-wrapper {
+        align-self: flex-end;
+    }
 
     @include breakpoint('xl') {
         display: none;

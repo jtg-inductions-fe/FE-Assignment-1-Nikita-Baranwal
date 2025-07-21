@@ -23,10 +23,10 @@ $weight-bold: 700;
 
 // z-index
 $z-index: (
+    negative: -1,
     base: 0,
-    overlay: 1,
-    drawer: 2,
-    ham-menu: 3,
+    one: 1,
+    two: 2,
 );
 
 // border
