@@ -1,4 +1,5 @@
 @use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
 
 .accordion {
     overflow: hidden;
@@ -16,7 +17,7 @@
 
     &[data-state='open'] {
         .accordion__content {
-            max-height: none;
+            max-height: px-to-rem(500);
         }
     }
 

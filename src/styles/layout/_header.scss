@@ -41,6 +41,7 @@
         height: px-to-rem(48);
         z-index: z(ham-menu);
         padding: 0;
+        color: map-get($map: variables.$colors, $key: primary);
         cursor: pointer;
         @include flex($justify: center, $align: center);
 

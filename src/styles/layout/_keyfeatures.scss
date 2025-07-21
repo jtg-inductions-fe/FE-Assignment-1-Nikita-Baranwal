@@ -137,6 +137,7 @@
             border-radius: px-to-rem(32);
             @include flex();
             font-size: px-to-rem(34);
+            color: map-get($map: variables.$colors, $key: light);
         }
 
         &-location {

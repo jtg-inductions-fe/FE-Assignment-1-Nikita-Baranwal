@@ -54,6 +54,7 @@
         &-icon {
             height: px-to-rem(32);
             width: px-to-rem(32);
+            color: map-get($map: variables.$colors, $key: light);
             background-color: map-get($map: variables.$colors, $key: primary);
             border-radius: 50%;
             @include flex();
