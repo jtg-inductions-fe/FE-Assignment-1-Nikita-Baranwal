@@ -4,12 +4,19 @@
 const logo = document.querySelector('.header__logo');
 const ham = document.querySelector('.header-ham');
 
-if (window.innerWidth >= 1024 && window.innerWidth < 1440) {
-    logo.tabIndex = 0;
-    ham.tabIndex = 1;
+function setTabIndexForTablets() {
+    if (!logo || !ham) return;
+
+    if (window.innerWidth >= 1024 && window.innerWidth < 1440) {
+        logo.tabIndex = 0;
+        ham.tabIndex = 1;
+    } else {
+        logo.tabIndex = -1;
+        ham.tabIndex = -1;
+    }
 }
 
-const container = document.querySelector('.header__container');
+window.addEventListener('resize', setTabIndexForTablets);
 
 /**
  * Traps focus within a given container.
@@ -33,7 +40,7 @@ function trapFocus(container) {
     const first = focusableElements[0];
     const last = focusableElements[focusableElements.length - 1];
 
-    container.addEventListener('keydown', (e) => {
+    const handleKeydown = (e) => {
         if (e.key === 'Tab') {
             if (e.shiftKey) {
                 if (document.activeElement === first) {
@@ -47,9 +54,16 @@ function trapFocus(container) {
                 }
             }
         }
-    });
+    };
+
+    container.addEventListener('keydown', handleKeydown);
 
     first.focus();
+
+    // Return cleanup function
+    return () => {
+        container.removeEventListener('keydown', handleKeydown);
+    };
 }
 
 const hamBtn = document.querySelector('.header-ham');
