@@ -77,6 +77,10 @@
             i {
                 font-size: px-to-rem(22);
             }
+
+            @include breakpoint('lg') {
+                cursor: none;
+            }
         }
 
         &-list {
